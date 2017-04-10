@@ -1,37 +1,28 @@
-# My Awesome project
+# PyGCE
 
-Maybe some build status/badges here like [![Build Status](your travis url for the repo here.png)](your travis url for the repo here)
-*Description of my awesome project*
-*See [string link](link) for my awesome integration/tool/init script.*
+*A tool to export your data from Garmin Connect, written in Python 3.*
 
 
 ## Install
 ```
-$ type install and you're done
+$ python3 setup.py
 ```
-*Some suggestions on how to compile*
+*To install from source, planned a pip-package for the future*
 
 
 ## Usage
-```ask for awesome and you'll find me```
-
-## API
-
-### API function (or better: a link to the documentation!!)
-#### options
-### pageres.src(url, sizes, options)
+```
+$ python3 pygce/pygce.py
+```
+for a test run, or `pygce` if you've installed the package.
 
 
 ## Questions and issues
-The [github issue tracker](link to issues of my project) is **only** for bug reports and feature requests. Anything else, such as questions for help in using the library, should be posted in [StackOverflow](link to SO questions tagged).
-
-
-## Team
-[![Name](link to image)](link to webpage) | [![Name](link to image)](link to webpage)
+The [github issue tracker](https://github.com/sirfoga/pygce/issues) is **only** for bug reports and feature requests. Anything else, such as questions for help in using the library, should be posted as [pull requests](https://github.com/sirfoga/pygce/pulls)
 
 
 ## Thanks
-Thanks to anyone who ever loved this awesome project. 
+Thanks to Garmin Connect for creating a semi-complete product: what if you've added an `EXPORT ALL DATA` button right at the bottom of the web-page? Would have hurt anybody?
 
 
 ## License
