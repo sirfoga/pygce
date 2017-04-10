@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - `setup.py`, README
+- garmin models
 
 ### Created
 - repository
