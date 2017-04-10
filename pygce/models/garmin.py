@@ -41,6 +41,18 @@ class GCDaySection(object):
             Parses raw html source and tries to finds all information
         """
 
+    def to_json(self):
+        """
+        :return: json object
+            A json representation of this object
+        """
+
+    def to_csv(self):
+        """
+        :return: csv object
+            A csv representation of this object
+        """
+
 
 class GCDaySummary(GCDaySection):
     """
