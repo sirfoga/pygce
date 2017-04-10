@@ -5,7 +5,8 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - GarminConnectBot to login, goto daily summary and dashboard of user
-- sample use
+- sample use of bot
+- GCDayTimeline
 
 ## 0.0.1 - 2017-04-10
 

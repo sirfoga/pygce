@@ -117,7 +117,7 @@ class GCDayBreakdown(GCDaySection):
         GCDaySection.__init__(self, raw_html)
 
 
-class GCDayTimeline(GCDaySection):
+class GCDayTimeline(object):
     """
     Standard Garmin Connect timeline of day as in webpage.
     Each standard day consists of different sections:
@@ -128,16 +128,36 @@ class GCDayTimeline(GCDaySection):
     - breakdown (highly active %, active %, sedentary %, sleep %)
     """
 
-    def __init__(self, raw_html):
+    def __init__(self, summary_html, steps_section_html, sleep_section_html, activities_section_html,
+                 breakdown_section_html):
         """
-        :param raw_html: str
-            HTML source snippet with information about section
-            """
+        :param summary_html: str
+            HTML source snippet with information about the day
+        :param steps_section_html: str
+            HTML source snippet with information about daily steps
+        :param sleep_section_html: str
+            HTML source snippet with information about daily sleep
+        :param activities_section_html: str
+            HTML source snippet with information about daily activities
+        :param breakdown_section_html: str
+            HTML source snippet with information about daily breakdown
+        """
 
-        GCDaySection.__init__(self, raw_html)
+        object.__init__(self)
+
+        self.sections = {
+            "summary": GCDaySummary(summary_html),
+            "steps": GCDaySteps(steps_section_html),
+            "sleep": GCDaySleep(sleep_section_html),
+            "activities": GCDayActivity(activities_section_html),
+            "breakdown": GCDayBreakdown(breakdown_section_html)
+        }  # list of sections in day
 
     def parse(self):
         """
         :return: void
             Finds all sections to parse, then builds corresponding objects and parses everything
         """
+
+        for section in self.sections.values():  # parse each section
+            section.parse()
