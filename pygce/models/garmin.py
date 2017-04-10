@@ -128,9 +128,11 @@ class GCDayTimeline(object):
     - breakdown (highly active %, active %, sedentary %, sleep %)
     """
 
-    def __init__(self, summary_html, steps_section_html, sleep_section_html, activities_section_html,
+    def __init__(self, date_time, summary_html, steps_section_html, sleep_section_html, activities_section_html,
                  breakdown_section_html):
         """
+        :param date_time: datetime
+            Datetime of day
         :param summary_html: str
             HTML source snippet with information about the day
         :param steps_section_html: str
@@ -145,6 +147,7 @@ class GCDayTimeline(object):
 
         object.__init__(self)
 
+        self.date = date_time.date()
         self.sections = {
             "summary": GCDaySummary(summary_html),
             "steps": GCDaySteps(steps_section_html),

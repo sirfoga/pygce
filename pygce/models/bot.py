@@ -16,12 +16,16 @@
 # limitations under the License.
 
 
+from datetime import timedelta
+
 from bs4 import BeautifulSoup
 from hal.internet.selenium import SeleniumForm
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+
+from .garmin import GCDayTimeline
 
 
 class GarminConnectBot(object):
@@ -78,6 +82,30 @@ class GarminConnectBot(object):
             self.user_logged_in = False
             return False  # something went wrong
 
+    def get_user_id(self):
+        """
+        :return: void
+            Retrieves user unique id and token
+        """
+
+        if self.user_id is None:
+            self.go_to_dashboard()
+            soup = BeautifulSoup(self.browser.page_source, "lxml")  # html parser
+            widgets = soup.find_all("div", {"class": "widget-content"})
+
+            id_found = False  # True iff id has been found
+            for w in widgets:
+                if not id_found:
+                    try:
+                        widget_title = w.find_all("h3", {"class": "data-bit"})[0]
+                        raw_id = widget_title.a["href"]
+                        tokens = raw_id.split("/")
+                        candidate_id = max(tokens, key=len)  # longest string (typically is the id, since it's 36 chars)
+                        self.user_id = str(candidate_id).strip()
+                        id_found = True
+                    except:
+                        pass  # that widget didn't contain the id .. skip to the next
+
     def go_to_dashboard(self):
         """
         :return: void
@@ -110,26 +138,50 @@ class GarminConnectBot(object):
             EC.presence_of_element_located((By.CLASS_NAME, "comment-container"))
         )  # wait until fully loaded
 
-    def get_user_id(self):
+    def get_day_data(self, date_time):
         """
-        :return: void
-            Retrieves user unique id and token
+        :param date_time: datetime
+            Datetime object with date
+        :return: GCDayTimline
+            Data about day
         """
 
-        if self.user_id is None:
-            self.go_to_dashboard()
+        try:
+            self.go_to_day_summary(date_time)
             soup = BeautifulSoup(self.browser.page_source, "lxml")  # html parser
-            widgets = soup.find_all("div", {"class": "widget-content"})
 
-            id_found = False  # True iff id has been found
-            for w in widgets:
-                if not id_found:
-                    try:
-                        widget_title = w.find_all("h3", {"class": "data-bit"})[0]
-                        raw_id = widget_title.a["href"]
-                        tokens = raw_id.split("/")
-                        candidate_id = max(tokens, key=len)  # longest string (typically is the id, since it's 36 chars)
-                        self.user_id = str(candidate_id).strip()
-                        id_found = True
-                    except:
-                        pass  # that widget didn't contain the id .. skip to the next
+            tabs_html = soup.find_all("div", {"class": "tab-content"})[0]  # find html source code for sections
+            summary_html = soup.find_all("div", {"class": "content page steps sleep calories timeline"})[0]
+            steps_html = soup.find_all("div", {"class": "row-fluid bottom-m"})[0]
+            sleep_html = tabs_html.find_all("div", {"id": "pane5"})[0]
+            activities_html = tabs_html.find_all("div", {"id": "pane4"})[0]
+            breakdown_html = tabs_html.find_all("div", {"id": "pane2"})[0]
+
+            return GCDayTimeline(
+                date_time,
+                summary_html,
+                steps_html,
+                sleep_html,
+                activities_html,
+                breakdown_html
+            )
+        except Exception as e:
+            print(str(e))
+            return None
+
+    def get_days_data(self, min_date_time, max_date_time):
+        """
+        :param min_date_time: datetime
+            Datetime object with date, this is the date when to start downloading data
+        :param max_date_time: datetime
+            Datetime object with date, this is the date when to stop downloading data
+        :return: [] of GCDayTimline
+            List of data about days
+        """
+
+        days_delta = (max_date_time - min_date_time).days  # days from begin to end
+        days_data = []  # output list
+        for i in range(days_delta + 1):  # including last day
+            day_to_get = min_date_time + timedelta(days=i)
+            days_data.append(self.get_day_data(day_to_get))
+        return days_data
