@@ -135,3 +135,9 @@ class GCDayTimeline(GCDaySection):
             """
 
         GCDaySection.__init__(self, raw_html)
+
+    def parse(self):
+        """
+        :return: void
+            Finds all sections to parse, then builds corresponding objects and parses everything
+        """
