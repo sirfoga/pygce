@@ -16,6 +16,8 @@
 # limitations under the License.
 
 
+import json
+
 from bs4 import BeautifulSoup
 
 
@@ -32,8 +34,8 @@ class GCDaySection(object):
 
         object.__init__(self)
 
-        self.html = raw_html
-        self.soup = BeautifulSoup(self.html)
+        self.html = str(raw_html)
+        self.soup = BeautifulSoup(self.html, "html.parser")
 
     def parse(self):
         """
@@ -41,23 +43,27 @@ class GCDaySection(object):
             Parses raw html source and tries to finds all information
         """
 
+    def to_dict(self):
+        """
+        :return: dict
+            Dictionary with keys (obj fields) and values (obj values)
+        """
+
+        return {}
+
     def to_json(self):
         """
         :return: json object
             A json representation of this object
         """
 
-    def to_csv(self):
-        """
-        :return: csv object
-            A csv representation of this object
-        """
+        return json.dumps(self.to_dict())
 
 
 class GCDaySummary(GCDaySection):
     """
     Standard activity in the Garmin Connect timeline of day.
-    Common features are day, likes, comment, kcal
+    Common features are likes, comment, kcal
     """
 
     def __init__(self, raw_html):
@@ -67,6 +73,58 @@ class GCDaySummary(GCDaySection):
         """
 
         GCDaySection.__init__(self, raw_html)
+
+        self.likes = None
+        self.comment = None
+        self.kcal_count = None
+
+    def parse(self):
+        self.parse_likes()
+        self.parse_comment()
+        self.parse_kcal_count()
+
+    def parse_likes(self):
+        """
+        :return: void
+            Finds likes count and stores value
+        """
+
+        container = self.soup.find_all("div", {"class": "span4 page-navigation"})[0]
+        container = container.find_all("span", {"class": "like js-like-count"})[0]
+        likes = container.text.strip().split(" ")[0].strip()
+        likes = int(likes)
+        self.likes = likes
+
+    def parse_comment(self):
+        """
+        :return: void
+            Finds comment value and stores value
+        """
+
+        container = self.soup.find_all("div", {"class": "note-container"})[0]
+        container = container.find_all("textarea", {"id": "noteTextarea"})[0]
+        comment = str(container.text).strip()
+        self.comment = comment
+
+    def parse_kcal_count(self):
+        """
+        :return: void
+            Finds kcal value and stores value
+        """
+
+        container = self.soup.find_all("div", {"class": "span8 daily-summary-stats-placeholder"})[0]
+        container = container.find_all("div", {"class": "row-fluid top-xl"})[0]
+        kcal_count = container.find_all("div", {"class": "data-bit"})[0].text
+        kcal_count = str(kcal_count).strip().replace(".", "")  # remove trailing digit
+        kcal_count = int(kcal_count)
+        self.kcal_count = kcal_count
+
+    def to_dict(self):
+        return {
+            "likes": self.likes,
+            "comment": self.comment,
+            "kcal_count": self.kcal_count
+        }
 
 
 class GCDaySteps(GCDaySection):
@@ -176,3 +234,6 @@ class GCDayTimeline(object):
 
         for section in self.sections.values():  # parse each section
             section.parse()
+
+    def __getattr__(self, item):
+        return self.sections[item]

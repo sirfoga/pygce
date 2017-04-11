@@ -146,6 +146,25 @@ class GarminConnectBot(object):
             Data about day
         """
 
+        self.go_to_day_summary(date_time)
+        soup = BeautifulSoup(str(self.browser.page_source), "html.parser")  # html parser
+
+        tabs_html = soup.find_all("div", {"class": "tab-content"})[0]  # find html source code for sections
+        summary_html = soup.find_all("div", {"class": "content page steps sleep calories timeline"})[0]
+        steps_html = soup.find_all("div", {"class": "row-fluid bottom-m"})[0]
+        sleep_html = tabs_html.find_all("div", {"id": "pane5"})[0]
+        activities_html = tabs_html.find_all("div", {"id": "pane4"})[0]
+        breakdown_html = tabs_html.find_all("div", {"id": "pane2"})[0]
+
+        return GCDayTimeline(
+            date_time,
+            summary_html,
+            steps_html,
+            sleep_html,
+            activities_html,
+            breakdown_html
+        )
+
         try:
             self.go_to_day_summary(date_time)
             soup = BeautifulSoup(self.browser.page_source, "lxml")  # html parser
