@@ -325,6 +325,28 @@ class GCDayBreakdown(GCDaySection):
 
         GCDaySection.__init__(self, raw_html)
 
+        self.highly_active = None
+        self.active = None
+        self.sedentary = None
+        self.sleeping = None
+
+    def parse(self):
+        values = self.soup.find_all("tspan")
+        values = [str(v.text).strip().replace("%", "") for v in values]  # remove jibberish
+
+        self.highly_active = parse_num(values[0])
+        self.active = parse_num(values[1])
+        self.sedentary = parse_num(values[2])
+        self.sleeping = parse_num(values[3])
+
+    def to_dict(self):
+        return {
+            "highly_active": self.highly_active,
+            "active": self.active,
+            "sedentary": self.sedentary,
+            "sleeping": self.sleeping
+        }
+
 
 class GCDayTimeline(object):
     """
