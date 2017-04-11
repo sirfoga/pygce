@@ -55,6 +55,7 @@ def main():
     day_data.parse()
     print(day_data.summary.to_json())
     print(day_data.steps.to_json())
+    print(day_data.sleep.to_json())
 
 if __name__ == '__main__':
     main()

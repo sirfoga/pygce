@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 ## 0.0.3 - 2017-04-11
 
 ### Added
-- GCDaySummary, GCDaySteps converters and parsers
+- GCDaySummary, GCDaySteps, GCDaySleep converters and parsers
 
 ## 0.0.2 - 2017-04-10
 
