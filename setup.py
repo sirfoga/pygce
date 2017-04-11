@@ -44,7 +44,7 @@ setup(
     keywords="garmin data parser",
     url="https://github.com/sirfoga/pygce",
     packages=find_packages(exclude=["tests"]),
-    install_requires=[  # TODO: uncomment packages (but travis will fail)
+    install_requires=[
         "bs4",
         "pyhal",
         "requests",

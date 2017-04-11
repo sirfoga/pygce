@@ -17,6 +17,9 @@ $ python3 pygce/pygce.py
 for a test run, or `pygce` if you've installed the package.
 
 
+## Sample output
+You can browse the [`json output`](sample.json) for a single day.
+
 ## Questions and issues
 The [github issue tracker](https://github.com/sirfoga/pygce/issues) is **only** for bug reports and feature requests. Anything else, such as questions for help in using the library, should be posted as [pull requests](https://github.com/sirfoga/pygce/pulls)
 

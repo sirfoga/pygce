@@ -51,12 +51,9 @@ def main():
     user, password, chromedriver = parse_args(create_args())
     bot = GarminConnectBot(user, password, chromedriver)
 
-    day_data = bot.get_day_data(datetime(year=2017, month=4, day=6))
+    day_data = bot.get_day_data(datetime(year=2017, month=4, day=9))
     day_data.parse()
-    print(day_data.summary.to_json())
-    print(day_data.steps.to_json())
-    print(day_data.sleep.to_json())
-    print(day_data.breakdown.to_json())
+    print(day_data.to_json())
 
 if __name__ == '__main__':
     main()

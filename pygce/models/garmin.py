@@ -21,6 +21,8 @@ from datetime import datetime
 
 from bs4 import BeautifulSoup
 
+GARMIN_CONNECT_URL = "https://connect.garmin.com"
+
 
 def parse_num(n):
     """
@@ -34,7 +36,7 @@ def parse_num(n):
     return float(m)
 
 
-def parse_hours_minutes(h):
+def parse_hh_mm_ss(h):
     """
     :param h: str
         Hours and minutes in the form hh:mm to parse
@@ -42,7 +44,14 @@ def parse_hours_minutes(h):
         Time parsed
     """
 
-    return datetime.strptime(str(h).strip(), "%H:%M").time()
+    h = str(h).strip()  # discard jibberish
+    split_count = h.count(":")
+    if split_count == 2:  # hh:mm:ss
+        return datetime.strptime(str(h).strip(), "%H:%M:%S").time()
+    elif split_count == 1:  # mm:ss
+        return datetime.strptime(str(h).strip(), "%M:%S").time()
+    else:  # ss
+        return datetime.strptime(str(h).strip(), "%S").time()
 
 
 class GCDaySection(object):
@@ -249,9 +258,9 @@ class GCDaySleep(GCDaySection):
         times = container.find_all("div", {"class": "data-bit"})
         times = [str(t.text).strip() for t in times]  # strip texts
 
-        self.night_sleep_time = parse_hours_minutes(times[0])
-        self.nap_time = parse_hours_minutes(times[1])
-        self.total_sleep_time = parse_hours_minutes(times[2].split(" ")[0])
+        self.night_sleep_time = parse_hh_mm_ss(times[0])
+        self.nap_time = parse_hh_mm_ss(times[1])
+        self.total_sleep_time = parse_hh_mm_ss(times[2].split(" ")[0])
 
     def parse_bed_time(self):
         """
@@ -273,15 +282,15 @@ class GCDaySleep(GCDaySection):
 
         container = self.soup.find_all("div", {
             "class": "span4 text-center sleep-chart-secondary deep-sleep-circle-chart-placeholder"})[0]
-        self.deep_sleep_time = parse_hours_minutes(container.find_all("span")[0].text.split("hrs")[0])
+        self.deep_sleep_time = parse_hh_mm_ss(container.find_all("span")[0].text.split("hrs")[0])
 
         container = self.soup.find_all("div", {
             "class": "span4 text-center sleep-chart-secondary light-sleep-circle-chart-placeholder"})[0]
-        self.light_sleep_time = parse_hours_minutes(container.find_all("span")[0].text.split("hrs")[0])
+        self.light_sleep_time = parse_hh_mm_ss(container.find_all("span")[0].text.split("hrs")[0])
 
         container = self.soup.find_all("div", {
             "class": "span4 text-center sleep-chart-secondary awake-circle-chart-placeholder"})[0]
-        self.awake_sleep_time = parse_hours_minutes(container.find_all("span")[0].text.split("hrs")[0])
+        self.awake_sleep_time = parse_hh_mm_ss(container.find_all("span")[0].text.split("hrs")[0])
 
     def to_dict(self):
         return {
@@ -309,6 +318,64 @@ class GCDayActivities(GCDaySection):
         """
 
         GCDaySection.__init__(self, raw_html)
+
+        self.activities = []
+
+    def parse(self):
+        rows = self.soup.find_all("tr")
+        for r in rows[1:-1]:  # discard headers and totals
+            activity = self.parse_activity(r)
+            self.activities.append(activity)
+
+    @staticmethod
+    def parse_activity(raw_html):
+        """
+        :param raw_html: str html code
+            Raw HTML code of row of table containing activity to parse
+        :return: dict
+            Dict with values of activity
+        """
+
+        columns = raw_html.find_all("td")
+
+        time_day = columns[0].text.strip()  # parse time of the day
+        try:
+            time_day = datetime.strptime(columns[0].text.strip(), "%I:%M %p").time()  # account for AM/PM
+        except:
+            pass
+
+        try:
+            duration = parse_hh_mm_ss(columns[2].text.strip())  # in case of multiple hours
+        except:
+            duration = parse_hh_mm_ss("00:00")
+
+        try:
+            url = GARMIN_CONNECT_URL + str(columns[5].a["href"]).strip()
+        except:
+            url = None
+
+        return {
+            "time_day": time_day,
+            "kcal": parse_num(columns[1].text),
+            "duration": duration,
+            "distance": parse_num(columns[3].text.split("km")[0]),
+            "type": columns[4].text.strip(),
+            "name": columns[5].text.strip(),
+            "url": url
+        }
+
+    def to_dict(self):
+        return {
+            "activities": self.activities
+        }
+
+    def to_json(self):
+        activities = self.activities
+        for a in activities:
+            for k in a.keys():
+                a[k] = str(a[k])  # convert each field to string
+
+        return json.dumps(activities)
 
 
 class GCDayBreakdown(GCDaySection):
@@ -398,3 +465,27 @@ class GCDayTimeline(object):
 
     def __getattr__(self, item):
         return self.sections[item]
+
+    def to_dict(self):
+        """
+        :return: dict
+            Dictionary with keys (obj fields) and values (obj values)
+        """
+
+        return self.sections
+
+    def to_json(self):
+        """
+        :return: json object
+            A json representation of this object
+        """
+
+        sections_dumps = {}  # dict section name -> section json
+        for s in self.sections.keys():
+            sections_dumps[s] = json.loads(self.sections[s].to_json())  # json object
+
+        day_dump = {
+            str(self.date): sections_dumps  # add date
+        }
+
+        return json.dumps(day_dump)
