@@ -53,10 +53,8 @@ def main():
 
     day_data = bot.get_day_data(datetime(year=2017, month=4, day=6))
     day_data.parse()
-    summary_data = day_data.summary
-    a = summary_data.to_json()
-    print(a)
-
+    print(day_data.summary.to_json())
+    print(day_data.steps.to_json())
 
 if __name__ == '__main__':
     main()

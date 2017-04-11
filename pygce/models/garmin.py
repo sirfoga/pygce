@@ -21,6 +21,18 @@ import json
 from bs4 import BeautifulSoup
 
 
+def parse_num(n):
+    """
+    :param n: str
+        Number to parse
+    :return: float
+        Parses numbers written like 123,949.99
+    """
+
+    m = str(n).strip().replace(".", "").replace(",", ".")
+    return float(m)
+
+
 class GCDaySection(object):
     """
     Standard section in the Garmin Connect timeline of day.
@@ -91,9 +103,8 @@ class GCDaySummary(GCDaySection):
 
         container = self.soup.find_all("div", {"class": "span4 page-navigation"})[0]
         container = container.find_all("span", {"class": "like js-like-count"})[0]
-        likes = container.text.strip().split(" ")[0].strip()
-        likes = int(likes)
-        self.likes = likes
+        likes = container.text.strip().split(" ")[0]
+        self.likes = parse_num(likes)
 
     def parse_comment(self):
         """
@@ -115,9 +126,7 @@ class GCDaySummary(GCDaySection):
         container = self.soup.find_all("div", {"class": "span8 daily-summary-stats-placeholder"})[0]
         container = container.find_all("div", {"class": "row-fluid top-xl"})[0]
         kcal_count = container.find_all("div", {"class": "data-bit"})[0].text
-        kcal_count = str(kcal_count).strip().replace(".", "")  # remove trailing digit
-        kcal_count = int(kcal_count)
-        self.kcal_count = kcal_count
+        self.kcal_count = parse_num(kcal_count)
 
     def to_dict(self):
         return {
@@ -140,6 +149,50 @@ class GCDaySteps(GCDaySection):
         """
 
         GCDaySection.__init__(self, raw_html)
+
+        self.total = None
+        self.goal = None
+        self.avg = None
+        self.distance = None
+
+    def parse(self):
+        self.parse_steps_count()
+        self.parse_steps_stats()
+
+    def parse_steps_count(self):
+        """
+        :return: void
+            Parses HTML source and finds goal and daily steps
+        """
+
+        container = self.soup.find_all("div", {"class": "span4 text-center charts"})[0]
+
+        total = container.find_all("div", {"class": "data-bit"})[0].text  # finds total steps
+        self.total = parse_num(total)
+
+        goal = container.find_all("div", {"class": "h5"})[0].text.strip().split(" ")[-1].strip()
+        self.goal = parse_num(goal)
+
+    def parse_steps_stats(self):
+        """
+        :return: void
+            Parses HTML source and finds daily distance and avg daily steps
+        """
+
+        container = self.soup.find_all("div", {"class": "span8 daily-summary-stats-placeholder"})[0]
+        container = container.find_all("div", {"class": "row-fluid top-xl"})[0]
+        container = container.find_all("div", {"class": "data-bit"})
+
+        self.distance = parse_num(container[1].text.split("km")[0])
+        self.avg = parse_num(container[2].text)
+
+    def to_dict(self):
+        return {
+            "total": self.total,
+            "goal": self.goal,
+            "avg": self.avg,
+            "distance": self.distance
+        }
 
 
 class GCDaySleep(GCDaySection):
