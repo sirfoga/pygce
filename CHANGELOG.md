@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 - GCDaySummary, GCDaySteps, GCDaySleep, GCDayBreakdown converters and parsers
 - GCDayTimeline to json
 - .json sample output of day data
+- .json days batch
 
 ## 0.0.2 - 2017-04-10
 

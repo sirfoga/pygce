@@ -50,10 +50,7 @@ def parse_args(parser):
 def main():
     user, password, chromedriver = parse_args(create_args())
     bot = GarminConnectBot(user, password, chromedriver)
-
-    day_data = bot.get_day_data(datetime(year=2017, month=4, day=9))
-    day_data.parse()
-    print(day_data.to_json())
+    bot.(datetime(year=2016, month=1, day=5), datetime(year=2017, month=4, day=10), "/home/$USER/tmp/out.json")
 
 if __name__ == '__main__':
     main()

@@ -16,6 +16,7 @@
 # limitations under the License.
 
 
+import json
 from datetime import timedelta
 
 from bs4 import BeautifulSoup
@@ -120,7 +121,7 @@ class GarminConnectBot(object):
             EC.presence_of_element_located((By.CLASS_NAME, "widget-content"))
         )  # wait until fully loaded
 
-    def go_to_day_summary(self, date_time):
+    def go_to_day(self, date_time):
         """
         :param date_time: datetime
             Datetime object with date
@@ -138,7 +139,7 @@ class GarminConnectBot(object):
             EC.presence_of_element_located((By.CLASS_NAME, "comment-container"))
         )  # wait until fully loaded
 
-    def get_day_data(self, date_time):
+    def get_day(self, date_time):
         """
         :param date_time: datetime
             Datetime object with date
@@ -147,7 +148,7 @@ class GarminConnectBot(object):
         """
 
         try:
-            self.go_to_day_summary(date_time)
+            self.go_to_day(date_time)
             soup = BeautifulSoup(str(self.browser.page_source), "html.parser")  # html parser
 
             tabs_html = soup.find_all("div", {"class": "tab-content"})[0]  # find html source code for sections
@@ -169,7 +170,7 @@ class GarminConnectBot(object):
             print(str(e))
             return None
 
-    def get_days_data(self, min_date_time, max_date_time):
+    def get_days(self, min_date_time, max_date_time):
         """
         :param min_date_time: datetime
             Datetime object with date, this is the date when to start downloading data
@@ -183,5 +184,24 @@ class GarminConnectBot(object):
         days_data = []  # output list
         for i in range(days_delta + 1):  # including last day
             day_to_get = min_date_time + timedelta(days=i)
-            days_data.append(self.get_day_data(day_to_get))
+            days_data.append(self.get_day(day_to_get))
         return days_data
+
+    def save_json_days(self, min_date_time, max_date_time, output_file):
+        """
+        :param min_date_time: datetime
+            Datetime object with date, this is the date when to start downloading data
+        :param max_date_time: datetime
+            Datetime object with date, this is the date when to stop downloading data
+        :param output_file: str
+            Path where to save output to
+        :return: void
+            Retrieves data about days in given range, then saves json dump
+        """
+
+        data = self.get_days(min_date_time, max_date_time)  # get raw data
+        for d in data:
+            d.parse()  # parse
+        json_data = [json.loads(d.to_json()) for d in data]  # convert to json objects
+        with open(output_file, "w") as o:  # write to file
+            json.dump(json_data, o)
