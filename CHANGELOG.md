@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 - csv guidelines in README
 - GCDaySection.to_csv_dict()
 - GCDayTimeline.to_csv_dict()
+- verbose mode when getting days data
+
+### Fixed
+- parse sleep times
 
 ## 0.0.5 - 2017-04-12
 

@@ -185,6 +185,7 @@ class GarminConnectBot(object):
         days_data = []  # output list
         for i in range(days_delta + 1):  # including last day
             day_to_get = min_date_time + timedelta(days=i)
+            print("Getting day", str(day_to_get))
             days_data.append(self.get_day(day_to_get))
         return days_data
 
@@ -202,6 +203,7 @@ class GarminConnectBot(object):
 
         data = self.get_days(min_date_time, max_date_time)  # get raw data
         for d in data:
+            print("Parsing day", str(d.date))
             d.parse()  # parse
         json_data = [json.loads(d.to_json()) for d in data]  # convert to json objects
         with open(output_file, "w") as o:  # write to file
@@ -221,6 +223,7 @@ class GarminConnectBot(object):
 
         data = self.get_days(min_date_time, max_date_time)  # get raw data
         for d in data:
+            print("Parsing day", str(d.date))
             d.parse()  # parse
 
         data = [d.to_csv_dict() for d in data]  # get csv

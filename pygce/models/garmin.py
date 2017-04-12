@@ -39,7 +39,7 @@ def parse_num(n):
 def parse_hh_mm_ss(h):
     """
     :param h: str
-        Hours and minutes in the form hh:mm to parse
+        Hours, minutes and seconds in the form hh:mm:ss to parse
     :return: datetime.time
         Time parsed
     """
@@ -52,6 +52,22 @@ def parse_hh_mm_ss(h):
         return datetime.strptime(str(h).strip(), "%M:%S").time()
     else:  # ss
         return datetime.strptime(str(h).strip(), "%S").time()
+
+
+def parse_hh_mm(h):
+    """
+    :param h: str
+        Hours and minutes in the form hh:mm to parse
+    :return: datetime.time
+        Time parsed
+    """
+
+    h = str(h).strip()  # discard jibberish
+    split_count = h.count(":")
+    if split_count == 1:  # hh:mm
+        return datetime.strptime(str(h).strip(), "%H:%M").time()
+    else:  # mm
+        return datetime.strptime(str(h).strip(), "%M").time()
 
 
 class GCDaySection(object):
@@ -274,9 +290,9 @@ class GCDaySleep(GCDaySection):
         times = container.find_all("div", {"class": "data-bit"})
         times = [str(t.text).strip() for t in times]  # strip texts
 
-        self.night_sleep_time = parse_hh_mm_ss(times[0])
-        self.nap_time = parse_hh_mm_ss(times[1])
-        self.total_sleep_time = parse_hh_mm_ss(times[2].split(" ")[0])
+        self.night_sleep_time = parse_hh_mm(times[0])
+        self.nap_time = parse_hh_mm(times[1])
+        self.total_sleep_time = parse_hh_mm(times[2].split(" ")[0])
 
     def parse_bed_time(self):
         """
@@ -298,15 +314,15 @@ class GCDaySleep(GCDaySection):
 
         container = self.soup.find_all("div", {
             "class": "span4 text-center sleep-chart-secondary deep-sleep-circle-chart-placeholder"})[0]
-        self.deep_sleep_time = parse_hh_mm_ss(container.find_all("span")[0].text.split("hrs")[0])
+        self.deep_sleep_time = parse_hh_mm(container.find_all("span")[0].text.split("hrs")[0])
 
         container = self.soup.find_all("div", {
             "class": "span4 text-center sleep-chart-secondary light-sleep-circle-chart-placeholder"})[0]
-        self.light_sleep_time = parse_hh_mm_ss(container.find_all("span")[0].text.split("hrs")[0])
+        self.light_sleep_time = parse_hh_mm(container.find_all("span")[0].text.split("hrs")[0])
 
         container = self.soup.find_all("div", {
             "class": "span4 text-center sleep-chart-secondary awake-circle-chart-placeholder"})[0]
-        self.awake_sleep_time = parse_hh_mm_ss(container.find_all("span")[0].text.split("hrs")[0])
+        self.awake_sleep_time = parse_hh_mm(container.find_all("span")[0].text.split("hrs")[0])
 
     def to_dict(self):
         return {
