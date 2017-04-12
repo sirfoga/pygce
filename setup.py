@@ -21,7 +21,7 @@ from setuptools import setup, find_packages
 
 DESCRIPTION = \
     "pygce\n\n\
-    Garmin Connect data exporter: a tool to export your data from Garmin Connect, written in Python 3.\n\
+    A tool to export your data from Garmin Connect.\n\
     \n\
     Install\n\n\
     - $ python3 setup.py (install from source)\n\
@@ -35,21 +35,22 @@ DESCRIPTION = \
 
 setup(
     name="pygce",
-    version="0.0.1",
+    version="0.0.4",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
-    description="pygce is an unofficial Garmin Connect data exporter: a tool to export your data from Garmin Connect.",
+    description="pygce is an unofficial Garmin Connect data exporter.",
     long_description=DESCRIPTION,
     license="Apache License, Version 2.0",
     keywords="garmin data parser",
     url="https://github.com/sirfoga/pygce",
-    packages=find_packages(exclude=["tests"]),
+    packages=find_packages(),
+    entry_points={
+        "console_scripts": [
+            "pygce = pygce.cli:main"
+        ]
+    },
     install_requires=[
         "bs4",
-        "pyhal",
-        "requests",
-        "lxml",
-        "send2trash"
-    ],
-    test_suite="tests"
+        "lxml"
+    ]
 )

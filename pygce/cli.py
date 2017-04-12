@@ -19,7 +19,7 @@ import argparse
 import os
 from datetime import datetime
 
-from models.bot import GarminConnectBot
+from .models.bot import GarminConnectBot
 
 
 def parse_yyyy_mm_dd(d):
@@ -41,7 +41,7 @@ def create_args():
     """
 
     parser = argparse.ArgumentParser(
-        usage="-u <username (email) to login to Garmin Connect> -p <password to login to Garmin Connect>")
+        usage="-u <username (email) to login to Garmin Connect> -p <password to login to Garmin Connect> -c <path to chromedriver to use> -d <days to fetch> -o <output file>")
     parser.add_argument("-u", dest="user", help="user to login to FSG website", required=True)
     parser.add_argument("-p", dest="password", help="password to login to FSG website", required=True)
     parser.add_argument("-c", dest="path_chromedriver", help="path to chromedriver to use", required=True)

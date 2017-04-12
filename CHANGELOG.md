@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - cmd args
+- sample usage in README
+
+### Fixed
+- setup script
 
 ## 0.0.3 - 2017-04-11
 

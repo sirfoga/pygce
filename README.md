@@ -5,16 +5,24 @@
 
 ## Install
 ```
-$ python3 setup.py
+$ pip3 install . --upgrade --force-reinstall
 ```
 *To install from source, planned a pip-package for the future*
 
 
 ## Usage
 ```
-$ python3 pygce/pygce.py
+usage: -u <username (email) to login to Garmin Connect> -p <password to login to Garmin Connect> -c <path to chromedriver to use> -d <days to fetch> -o <output file>
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -u USER               user to login to FSG website
+  -p PASSWORD           password to login to FSG website
+  -c PATH_CHROMEDRIVER  path to chromedriver to use
+  -d [DAYS [DAYS ...]]  days to save. e.g -d 2017-12-30 or -d 2016-01-01
+                        2017-12-30
+  -o PATH_OUT           path to output file 
 ```
-for a test run, or `pygce` if you've installed the package.
 
 
 ## Sample output
