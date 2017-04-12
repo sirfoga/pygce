@@ -5,7 +5,8 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - csv cmd arg
-- usage example and output example in README
+- usage example and output example in 
+- GCDayActivities.get_totals
 
 ### Fixed
 - help in cmd args

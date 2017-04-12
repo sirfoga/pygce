@@ -377,6 +377,18 @@ class GCDayActivities(GCDaySection):
 
         return json.dumps(activities)
 
+    def get_totals(self):
+        """
+        :return: {}
+            Self dict but with totals instead (total kcal, total distance ...)
+        """
+
+        return {
+            "kcal": sum(a["kcal"] for a in self.activities),
+            "duration": sum(a["duration"] for a in self.activities),
+            "distance": sum(a["distance"] for a in self.activities),
+        }
+
 
 class GCDayBreakdown(GCDaySection):
     """
