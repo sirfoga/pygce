@@ -205,3 +205,19 @@ class GarminConnectBot(object):
         json_data = [json.loads(d.to_json()) for d in data]  # convert to json objects
         with open(output_file, "w") as o:  # write to file
             json.dump(json_data, o)
+
+    def save_csv_days(self, min_date_time, max_date_time, output_file):
+        """
+        :param min_date_time: datetime
+            Datetime object with date, this is the date when to start downloading data
+        :param max_date_time: datetime
+            Datetime object with date, this is the date when to stop downloading data
+        :param output_file: str
+            Path where to save output to
+        :return: void
+            Retrieves data about days in given range, then saves csv dump
+        """
+
+        data = self.get_days(min_date_time, max_date_time)  # get raw data
+        for d in data:
+            d.parse()  # parse

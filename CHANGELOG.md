@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 0.0.5 - 2017-04-12
+
+### Added
+- csv cmd arg
+- usage example and output example in README
+
+### Fixed
+- help in cmd args
+
 ## 0.0.4 - 2017-04-12
 
 ### Added
