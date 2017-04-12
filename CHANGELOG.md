@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 0.0.4 - 2017-04-12
+
+### Added
+- cmd args
+
 ## 0.0.3 - 2017-04-11
 
 ### Added

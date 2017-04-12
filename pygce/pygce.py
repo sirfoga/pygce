@@ -16,9 +16,22 @@
 # limitations under the License.
 
 import argparse
+import os
 from datetime import datetime
 
 from models.bot import GarminConnectBot
+
+
+def parse_yyyy_mm_dd(d):
+    """
+    :param d: str
+        Date in the form yyyy-mm-dd to parse
+    :return: datetime
+        Date parsed
+    """
+
+    d = str(d).strip()  # discard jibberish
+    return datetime.strptime(d, "%Y-%m-%d")
 
 
 def create_args():
@@ -32,6 +45,9 @@ def create_args():
     parser.add_argument("-u", dest="user", help="user to login to FSG website", required=True)
     parser.add_argument("-p", dest="password", help="password to login to FSG website", required=True)
     parser.add_argument("-c", dest="path_chromedriver", help="path to chromedriver to use", required=True)
+    parser.add_argument("-d", nargs="*", dest="days",
+                        help="days to save. e.g -d 2017-12-30 or -d 2016-01-01 2017-12-30", required=True)
+    parser.add_argument("-o", dest="path_out", help="path to output file", required=True)
     return parser
 
 
@@ -44,13 +60,52 @@ def parse_args(parser):
     """
 
     args = parser.parse_args()
-    return str(args.user), str(args.password), str(args.path_chromedriver)
+
+    raw_days = [str(d).strip() for d in args.days]  # parse days
+    if len(raw_days) == 1:
+        days = [parse_yyyy_mm_dd(raw_days[0]), parse_yyyy_mm_dd(raw_days[0])]
+    else:
+        days = [parse_yyyy_mm_dd(raw_days[0]), parse_yyyy_mm_dd(raw_days[1])]
+
+    return str(args.user), str(args.password), str(args.path_chromedriver), days, str(args.path_out)
+
+
+def check_args(user, password, chromedriver, days, path_out):
+    """
+    :param user: str
+        User to use
+    :param password: str
+        Password to use
+    :param chromedriver: str
+        Path to chromedriver to use
+    :param days: [] of datetime.date
+        Days to save
+    :param path_out: str
+        File to use as output
+    :return: bool
+        True iff args are correct
+    """
+
+    assert (len(user) > 1)
+    assert (len(password) > 1)
+    assert (os.path.exists(chromedriver))
+    assert (isinstance(days[0], datetime))
+    assert (days[0] <= days[1])  # start day <= end day
+
+    out_dir = os.path.dirname(path_out)
+    if not os.path.exists(out_dir):
+        os.makedirs(out_dir)  # create necessary dir for output file
+
+    return True
 
 
 def main():
-    user, password, chromedriver = parse_args(create_args())
-    bot = GarminConnectBot(user, password, chromedriver)
-    bot.(datetime(year=2016, month=1, day=5), datetime(year=2017, month=4, day=10), "/home/$USER/tmp/out.json")
+    user, password, chromedriver, days, path_out = parse_args(create_args())
+    if check_args(user, password, chromedriver, days, path_out):
+        bot = GarminConnectBot(user, password, chromedriver)
+        bot.save_json_days(days[0], days[1], path_out)
+    else:
+        print("Error while parsing args. Run 'pygce -h' for help")
 
 if __name__ == '__main__':
     main()
