@@ -47,7 +47,15 @@ When called with appropriate args `pygce` saves `.csv` or `.json` data dumps of 
     },
     "activities": [
 ```
-You can browse the [`full json output`](sample.json) for a single day.
+You can browse a [`full json output`](sample.json) for a single day.
+If you instead chose the `csv` output format you should see something like this:
+```
+SUMMARY:comment,SLEEP:deep_sleep_time,ACTIVITIES:distance,STEPS:goal,STEPS:distance,BREAKDOWN:sleeping,SUMMARY:likes,SLEEP:bed_time,STEPS:avg,SLEEP:light_sleep_time
+sweet dinner,00:04:55,22.82,10000,22.8,29,6,22:22:00,12087,00:03:36
+met girlfriend in river park,00:02:47,8.92,10200,8.9,22,9,01:05:00,11940,00:01:42
+droven all around ny,00:03:41,3.38,10272,3.4,27,2,03:01:00,10045,00:02:33
+```
+Browse a [`sample csv output`](sample.csv) for 3 days.
 
 ## Questions and issues
 The one thing to note is that you should have a [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) downloaded locally: when `pygce` runs, it opens a `Google Chrome` window and starts navigating through your Garmin Connect timeline, saving the results.

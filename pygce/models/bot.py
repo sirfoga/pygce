@@ -16,6 +16,7 @@
 # limitations under the License.
 
 
+import csv
 import json
 from datetime import timedelta
 
@@ -221,3 +222,10 @@ class GarminConnectBot(object):
         data = self.get_days(min_date_time, max_date_time)  # get raw data
         for d in data:
             d.parse()  # parse
+
+        data = [d.to_csv_dict() for d in data]  # get csv
+        csv_headers = data[0].keys()  # get headers for a sample dict
+        with open(output_file, "w") as o:  # write to file
+            dict_writer = csv.DictWriter(o, csv_headers)
+            dict_writer.writeheader()
+            dict_writer.writerows(data)

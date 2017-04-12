@@ -19,7 +19,7 @@ import argparse
 import os
 from datetime import datetime
 
-from .models.bot import GarminConnectBot
+from .models.bot import GarminConnectBot  # 'from models.bot import GarminConnectBot' when testing local script
 
 AVAILABLE_OUTPUT_FORMATS = ["json", "csv"]
 

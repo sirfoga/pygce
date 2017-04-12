@@ -1,15 +1,25 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 0.0.6 - 2017-04-12
+
+### Added
+- sample csv
+- csv guidelines in README
+- GCDaySection.to_csv_dict()
+- GCDayTimeline.to_csv_dict()
+
 ## 0.0.5 - 2017-04-12
 
 ### Added
 - csv cmd arg
 - usage example and output example in 
 - GCDayActivities.get_totals
+- GCDaySection.tag
 
 ### Fixed
 - help in cmd args
+- GCDayActivities.get_totals
 
 ## 0.0.4 - 2017-04-12
 

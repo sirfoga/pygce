@@ -17,7 +17,7 @@
 
 
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from bs4 import BeautifulSoup
 
@@ -59,14 +59,17 @@ class GCDaySection(object):
     Standard section in the Garmin Connect timeline of day.
     """
 
-    def __init__(self, raw_html):
+    def __init__(self, raw_html, tag=""):
         """
         :param raw_html: str
             HTML source snippet with information about section
+        :param tag: str
+            Unique str in order not to mistake this GCDaySection with another one
         """
 
         object.__init__(self)
 
+        self.tag = tag  # unique key in order not to mistake this GCDaySection with another one
         self.html = str(raw_html)
         self.soup = BeautifulSoup(self.html, "html.parser")
 
@@ -96,6 +99,19 @@ class GCDaySection(object):
 
         return json.dumps(d)
 
+    def to_csv_dict(self):
+        """
+        :return: {}
+            Like self.to_json() but with a unique str before each key to spot against different GCDaySections
+        """
+
+        d = self.to_dict()
+        csv_d = {}
+        for k in d.keys():
+            new_key = str(self.tag) + ":" + k
+            csv_d[new_key] = str(d[k])  # edit key
+        return csv_d
+
 
 class GCDaySummary(GCDaySection):
     """
@@ -109,7 +125,7 @@ class GCDaySummary(GCDaySection):
             HTML source snippet with information about section
         """
 
-        GCDaySection.__init__(self, raw_html)
+        GCDaySection.__init__(self, raw_html, tag="SUMMARY")
 
         self.likes = None
         self.comment = None
@@ -173,7 +189,7 @@ class GCDaySteps(GCDaySection):
             HTML source snippet with information about section
         """
 
-        GCDaySection.__init__(self, raw_html)
+        GCDaySection.__init__(self, raw_html, tag="STEPS")
 
         self.total = None
         self.goal = None
@@ -232,7 +248,7 @@ class GCDaySleep(GCDaySection):
             HTML source snippet with information about section
         """
 
-        GCDaySection.__init__(self, raw_html)
+        GCDaySection.__init__(self, raw_html, tag="SLEEP")
 
         self.night_sleep_time = None
         self.nap_time = None
@@ -317,7 +333,7 @@ class GCDayActivities(GCDaySection):
             HTML source snippet with information about section
         """
 
-        GCDaySection.__init__(self, raw_html)
+        GCDaySection.__init__(self, raw_html, tag="ACTIVITIES")
 
         self.activities = []
 
@@ -377,16 +393,58 @@ class GCDayActivities(GCDaySection):
 
         return json.dumps(activities)
 
-    def get_totals(self):
+    def to_csv_dict(self):
+        """
+        :return: {}
+            Like super.to_csv_dict() but with totals instead
+        """
+
+        d = self.get_totals_dict()
+        csv_d = {}
+        for k in d.keys():
+            new_key = str(self.tag) + ":" + k
+            csv_d[new_key] = str(d[k])  # edit key
+        return csv_d
+
+    def get_total_kcal(self):
+        """
+        :return: float
+            Total kcal of all activities
+        """
+
+        return sum(a["kcal"] for a in self.activities)
+
+    def get_total_duration(self):
+        """
+        :return: timedelta
+            Total duration of all activities
+        """
+
+        all_durations = [a["duration"] for a in self.activities]  # fetch duration of all activities
+        total_duration = timedelta(hours=0, minutes=0, seconds=0)
+        for duration in all_durations:
+            total_duration += timedelta(hours=duration.hour, minutes=duration.minute,
+                                        seconds=duration.second)  # sum all durations
+        return total_duration
+
+    def get_total_distance(self):
+        """
+        :return: float
+            Total distance of all activities
+        """
+
+        return sum(a["distance"] for a in self.activities)
+
+    def get_totals_dict(self):
         """
         :return: {}
             Self dict but with totals instead (total kcal, total distance ...)
         """
 
         return {
-            "kcal": sum(a["kcal"] for a in self.activities),
-            "duration": sum(a["duration"] for a in self.activities),
-            "distance": sum(a["distance"] for a in self.activities),
+            "kcal": self.get_total_kcal(),
+            "duration": str(self.get_total_duration()),
+            "distance": self.get_total_distance(),
         }
 
 
@@ -402,7 +460,7 @@ class GCDayBreakdown(GCDaySection):
             HTML source snippet with information about section
         """
 
-        GCDaySection.__init__(self, raw_html)
+        GCDaySection.__init__(self, raw_html, tag="BREAKDOWN")
 
         self.highly_active = None
         self.active = None
@@ -485,6 +543,20 @@ class GCDayTimeline(object):
         """
 
         return self.sections
+
+    def to_csv_dict(self):
+        """
+        :return: {}
+            Like self.to_dict() but with a set with keys and values NOT nested. Also for activities there are totals only
+        """
+
+        d = {
+            "date": str(self.date)
+        }  # resulting dict
+        for section in self.sections.values():
+            d.update(section.to_csv_dict())  # add each section keys
+
+        return d
 
     def to_json(self):
         """
