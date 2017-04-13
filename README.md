@@ -2,8 +2,8 @@
 
 *A tool to export, save, and analyze your Garmin Connect data*
 
-[![PyPI version](https://badge.fury.io/py/pygce.svg)](https://badge.fury.io/py/pygce.svg) [![Code Health](https://landscape.io/github/sirfoga/pygce/master/landscape.svg?style=flat
-)](https://landscape.io/github/sirfoga/hal/master)
+[![PyPI version](https://badge.fury.io/py/pygce.svg)](https://pypi.python.org/pypi/pygce) [![Code Health](https://landscape.io/github/sirfoga/pygce/master/landscape.svg?style=flat
+)](https://landscape.io/github/sirfoga/pygce/master)
 
 
 ## Install
