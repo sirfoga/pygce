@@ -19,6 +19,7 @@
 from datetime import datetime
 
 GARMIN_CONNECT_URL = "https://connect.garmin.com"
+GARMIN_CONNECT_ACTIVITIES_URL = "https://connect.garmin.com/modern/activities"
 
 
 def parse_num(n):

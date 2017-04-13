@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - CorrelationAnalysis
+- garmin.activity models
 
 ### Refactored
 - split GCDayTimeline in garmin.timeline and garmin.utils packages
