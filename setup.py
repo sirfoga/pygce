@@ -35,7 +35,7 @@ DESCRIPTION = \
 
 setup(
     name="pygce",
-    version="0.0.6",
+    version="0.0.7",
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
     description="pygce is an unofficial Garmin Connect data exporter.",

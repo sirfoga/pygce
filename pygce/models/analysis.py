@@ -91,6 +91,7 @@ class CorrelationAnalysis(object):
         "SLEEP:night_sleep_time",
         "ACTIVITIES:duration"
     ]  # columns of data file to convert from time format to float
+    SLEEP_HEADERS_TO_FIX = [h for h in HEADERS_TO_ANALYZE if "SLEEP" in h]  # column names of data to with sleep values
 
     def __init__(self, folder_data):
         """
@@ -113,21 +114,15 @@ class CorrelationAnalysis(object):
                 print("Analysing file ", str(f))
 
                 file_name = Document(f).name.strip()
-                output_file_name = file_name + ".png"  # save output as image
-                output_file_path = os.path.join(self.folder_data, output_file_name)
-
-                try:
-                    headers, data = self.parse_csv(f)  # parse raw data
-                    correlation.save_correlation_matrix_of_columns(
-                        "Correlation of Garmin data" + file_name,
-                        self.HEADERS_TO_ANALYZE,  # headers to test
-                        headers,
-                        data,
-                        output_file_path
-                    )
-                except Exception as e:
-                    print("Cannot save correlation matrix of file \"", str(f), "\" because of")
-                    print(str(e))
+                output_file_path = os.path.join(self.folder_data, file_name + ".png")  # save output as image
+                headers, data = self.parse_csv(f)  # parse raw data
+                correlation.save_correlation_matrix_of_columns(
+                    "Correlation of Garmin data " + file_name,
+                    self.HEADERS_TO_ANALYZE,  # headers to test
+                    headers,
+                    data,
+                    output_file_path
+                )
 
     def parse_csv(self, file_path):
         """

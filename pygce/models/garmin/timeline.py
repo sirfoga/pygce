@@ -21,53 +21,7 @@ from datetime import datetime, timedelta
 
 from bs4 import BeautifulSoup
 
-GARMIN_CONNECT_URL = "https://connect.garmin.com"
-
-
-def parse_num(n):
-    """
-    :param n: str
-        Number to parse
-    :return: float
-        Parses numbers written like 123,949.99
-    """
-
-    m = str(n).strip().replace(".", "").replace(",", ".")
-    return float(m)
-
-
-def parse_hh_mm_ss(h):
-    """
-    :param h: str
-        Hours, minutes and seconds in the form hh:mm:ss to parse
-    :return: datetime.time
-        Time parsed
-    """
-
-    h = str(h).strip()  # discard jibberish
-    split_count = h.count(":")
-    if split_count == 2:  # hh:mm:ss
-        return datetime.strptime(str(h).strip(), "%H:%M:%S").time()
-    elif split_count == 1:  # mm:ss
-        return datetime.strptime(str(h).strip(), "%M:%S").time()
-    else:  # ss
-        return datetime.strptime(str(h).strip(), "%S").time()
-
-
-def parse_hh_mm(h):
-    """
-    :param h: str
-        Hours and minutes in the form hh:mm to parse
-    :return: datetime.time
-        Time parsed
-    """
-
-    h = str(h).strip()  # discard jibberish
-    split_count = h.count(":")
-    if split_count == 1:  # hh:mm
-        return datetime.strptime(str(h).strip(), "%H:%M").time()
-    else:  # mm
-        return datetime.strptime(str(h).strip(), "%M").time()
+from . import utils
 
 
 class GCDaySection(object):
@@ -161,7 +115,7 @@ class GCDaySummary(GCDaySection):
         container = self.soup.find_all("div", {"class": "span4 page-navigation"})[0]
         container = container.find_all("span", {"class": "like js-like-count"})[0]
         likes = container.text.strip().split(" ")[0]
-        self.likes = parse_num(likes)
+        self.likes = utils.parse_num(likes)
 
     def parse_comment(self):
         """
@@ -183,7 +137,7 @@ class GCDaySummary(GCDaySection):
         container = self.soup.find_all("div", {"class": "span8 daily-summary-stats-placeholder"})[0]
         container = container.find_all("div", {"class": "row-fluid top-xl"})[0]
         kcal_count = container.find_all("div", {"class": "data-bit"})[0].text
-        self.kcal_count = parse_num(kcal_count)
+        self.kcal_count = utils.parse_num(kcal_count)
 
     def to_dict(self):
         return {
@@ -225,10 +179,10 @@ class GCDaySteps(GCDaySection):
         container = self.soup.find_all("div", {"class": "span4 text-center charts"})[0]
 
         total = container.find_all("div", {"class": "data-bit"})[0].text  # finds total steps
-        self.total = parse_num(total)
+        self.total = utils.parse_num(total)
 
         goal = container.find_all("div", {"class": "h5"})[0].text.strip().split(" ")[-1].strip()
-        self.goal = parse_num(goal)
+        self.goal = utils.parse_num(goal)
 
     def parse_steps_stats(self):
         """
@@ -240,8 +194,8 @@ class GCDaySteps(GCDaySection):
         container = container.find_all("div", {"class": "row-fluid top-xl"})[0]
         container = container.find_all("div", {"class": "data-bit"})
 
-        self.distance = parse_num(container[1].text.split("km")[0])
-        self.avg = parse_num(container[2].text)
+        self.distance = utils.parse_num(container[1].text.split("km")[0])
+        self.avg = utils.parse_num(container[2].text)
 
     def to_dict(self):
         return {
@@ -290,9 +244,9 @@ class GCDaySleep(GCDaySection):
         times = container.find_all("div", {"class": "data-bit"})
         times = [str(t.text).strip() for t in times]  # strip texts
 
-        self.night_sleep_time = parse_hh_mm(times[0])
-        self.nap_time = parse_hh_mm(times[1])
-        self.total_sleep_time = parse_hh_mm(times[2].split(" ")[0])
+        self.night_sleep_time = utils.parse_hh_mm(times[0])
+        self.nap_time = utils.parse_hh_mm(times[1])
+        self.total_sleep_time = utils.parse_hh_mm(times[2].split(" ")[0])
 
     def parse_bed_time(self):
         """
@@ -314,15 +268,15 @@ class GCDaySleep(GCDaySection):
 
         container = self.soup.find_all("div", {
             "class": "span4 text-center sleep-chart-secondary deep-sleep-circle-chart-placeholder"})[0]
-        self.deep_sleep_time = parse_hh_mm(container.find_all("span")[0].text.split("hrs")[0])
+        self.deep_sleep_time = utils.parse_hh_mm(container.find_all("span")[0].text.split("hrs")[0])
 
         container = self.soup.find_all("div", {
             "class": "span4 text-center sleep-chart-secondary light-sleep-circle-chart-placeholder"})[0]
-        self.light_sleep_time = parse_hh_mm(container.find_all("span")[0].text.split("hrs")[0])
+        self.light_sleep_time = utils.parse_hh_mm(container.find_all("span")[0].text.split("hrs")[0])
 
         container = self.soup.find_all("div", {
             "class": "span4 text-center sleep-chart-secondary awake-circle-chart-placeholder"})[0]
-        self.awake_sleep_time = parse_hh_mm(container.find_all("span")[0].text.split("hrs")[0])
+        self.awake_sleep_time = utils.parse_hh_mm(container.find_all("span")[0].text.split("hrs")[0])
 
     def to_dict(self):
         return {
@@ -377,20 +331,20 @@ class GCDayActivities(GCDaySection):
             pass
 
         try:
-            duration = parse_hh_mm_ss(columns[2].text.strip())  # in case of multiple hours
+            duration = utils.parse_hh_mm_ss(columns[2].text.strip())  # in case of multiple hours
         except:
-            duration = parse_hh_mm_ss("00:00")
+            duration = utils.parse_hh_mm_ss("00:00")
 
         try:
-            url = GARMIN_CONNECT_URL + str(columns[5].a["href"]).strip()
+            url = utils.GARMIN_CONNECT_URL + str(columns[5].a["href"]).strip()
         except:
             url = None
 
         return {
             "time_day": time_day,
-            "kcal": parse_num(columns[1].text),
+            "kcal": utils.parse_num(columns[1].text),
             "duration": duration,
-            "distance": parse_num(columns[3].text.split("km")[0]),
+            "distance": utils.parse_num(columns[3].text.split("km")[0]),
             "type": columns[4].text.strip(),
             "name": columns[5].text.strip(),
             "url": url
@@ -487,10 +441,10 @@ class GCDayBreakdown(GCDaySection):
         values = self.soup.find_all("tspan")
         values = [str(v.text).strip().replace("%", "") for v in values]  # remove jibberish
 
-        self.highly_active = parse_num(values[0])
-        self.active = parse_num(values[1])
-        self.sedentary = parse_num(values[2])
-        self.sleeping = parse_num(values[3])
+        self.highly_active = utils.parse_num(values[0])
+        self.active = utils.parse_num(values[1])
+        self.sedentary = utils.parse_num(values[2])
+        self.sleeping = utils.parse_num(values[3])
 
     def to_dict(self):
         return {

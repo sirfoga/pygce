@@ -1,10 +1,17 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# TODO
+- GCDaySection.parse_json, GCDaySection.parse_csv
+- test suite
+
 ## 0.0.7 - 2017-04-13
 
 ### Added
 - CorrelationAnalysis
+
+### Refactored
+- split GCDayTimeline in garmin.timeline and garmin.utils packages
 
 ## 0.0.6 - 2017-04-12
 
