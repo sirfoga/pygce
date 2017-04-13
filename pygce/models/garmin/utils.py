@@ -52,6 +52,21 @@ def parse_hh_mm_ss(h):
         return datetime.strptime(str(h).strip(), "%S").time()
 
 
+def get_seconds(s):
+    """
+    :param s: str
+        Datetime in the form %H:%M:%S
+    :return: int
+        Seconds in time
+    """
+
+    t = parse_hh_mm_ss(s)  # get time
+    total_seconds = t.second
+    total_seconds += t.minute * 60.0
+    total_seconds += t.hour * 60.0 * 60.0
+    return total_seconds
+
+
 def parse_hh_mm(h):
     """
     :param h: str
