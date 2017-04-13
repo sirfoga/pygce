@@ -21,7 +21,7 @@ from setuptools import setup, find_packages
 
 DESCRIPTION = \
     "pygce\n\n\
-    A tool to export your data from Garmin Connect.\n\
+    A tool to export, save, and analyze your  Garmin Connect data.\n\
     \n\
     Install\n\n\
     - $ python3 setup.py (install from source)\n\

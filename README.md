@@ -1,6 +1,6 @@
 # PyGCE
 
-*A tool to export your data from Garmin Connect, written in Python 3.*
+*A tool to export, save, and analyze your Garmin Connect data*
 
 
 ## Install
