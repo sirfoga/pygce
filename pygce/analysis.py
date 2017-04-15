@@ -19,35 +19,33 @@
 import argparse
 import os
 
-from hal.files.models import FileSystem, Document
+from hal.files.models import Document
 from hal.ml.analysis import correlation
 from hal.ml.data.parser import CSVParser
 
 from models.garmin import utils  # 'from models.garmin import utils' when testing local script
 
 
-class CorrelationAnalysis(object):
-    """ Computes correlation of data"""
+class GarminDataFilter(object):
+    """ Parses and fixes raw data """
 
-    def __init__(self, folder_data):
+    def __init__(self, dataset_file):
         """
-        :param folder_data: str
+        :param dataset_file: str
             Path to folder with data to analyse
         """
 
         object.__init__(self)
 
-        self.folder_data = folder_data
+        self.dataset_file = dataset_file
 
-    def parse_csv(self, file_path):
+    def parse_csv(self):
         """
-        :param file_path: str
-            Path to file to parse
         :return: tuple [], [] of []
             Headers of csv file and data
         """
 
-        raw_data = CSVParser(file_path).parse_data()
+        raw_data = CSVParser(self.dataset_file).parse_data()
         headers = raw_data[0][1:]  # first row discarding time value
         headers = [h.strip() for h in headers]
         raw_data = raw_data[1:]  # discard headers row
@@ -99,10 +97,20 @@ class CorrelationAnalysis(object):
                     d[row][i] = utils.parse_num(data[row][i])
         return d
 
-    def save_correlation_matrix_of_file(self, f, title_image, headers_to_analyze):
+
+class StatsAnalysis(GarminDataFilter):
+    """ Computes correlation of data"""
+
+    def __init__(self, dataset_file):
         """
-        :param f: str
-            Path to file to save correlation matrix of
+        :param dataset_file: str
+            Path to folder with data to analyse
+        """
+
+        GarminDataFilter.__init__(self, dataset_file)
+
+    def save_correlation_matrix(self, title_image, headers_to_analyze):
+        """
         :param title_image: str
             Title of output image
         :param headers_to_analyze: [] of str
@@ -111,23 +119,22 @@ class CorrelationAnalysis(object):
             Saves correlation matrix of data of files in folder
         """
 
-        if os.path.isfile(f) and str(f).endswith("csv"):
-            print("Analysing file ", str(f))
+        print("Analysing file ", str(self.dataset_file))
 
-            file_name = Document(f).name.strip()
-            output_file_path = os.path.join(self.folder_data, file_name + ".png")  # save output as image
-            headers, data = self.parse_csv(f)  # parse raw data
-            correlation.save_correlation_matrix_of_columns(
-                title_image,
-                headers_to_analyze,  # headers to test
-                headers,
-                data,
-                output_file_path
-            )
+        file_name = Document(self.dataset_file).name.strip()
+        output_file_path = file_name + ".png"  # save output as image
+        headers, data = self.parse_csv()  # parse raw data
+        correlation.save_correlation_matrix_of_columns(
+            title_image,
+            headers_to_analyze,  # headers to test
+            headers,
+            data,
+            output_file_path
+        )
 
 
-class TimelineCorrelation(CorrelationAnalysis):
-    """ Computes correlation of timeline data """
+class TimelineDataAnalysis(StatsAnalysis):
+    """ Machine-learn timeline data """
 
     HEADERS_TO_ANALYZE = [
         "SUMMARY:kcal_count",
@@ -158,23 +165,21 @@ class TimelineCorrelation(CorrelationAnalysis):
         "ACTIVITIES:duration"
     ]  # columns of data file to convert from time format to float
 
-    def __init__(self, folder_data):
+    def __init__(self, dataset_file):
         """
-        :param folder_data: str
+        :param dataset_file: str
             Path to folder with data to analyse
         """
 
-        CorrelationAnalysis.__init__(self, folder_data)
+        StatsAnalysis.__init__(self, dataset_file)
 
-    def parse_csv(self, file_path):
+    def parse_csv(self):
         """
-        :param file_path: str
-            Path to file to parse
         :return: tuple [], [] of []
             Headers of csv file and data
         """
 
-        headers, data = super(TimelineCorrelation, self).parse_csv(file_path)
+        headers, data = super(TimelineDataAnalysis, self).parse_csv()
         data = self.convert_time_columns(headers, self.TIME_HEADERS_TO_CONVERT, data)
         return headers, data
 
@@ -184,13 +189,12 @@ class TimelineCorrelation(CorrelationAnalysis):
             Saves correlation matrix of data of files in folder
         """
 
-        for f in FileSystem.ls(self.folder_data, False, False):
-            self.save_correlation_matrix_of_file(f, "Garmin timeline data " + Document(f).name.strip(),
-                                                 self.HEADERS_TO_ANALYZE)
+        self.save_correlation_matrix("Garmin timeline data " + Document(self.dataset_file).name.strip(),
+                                     self.HEADERS_TO_ANALYZE)
 
 
-class ActivitiesCorrelation(CorrelationAnalysis):
-    """  Computes correlation of activities data """
+class ActivitiesDataAnalysis(StatsAnalysis):
+    """ Machine-learn activities data """
 
     HEADERS_TO_ANALYZE = [
         "Distance",
@@ -215,23 +219,21 @@ class ActivitiesCorrelation(CorrelationAnalysis):
         "Training Effect"
     ]  # columns with malformed floats values
 
-    def __init__(self, folder_data):
+    def __init__(self, dataset_file):
         """
-        :param folder_data: str
+        :param dataset_file: str
             Path to folder with data to analyse
         """
 
-        CorrelationAnalysis.__init__(self, folder_data)
+        StatsAnalysis.__init__(self, dataset_file)
 
-    def parse_csv(self, file_path):
+    def parse_csv(self):
         """
-        :param file_path: str
-            Path to file to parse
         :return: tuple [], [] of []
             Headers of csv file and data
         """
 
-        headers, data = super(ActivitiesCorrelation, self).parse_csv(file_path)
+        headers, data = super(ActivitiesDataAnalysis, self).parse_csv()
         data = self.convert_time_columns(headers, self.TIME_HEADERS_TO_CONVERT, data)
         data = self.fix_floats(headers, self.HEADERS_WITH_MALFORMED_FLOATS, data)
         return headers, data
@@ -242,9 +244,8 @@ class ActivitiesCorrelation(CorrelationAnalysis):
             Saves correlation matrix of data of files in folder
         """
 
-        for f in FileSystem.ls(self.folder_data, False, False):
-            self.save_correlation_matrix_of_file(f, "Garmin activities data " + Document(f).name.strip(),
-                                                 self.HEADERS_TO_ANALYZE)
+        self.save_correlation_matrix("Garmin activities data " + Document(self.dataset_file).name.strip(),
+                                     self.HEADERS_TO_ANALYZE)
 
 
 def create_args():
@@ -286,7 +287,7 @@ def check_args(folder_path):
 def main():
     folder_path = parse_args(create_args())
     if check_args(folder_path):
-        driver = ActivitiesCorrelation(folder_path)
+        driver = ActivitiesDataAnalysis(folder_path)
         driver.save_correlation_matrix_of_data()
     else:
         print("Error while parsing args.")
