@@ -19,9 +19,12 @@
 import argparse
 import os
 
+import numpy as np
 from hal.files.models import Document
 from hal.ml.analysis import correlation
-from hal.ml.data.parser import CSVParser
+from hal.ml.data.parser import parse_csv_file
+from hal.ml.utils import matrix as m_utils
+from sklearn import linear_model
 
 from models.garmin import utils  # 'from models.garmin import utils' when testing local script
 
@@ -45,17 +48,7 @@ class GarminDataFilter(object):
             Headers of csv file and data
         """
 
-        raw_data = CSVParser(self.dataset_file).parse_data()
-        headers = raw_data[0][1:]  # first row discarding time value
-        headers = [h.strip() for h in headers]
-        raw_data = raw_data[1:]  # discard headers row
-
-        data = []
-        for line in raw_data:  # parse raw data
-            n_array = [str(n).strip() for n in line[1:] if len(str(n).strip()) > 0]  # discard null value
-            data.append(n_array)
-
-        return headers, data
+        return parse_csv_file(self.dataset_file)
 
     @staticmethod
     def convert_time_columns(headers, headers_to_convert, data):
@@ -192,6 +185,40 @@ class TimelineDataAnalysis(StatsAnalysis):
         self.save_correlation_matrix("Garmin timeline data " + Document(self.dataset_file).name.strip(),
                                      self.HEADERS_TO_ANALYZE)
 
+    def predict_feature(self, feature):
+        """
+        :param feature: str
+            Name of feature (column name) to predict
+        :return: TODO
+            TODO
+        """
+
+        headers, raw_data = self.parse_csv()  # get columns names and raw data
+        model = linear_model.LinearRegression()  # model to fit data
+
+        print(np.shape(raw_data))
+        print("rows:", len(raw_data))
+        print("cols:", len(raw_data[0]))
+
+        print("Predicting \"", feature, "\"")
+        x_matrix_features = self.HEADERS_TO_ANALYZE
+        x_matrix_features.remove(feature)  # do NOT include feature to predict in input matrix
+        x_data = m_utils.get_subset_of_matrix(x_matrix_features, headers, raw_data)  # input matrix
+        y_data = m_utils.get_subset_of_matrix([feature], headers, raw_data)  # output matrix
+
+        print(np.shape(x_data))
+        print(np.shape(y_data))
+
+        print("Fitting data ...")
+        model.fit(x_data, y_data)
+
+        coeffs = {}  # dict feature -> coefficient
+        for i in range(len(x_matrix_features)):
+            coeffs[x_matrix_features[i]] = model.coef_[0][i]
+
+        print("Coefficients:")
+        print(coeffs)
+
 
 class ActivitiesDataAnalysis(StatsAnalysis):
     """ Machine-learn activities data """
@@ -287,8 +314,11 @@ def check_args(folder_path):
 def main():
     folder_path = parse_args(create_args())
     if check_args(folder_path):
-        driver = ActivitiesDataAnalysis(folder_path)
-        driver.save_correlation_matrix_of_data()
+        for f in os.listdir(folder_path):
+            file_path = os.path.join(folder_path, f)
+            if os.path.isfile(file_path) and str(file_path).endswith(".csv"):
+                gc = TimelineDataAnalysis(file_path)
+                gc.predict_feature("SLEEP:deep_sleep_time")
     else:
         print("Error while parsing args.")
 
