@@ -19,7 +19,7 @@
 import argparse
 import os
 
-import numpy as np
+import matplotlib.pyplot as plt
 from hal.files.models import Document
 from hal.ml.analysis import correlation
 from hal.ml.data.parser import parse_csv_file
@@ -196,18 +196,11 @@ class TimelineDataAnalysis(StatsAnalysis):
         headers, raw_data = self.parse_csv()  # get columns names and raw data
         model = linear_model.LinearRegression()  # model to fit data
 
-        print(np.shape(raw_data))
-        print("rows:", len(raw_data))
-        print("cols:", len(raw_data[0]))
-
         print("Predicting \"", feature, "\"")
         x_matrix_features = self.HEADERS_TO_ANALYZE
         x_matrix_features.remove(feature)  # do NOT include feature to predict in input matrix
         x_data = m_utils.get_subset_of_matrix(x_matrix_features, headers, raw_data)  # input matrix
         y_data = m_utils.get_subset_of_matrix([feature], headers, raw_data)  # output matrix
-
-        print(np.shape(x_data))
-        print(np.shape(y_data))
 
         print("Fitting data ...")
         model.fit(x_data, y_data)
@@ -217,7 +210,42 @@ class TimelineDataAnalysis(StatsAnalysis):
             coeffs[x_matrix_features[i]] = model.coef_[0][i]
 
         print("Coefficients:")
-        print(coeffs)
+        for k in coeffs.keys():
+            print(k, ":", coeffs[k])
+
+        self.show_bar_chart("Linear fit of " + feature, [k for k in coeffs.keys()], coeffs.values(), "Coefficient")
+
+    @staticmethod
+    def show_bar_chart(title, x_labels, y_values, y_label):
+        """
+        :param title: str
+            Title of chart
+        :param x_labels: [] of str
+            Names for each variable
+        :param y_values: [] of float
+            Values of x labels
+        :param y_label: str
+            Label of y axis
+        :return: void
+            Show bar chart
+        """
+
+        fig = plt.figure()
+        ax1 = fig.add_subplot(111)
+        plt.title(title)
+        plt.grid(True)
+        plt.gcf().subplots_adjust(bottom=0.25)  # include long x-labels
+
+        ax1.set_xticks(list(range(len(x_labels))))
+        ax1.set_xticklabels([x_labels[i] for i in range(len(x_labels))], rotation=90)
+        plt.ylabel(y_label)
+
+        x_pos = range(len(x_labels))
+        plt.bar(x_pos, y_values, align="center")
+
+        ax1.set_yscale("symlog", linthreshy=1e-12)  # logarithmic plota
+
+        plt.show()
 
 
 class ActivitiesDataAnalysis(StatsAnalysis):

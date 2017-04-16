@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - ml linear regression analysis
+- ml bar_chart
 
 ## 0.0.8 - 2017-04-15
 
