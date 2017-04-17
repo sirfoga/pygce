@@ -62,6 +62,15 @@ droven all around ny,00:03:41,3.38,10272,3.4,27,2,03:01:00,10045,00:02:33
 Browse a [`sample csv output`](sample.csv) for 3 days.
 
 
+## Sample analysis output
+As of now, the [analysis](pygce/analysis/cli.py) has not been included in the main cli program, nor has a mature command line parser: you can play with it as you want!
+There is lots of machine-learning stuff already done, and you can browse some samples [here](analysis_images). Mainly the focus is on clustering, best features selection and regression. Feel free to [contribute](https://github.com/sirfoga/pygce/pulls)!
+
+![3d clusters](analysis_images/3d_clusters.png "3d clusters")
+![correlation matrix](analysis_images/correlation_matrix.png "correlation matrix")
+![k best features](analysis_images/k_best.png "k best features")
+
+
 ## Documentation
 - You can browse the [html](docs/doxygen/html/index.html) (or if you prefer the [epydoc docs](docs/epydoc/html/index.html))
 - There is also the [pdf](docs/doxygen/latex/refman.pdf) version (for the epydoc pdfs go [here](docs/epydoc/pdf/api.pdf))

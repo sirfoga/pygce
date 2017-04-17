@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 - GCDaySection.parse_json, GCDaySection.parse_csv
 - test suite
 
+## 0.1.2 - 2017-04-17
+
+### Added
+- sample ml-analysis images
+- images in README
+
+### Fixed
+- cluster_3d_plot without title
+
 ## 0.1.1 - 2017-04-17
 
 ### Added

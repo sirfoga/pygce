@@ -305,6 +305,8 @@ class TimelineDataAnalysis(StatsAnalysis):
         ax.set_xlabel(labels[0])  # set labels
         ax.set_ylabel(labels[1])
         ax.set_zlabel(labels[2])
+
+        plt.title(str(n_clusters) + "-clustering data")
         plt.show()
 
     def select_k_best(self, feature, k=5):
