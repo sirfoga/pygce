@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary" kind="class" language="Python" prot="public">
+    <compoundname>pygce::models::garmin::timeline::GCDaySummary</compoundname>
+    <basecompoundref refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section" prot="public" virt="non-virtual">pygce.models.garmin.timeline.GCDaySection</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1a3fc863d92101994b0c2263b6f0cae4c4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pygce.models.garmin.timeline.GCDaySummary::likes</definition>
+        <argsstring></argsstring>
+        <name>likes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="100" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1af38e9e07196f995d9e8551bb69940f3d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pygce.models.garmin.timeline.GCDaySummary::comment</definition>
+        <argsstring></argsstring>
+        <name>comment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="101" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1a16ed8d554c0349a90d281cbd58608153" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pygce.models.garmin.timeline.GCDaySummary::kcal_count</definition>
+        <argsstring></argsstring>
+        <name>kcal_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="102" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1a9af14ec017803981a9b6047877d92be7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.models.garmin.timeline.GCDaySummary.__init__</definition>
+        <argsstring>(self, raw_html)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>raw_html</type>
+          <defname>raw_html</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param raw_html: str
+    HTML source snippet with information about section
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="92" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="92" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1ab7b302fdc532d60ac846230bc0a28150" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.models.garmin.timeline.GCDaySummary.parse</definition>
+        <argsstring>(self)</argsstring>
+        <name>parse</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="104" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="104" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1a6b4f9c47531f9a6ed2f82751153a6611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.models.garmin.timeline.GCDaySummary.parse_likes</definition>
+        <argsstring>(self)</argsstring>
+        <name>parse_likes</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: void
+    Finds likes count and stores value
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="109" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="109" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1adb9b8c1210354666d6a137d3e1cc50c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.models.garmin.timeline.GCDaySummary.parse_comment</definition>
+        <argsstring>(self)</argsstring>
+        <name>parse_comment</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: void
+    Finds comment value and stores value
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="120" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="120" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1a96e573903735f0ed37698d79d43116f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.models.garmin.timeline.GCDaySummary.parse_kcal_count</definition>
+        <argsstring>(self)</argsstring>
+        <name>parse_kcal_count</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: void
+    Finds kcal value and stores value
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="131" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="131" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1a65d756c22031bee3eebcef9e1df1040b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.models.garmin.timeline.GCDaySummary.to_dict</definition>
+        <argsstring>(self)</argsstring>
+        <name>to_dict</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="142" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="142" bodyend="149"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Standard activity in the Garmin Connect timeline of day.
+Common features are likes, comment, kcal
+</verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="53">
+        <label>pygce.models.garmin.timeline.GCDaySection</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
+        <childnode refid="54" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>object</label>
+      </node>
+      <node id="52">
+        <label>pygce.models.garmin.timeline.GCDaySummary</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="56">
+        <label>pygce.models.garmin.timeline.GCDaySection</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>object</label>
+      </node>
+      <node id="55">
+        <label>pygce.models.garmin.timeline.GCDaySummary</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary"/>
+        <childnode refid="56" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="86" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="86" bodyend="150"/>
+    <listofallmembers>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1a9af14ec017803981a9b6047877d92be7" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>__init__</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1aae8c8c4a74381fa4ee47881ad498fb8f" prot="public" virt="non-virtual" ambiguityscope="pygce::models::garmin::timeline::GCDaySection."><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>__init__</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1af38e9e07196f995d9e8551bb69940f3d" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>comment</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1ac70b12b38ec07c1afbd3198a2620fe86" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>html</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1a16ed8d554c0349a90d281cbd58608153" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>kcal_count</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1a3fc863d92101994b0c2263b6f0cae4c4" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>likes</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1ab7b302fdc532d60ac846230bc0a28150" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>parse</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1adb9b8c1210354666d6a137d3e1cc50c4" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>parse_comment</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1a96e573903735f0ed37698d79d43116f0" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>parse_kcal_count</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1a6b4f9c47531f9a6ed2f82751153a6611" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>parse_likes</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1ae04dcff466d78ae686dce462057260a9" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>soup</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1a3dacbeacfedec2f69dcbb9fe6870f8a3" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>tag</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1a3a8d885a0155c9fa13843609fb7bf80d" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>to_csv_dict</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary_1a65d756c22031bee3eebcef9e1df1040b" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>to_dict</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1a810c65491986e687542ee5a4f02c51d7" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDaySummary</scope><name>to_json</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

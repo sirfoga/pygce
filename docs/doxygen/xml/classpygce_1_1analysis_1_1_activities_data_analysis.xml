@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classpygce_1_1analysis_1_1_activities_data_analysis" kind="class" language="Python" prot="public">
+    <compoundname>pygce::analysis::ActivitiesDataAnalysis</compoundname>
+    <basecompoundref refid="classpygce_1_1analysis_1_1_stats_analysis" prot="public" virt="non-virtual">pygce.analysis.StatsAnalysis</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpygce_1_1analysis_1_1_activities_data_analysis_1ab6e96136ec635b6faa18ebb24f1db35d" prot="public" static="yes" mutable="no">
+        <type>list</type>
+        <definition>list pygce.analysis.ActivitiesDataAnalysis::HEADERS_TO_ANALYZE</definition>
+        <argsstring></argsstring>
+        <name>HEADERS_TO_ANALYZE</name>
+        <initializer>= [
+        &quot;Distance&quot;,
+        &quot;Time&quot;,
+        &quot;Avg Speed(Avg Pace)&quot;,
+        &quot;Max Speed(Best Pace)&quot;,
+        &quot;Elevation Gain&quot;,
+        &quot;Avg HR&quot;,
+        &quot;Max HR&quot;,
+        &quot;Avg Run Cadence&quot;,
+        &quot;Max Run Cadence&quot;,
+        &quot;Calories&quot;,
+        &quot;Training Effect&quot;
+    ]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" line="255" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpygce_1_1analysis_1_1_activities_data_analysis_1aad6be4b72fa047730b0c5e53f50f644d" prot="public" static="yes" mutable="no">
+        <type>list</type>
+        <definition>list pygce.analysis.ActivitiesDataAnalysis::TIME_HEADERS_TO_CONVERT</definition>
+        <argsstring></argsstring>
+        <name>TIME_HEADERS_TO_CONVERT</name>
+        <initializer>= [
+        &quot;Time&quot;,
+        &quot;Avg Speed(Avg Pace)&quot;,
+        &quot;Max Speed(Best Pace)&quot;
+    ]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" line="268" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpygce_1_1analysis_1_1_activities_data_analysis_1a1f7ff038df4e658a32278a9385bded54" prot="public" static="yes" mutable="no">
+        <type>list</type>
+        <definition>list pygce.analysis.ActivitiesDataAnalysis::HEADERS_WITH_MALFORMED_FLOATS</definition>
+        <argsstring></argsstring>
+        <name>HEADERS_WITH_MALFORMED_FLOATS</name>
+        <initializer>= [
+        &quot;Distance&quot;,
+        &quot;Training Effect&quot;
+    ]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" line="273" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" bodystart="273" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpygce_1_1analysis_1_1_activities_data_analysis_1a975523ebe1d0e6e29c690b999eca191b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.analysis.ActivitiesDataAnalysis.__init__</definition>
+        <argsstring>(self, dataset_file)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpygce_1_1analysis_1_1_garmin_data_filter_1a1d609bdd447d36bafce41e43586540ef" kindref="member">dataset_file</ref></type>
+          <defname>dataset_file</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param dataset_file: str
+    Path to folder with data to analyse
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" line="278" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" bodystart="278" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="function" id="classpygce_1_1analysis_1_1_activities_data_analysis_1ae9eeead50f60011ca4745fba87532df4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.analysis.ActivitiesDataAnalysis.parse_csv</definition>
+        <argsstring>(self)</argsstring>
+        <name>parse_csv</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: tuple [], [] of []
+    Headers of csv file and data
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" line="286" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" bodystart="286" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="classpygce_1_1analysis_1_1_activities_data_analysis_1ad9c9a9dfebc3f269c9cb9067fad2365e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.analysis.ActivitiesDataAnalysis.shows_correlation_matrix_of_data</definition>
+        <argsstring>(self)</argsstring>
+        <name>shows_correlation_matrix_of_data</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: void
+    Shows correlation matrix of data of files in folder
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" line="297" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" bodystart="297" bodyend="306"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Machine-learn activities data </verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>pygce.analysis.GarminDataFilter</label>
+        <link refid="classpygce_1_1analysis_1_1_garmin_data_filter"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="0">
+        <label>pygce.analysis.ActivitiesDataAnalysis</label>
+        <link refid="classpygce_1_1analysis_1_1_activities_data_analysis"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>object</label>
+      </node>
+      <node id="1">
+        <label>pygce.analysis.StatsAnalysis</label>
+        <link refid="classpygce_1_1analysis_1_1_stats_analysis"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>pygce.analysis.GarminDataFilter</label>
+        <link refid="classpygce_1_1analysis_1_1_garmin_data_filter"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>pygce.analysis.ActivitiesDataAnalysis</label>
+        <link refid="classpygce_1_1analysis_1_1_activities_data_analysis"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>object</label>
+      </node>
+      <node id="5">
+        <label>pygce.analysis.StatsAnalysis</label>
+        <link refid="classpygce_1_1analysis_1_1_stats_analysis"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" line="252" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" bodystart="252" bodyend="307"/>
+    <listofallmembers>
+      <member refid="classpygce_1_1analysis_1_1_activities_data_analysis_1a975523ebe1d0e6e29c690b999eca191b" prot="public" virt="non-virtual"><scope>pygce::analysis::ActivitiesDataAnalysis</scope><name>__init__</name></member>
+      <member refid="classpygce_1_1analysis_1_1_garmin_data_filter_1adc6e58e018ad152b58e1c47a470412ff" prot="public" virt="non-virtual"><scope>pygce::analysis::ActivitiesDataAnalysis</scope><name>convert_time_columns</name></member>
+      <member refid="classpygce_1_1analysis_1_1_garmin_data_filter_1a1d609bdd447d36bafce41e43586540ef" prot="public" virt="non-virtual"><scope>pygce::analysis::ActivitiesDataAnalysis</scope><name>dataset_file</name></member>
+      <member refid="classpygce_1_1analysis_1_1_garmin_data_filter_1a57cc86d4089d42fe1dc06adbd8481d00" prot="public" virt="non-virtual"><scope>pygce::analysis::ActivitiesDataAnalysis</scope><name>fix_floats</name></member>
+      <member refid="classpygce_1_1analysis_1_1_activities_data_analysis_1ab6e96136ec635b6faa18ebb24f1db35d" prot="public" virt="non-virtual"><scope>pygce::analysis::ActivitiesDataAnalysis</scope><name>HEADERS_TO_ANALYZE</name></member>
+      <member refid="classpygce_1_1analysis_1_1_activities_data_analysis_1a1f7ff038df4e658a32278a9385bded54" prot="public" virt="non-virtual"><scope>pygce::analysis::ActivitiesDataAnalysis</scope><name>HEADERS_WITH_MALFORMED_FLOATS</name></member>
+      <member refid="classpygce_1_1analysis_1_1_activities_data_analysis_1ae9eeead50f60011ca4745fba87532df4" prot="public" virt="non-virtual"><scope>pygce::analysis::ActivitiesDataAnalysis</scope><name>parse_csv</name></member>
+      <member refid="classpygce_1_1analysis_1_1_stats_analysis_1a174d6c1f91b2818a41db03dafdce964c" prot="public" virt="non-virtual"><scope>pygce::analysis::ActivitiesDataAnalysis</scope><name>show_correlation_matrix</name></member>
+      <member refid="classpygce_1_1analysis_1_1_activities_data_analysis_1ad9c9a9dfebc3f269c9cb9067fad2365e" prot="public" virt="non-virtual"><scope>pygce::analysis::ActivitiesDataAnalysis</scope><name>shows_correlation_matrix_of_data</name></member>
+      <member refid="classpygce_1_1analysis_1_1_activities_data_analysis_1aad6be4b72fa047730b0c5e53f50f644d" prot="public" virt="non-virtual"><scope>pygce::analysis::ActivitiesDataAnalysis</scope><name>TIME_HEADERS_TO_CONVERT</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

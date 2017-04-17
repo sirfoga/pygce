@@ -1,0 +1,104 @@
+\hypertarget{namespacepygce_1_1models_1_1garmin_1_1utils}{}\section{pygce.\+models.\+garmin.\+utils Namespace Reference}
+\label{namespacepygce_1_1models_1_1garmin_1_1utils}\index{pygce.\+models.\+garmin.\+utils@{pygce.\+models.\+garmin.\+utils}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacepygce_1_1models_1_1garmin_1_1utils_aea0d8725a78fd92ca64024c3c1c0c184}{parse\+\_\+num} (n)
+\item 
+def \hyperlink{namespacepygce_1_1models_1_1garmin_1_1utils_ac75c05f5427172ce319c6ff155399b17}{parse\+\_\+hh\+\_\+mm\+\_\+ss} (h)
+\item 
+def \hyperlink{namespacepygce_1_1models_1_1garmin_1_1utils_a8505cf82cbca1a0f001e062b09a82581}{get\+\_\+seconds} (s)
+\item 
+def \hyperlink{namespacepygce_1_1models_1_1garmin_1_1utils_a53d4c33bdb7653260d28ee934c8e35fe}{parse\+\_\+hh\+\_\+mm} (h)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{namespacepygce_1_1models_1_1garmin_1_1utils_a68b54ed8a5dee0f2fdb43d107f19699f}{G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+RL} = \char`\"{}https\+://connect.\+garmin.\+com\char`\"{}
+\item 
+string \hyperlink{namespacepygce_1_1models_1_1garmin_1_1utils_a147f822f3288cb74ff6012414e346e6f}{G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+A\+C\+T\+I\+V\+I\+T\+I\+E\+S\+\_\+\+U\+RL} = \char`\"{}https\+://connect.\+garmin.\+com/modern/activities\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{pygce\+::models\+::garmin\+::utils@{pygce\+::models\+::garmin\+::utils}!get\+\_\+seconds@{get\+\_\+seconds}}
+\index{get\+\_\+seconds@{get\+\_\+seconds}!pygce\+::models\+::garmin\+::utils@{pygce\+::models\+::garmin\+::utils}}
+\subsubsection[{\texorpdfstring{get\+\_\+seconds(s)}{get_seconds(s)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+models.\+garmin.\+utils.\+get\+\_\+seconds (
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacepygce_1_1models_1_1garmin_1_1utils_a8505cf82cbca1a0f001e062b09a82581}{}\label{namespacepygce_1_1models_1_1garmin_1_1utils_a8505cf82cbca1a0f001e062b09a82581}
+\begin{DoxyVerb}:param s: str
+    Datetime in the form %H:%M:%S
+:return: int
+    Seconds in time
+\end{DoxyVerb}
+ 
+
+Definition at line 55 of file utils.\+py.
+
+\index{pygce\+::models\+::garmin\+::utils@{pygce\+::models\+::garmin\+::utils}!parse\+\_\+hh\+\_\+mm@{parse\+\_\+hh\+\_\+mm}}
+\index{parse\+\_\+hh\+\_\+mm@{parse\+\_\+hh\+\_\+mm}!pygce\+::models\+::garmin\+::utils@{pygce\+::models\+::garmin\+::utils}}
+\subsubsection[{\texorpdfstring{parse\+\_\+hh\+\_\+mm(h)}{parse_hh_mm(h)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+models.\+garmin.\+utils.\+parse\+\_\+hh\+\_\+mm (
+\begin{DoxyParamCaption}
+\item[{}]{h}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacepygce_1_1models_1_1garmin_1_1utils_a53d4c33bdb7653260d28ee934c8e35fe}{}\label{namespacepygce_1_1models_1_1garmin_1_1utils_a53d4c33bdb7653260d28ee934c8e35fe}
+\begin{DoxyVerb}:param h: str
+    Hours and minutes in the form hh:mm to parse
+:return: datetime.time
+    Time parsed
+\end{DoxyVerb}
+ 
+
+Definition at line 70 of file utils.\+py.
+
+\index{pygce\+::models\+::garmin\+::utils@{pygce\+::models\+::garmin\+::utils}!parse\+\_\+hh\+\_\+mm\+\_\+ss@{parse\+\_\+hh\+\_\+mm\+\_\+ss}}
+\index{parse\+\_\+hh\+\_\+mm\+\_\+ss@{parse\+\_\+hh\+\_\+mm\+\_\+ss}!pygce\+::models\+::garmin\+::utils@{pygce\+::models\+::garmin\+::utils}}
+\subsubsection[{\texorpdfstring{parse\+\_\+hh\+\_\+mm\+\_\+ss(h)}{parse_hh_mm_ss(h)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+models.\+garmin.\+utils.\+parse\+\_\+hh\+\_\+mm\+\_\+ss (
+\begin{DoxyParamCaption}
+\item[{}]{h}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacepygce_1_1models_1_1garmin_1_1utils_ac75c05f5427172ce319c6ff155399b17}{}\label{namespacepygce_1_1models_1_1garmin_1_1utils_ac75c05f5427172ce319c6ff155399b17}
+\begin{DoxyVerb}:param h: str
+    Hours, minutes and seconds in the form hh:mm:ss to parse
+:return: datetime.time
+    Time parsed
+\end{DoxyVerb}
+ 
+
+Definition at line 37 of file utils.\+py.
+
+\index{pygce\+::models\+::garmin\+::utils@{pygce\+::models\+::garmin\+::utils}!parse\+\_\+num@{parse\+\_\+num}}
+\index{parse\+\_\+num@{parse\+\_\+num}!pygce\+::models\+::garmin\+::utils@{pygce\+::models\+::garmin\+::utils}}
+\subsubsection[{\texorpdfstring{parse\+\_\+num(n)}{parse_num(n)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+models.\+garmin.\+utils.\+parse\+\_\+num (
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacepygce_1_1models_1_1garmin_1_1utils_aea0d8725a78fd92ca64024c3c1c0c184}{}\label{namespacepygce_1_1models_1_1garmin_1_1utils_aea0d8725a78fd92ca64024c3c1c0c184}
+\begin{DoxyVerb}:param n: str
+    Number to parse
+:return: float
+    Parses numbers written like 123,949.99
+\end{DoxyVerb}
+ 
+
+Definition at line 25 of file utils.\+py.
+
+
+
+\subsection{Variable Documentation}
+\index{pygce\+::models\+::garmin\+::utils@{pygce\+::models\+::garmin\+::utils}!G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+A\+C\+T\+I\+V\+I\+T\+I\+E\+S\+\_\+\+U\+RL@{G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+A\+C\+T\+I\+V\+I\+T\+I\+E\+S\+\_\+\+U\+RL}}
+\index{G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+A\+C\+T\+I\+V\+I\+T\+I\+E\+S\+\_\+\+U\+RL@{G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+A\+C\+T\+I\+V\+I\+T\+I\+E\+S\+\_\+\+U\+RL}!pygce\+::models\+::garmin\+::utils@{pygce\+::models\+::garmin\+::utils}}
+\subsubsection[{\texorpdfstring{G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+A\+C\+T\+I\+V\+I\+T\+I\+E\+S\+\_\+\+U\+RL}{GARMIN_CONNECT_ACTIVITIES_URL}}]{\setlength{\rightskip}{0pt plus 5cm}string pygce.\+models.\+garmin.\+utils.\+G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+A\+C\+T\+I\+V\+I\+T\+I\+E\+S\+\_\+\+U\+RL = \char`\"{}https\+://connect.\+garmin.\+com/modern/activities\char`\"{}}\hypertarget{namespacepygce_1_1models_1_1garmin_1_1utils_a147f822f3288cb74ff6012414e346e6f}{}\label{namespacepygce_1_1models_1_1garmin_1_1utils_a147f822f3288cb74ff6012414e346e6f}
+
+
+Definition at line 22 of file utils.\+py.
+
+\index{pygce\+::models\+::garmin\+::utils@{pygce\+::models\+::garmin\+::utils}!G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+RL@{G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+RL}}
+\index{G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+RL@{G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+RL}!pygce\+::models\+::garmin\+::utils@{pygce\+::models\+::garmin\+::utils}}
+\subsubsection[{\texorpdfstring{G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+RL}{GARMIN_CONNECT_URL}}]{\setlength{\rightskip}{0pt plus 5cm}string pygce.\+models.\+garmin.\+utils.\+G\+A\+R\+M\+I\+N\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+RL = \char`\"{}https\+://connect.\+garmin.\+com\char`\"{}}\hypertarget{namespacepygce_1_1models_1_1garmin_1_1utils_a68b54ed8a5dee0f2fdb43d107f19699f}{}\label{namespacepygce_1_1models_1_1garmin_1_1utils_a68b54ed8a5dee0f2fdb43d107f19699f}
+
+
+Definition at line 21 of file utils.\+py.
+

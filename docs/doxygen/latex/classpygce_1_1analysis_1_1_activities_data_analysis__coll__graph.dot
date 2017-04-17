@@ -1,0 +1,12 @@
+digraph "pygce.analysis.ActivitiesDataAnalysis"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="pygce.analysis.Activities\lDataAnalysis",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="pygce.analysis.StatsAnalysis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1analysis_1_1_stats_analysis.html"];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="pygce.analysis.GarminData\lFilter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1analysis_1_1_garmin_data_filter.html"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="object",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

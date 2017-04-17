@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacepygce_1_1analysis" kind="namespace" language="Python">
+    <compoundname>pygce::analysis</compoundname>
+    <innerclass refid="classpygce_1_1analysis_1_1_activities_data_analysis" prot="public">pygce::analysis::ActivitiesDataAnalysis</innerclass>
+    <innerclass refid="classpygce_1_1analysis_1_1_garmin_data_filter" prot="public">pygce::analysis::GarminDataFilter</innerclass>
+    <innerclass refid="classpygce_1_1analysis_1_1_stats_analysis" prot="public">pygce::analysis::StatsAnalysis</innerclass>
+    <innerclass refid="classpygce_1_1analysis_1_1_timeline_data_analysis" prot="public">pygce::analysis::TimelineDataAnalysis</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepygce_1_1analysis_1a60c889781e2e81e5714818b6bcfcb0ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.analysis.create_args</definition>
+        <argsstring>()</argsstring>
+        <name>create_args</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: ArgumentParser
+    Parser that handles cmd arguments.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" line="307" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" bodystart="307" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepygce_1_1analysis_1a06f85f2c688ac4bd961960c31b294bec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.analysis.parse_args</definition>
+        <argsstring>(parser)</argsstring>
+        <name>parse_args</name>
+        <param>
+          <type>parser</type>
+          <defname>parser</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param parser: ArgumentParser
+    Object that holds cmd arguments.
+:return: tuple
+    Values of arguments.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" line="319" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" bodystart="319" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepygce_1_1analysis_1aceaa20aef74711b14ed3403d724775f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.analysis.check_args</definition>
+        <argsstring>(folder_path)</argsstring>
+        <name>check_args</name>
+        <param>
+          <type>folder_path</type>
+          <defname>folder_path</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param folder_path: str
+    Path to folder with data files to analyse
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" line="332" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" bodystart="332" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepygce_1_1analysis_1aaefa5e8b8784dfb130c1458c26c1983d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.analysis.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" line="343" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" bodystart="343" bodyend="356"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

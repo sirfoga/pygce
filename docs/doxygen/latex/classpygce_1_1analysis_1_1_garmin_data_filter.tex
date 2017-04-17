@@ -1,0 +1,129 @@
+\hypertarget{classpygce_1_1analysis_1_1_garmin_data_filter}{}\section{pygce.\+analysis.\+Garmin\+Data\+Filter Class Reference}
+\label{classpygce_1_1analysis_1_1_garmin_data_filter}\index{pygce.\+analysis.\+Garmin\+Data\+Filter@{pygce.\+analysis.\+Garmin\+Data\+Filter}}
+Inheritance diagram for pygce.\+analysis.\+Garmin\+Data\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classpygce_1_1analysis_1_1_garmin_data_filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpygce_1_1analysis_1_1_garmin_data_filter_af82a21b2ce628ac96f3e5c0586bc096c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpygce_1_1analysis_1_1_garmin_data_filter_a1d609bdd447d36bafce41e43586540ef}{dataset\+\_\+file})
+\item 
+def \hyperlink{classpygce_1_1analysis_1_1_garmin_data_filter_a20693ff1b6595241436b350403aeb63c}{parse\+\_\+csv} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpygce_1_1analysis_1_1_garmin_data_filter_adc6e58e018ad152b58e1c47a470412ff}{convert\+\_\+time\+\_\+columns} (headers, headers\+\_\+to\+\_\+convert, data)
+\item 
+def \hyperlink{classpygce_1_1analysis_1_1_garmin_data_filter_a57cc86d4089d42fe1dc06adbd8481d00}{fix\+\_\+floats} (headers, headers\+\_\+to\+\_\+fix, data)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpygce_1_1analysis_1_1_garmin_data_filter_a1d609bdd447d36bafce41e43586540ef}{dataset\+\_\+file}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Parses and fixes raw data \end{DoxyVerb}
+ 
+
+Definition at line 32 of file analysis.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{pygce\+::analysis\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::\+Garmin\+Data\+Filter}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pygce\+::analysis\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::\+Garmin\+Data\+Filter}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, dataset\+\_\+file)}{__init__(self, dataset_file)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+Garmin\+Data\+Filter.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{dataset\+\_\+file}
+\end{DoxyParamCaption}
+)}\hypertarget{classpygce_1_1analysis_1_1_garmin_data_filter_af82a21b2ce628ac96f3e5c0586bc096c}{}\label{classpygce_1_1analysis_1_1_garmin_data_filter_af82a21b2ce628ac96f3e5c0586bc096c}
+\begin{DoxyVerb}:param dataset_file: str
+    Path to folder with data to analyse
+\end{DoxyVerb}
+ 
+
+Definition at line 35 of file analysis.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\index{pygce\+::analysis\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::\+Garmin\+Data\+Filter}!convert\+\_\+time\+\_\+columns@{convert\+\_\+time\+\_\+columns}}
+\index{convert\+\_\+time\+\_\+columns@{convert\+\_\+time\+\_\+columns}!pygce\+::analysis\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::\+Garmin\+Data\+Filter}}
+\subsubsection[{\texorpdfstring{convert\+\_\+time\+\_\+columns(headers, headers\+\_\+to\+\_\+convert, data)}{convert_time_columns(headers, headers_to_convert, data)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+Garmin\+Data\+Filter.\+convert\+\_\+time\+\_\+columns (
+\begin{DoxyParamCaption}
+\item[{}]{headers, }
+\item[{}]{headers\+\_\+to\+\_\+convert, }
+\item[{}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classpygce_1_1analysis_1_1_garmin_data_filter_adc6e58e018ad152b58e1c47a470412ff}{}\label{classpygce_1_1analysis_1_1_garmin_data_filter_adc6e58e018ad152b58e1c47a470412ff}
+\begin{DoxyVerb}:param headers: [] of str
+    Column names of data
+:param headers_to_convert: [] of str
+    Column names of data to convert from time format to float
+:param data: [] of []
+    Raw data
+:return: [] of []
+    Input data but with converted time columns
+\end{DoxyVerb}
+ 
+
+Definition at line 54 of file analysis.\+py.
+
+\index{pygce\+::analysis\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::\+Garmin\+Data\+Filter}!fix\+\_\+floats@{fix\+\_\+floats}}
+\index{fix\+\_\+floats@{fix\+\_\+floats}!pygce\+::analysis\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::\+Garmin\+Data\+Filter}}
+\subsubsection[{\texorpdfstring{fix\+\_\+floats(headers, headers\+\_\+to\+\_\+fix, data)}{fix_floats(headers, headers_to_fix, data)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+Garmin\+Data\+Filter.\+fix\+\_\+floats (
+\begin{DoxyParamCaption}
+\item[{}]{headers, }
+\item[{}]{headers\+\_\+to\+\_\+fix, }
+\item[{}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classpygce_1_1analysis_1_1_garmin_data_filter_a57cc86d4089d42fe1dc06adbd8481d00}{}\label{classpygce_1_1analysis_1_1_garmin_data_filter_a57cc86d4089d42fe1dc06adbd8481d00}
+\begin{DoxyVerb}:param headers: [] of str
+    Column names of data
+:param headers_to_fix: [] of str
+    Column names of data to fix the float format
+:param data: [] of []
+    Raw data
+:return: [] of []
+    Input data but with fixed floats in columns
+\end{DoxyVerb}
+ 
+
+Definition at line 74 of file analysis.\+py.
+
+\index{pygce\+::analysis\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::\+Garmin\+Data\+Filter}!parse\+\_\+csv@{parse\+\_\+csv}}
+\index{parse\+\_\+csv@{parse\+\_\+csv}!pygce\+::analysis\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::\+Garmin\+Data\+Filter}}
+\subsubsection[{\texorpdfstring{parse\+\_\+csv(self)}{parse_csv(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+Garmin\+Data\+Filter.\+parse\+\_\+csv (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classpygce_1_1analysis_1_1_garmin_data_filter_a20693ff1b6595241436b350403aeb63c}{}\label{classpygce_1_1analysis_1_1_garmin_data_filter_a20693ff1b6595241436b350403aeb63c}
+\begin{DoxyVerb}:return: tuple [], [] of []
+    Headers of csv file and data
+\end{DoxyVerb}
+ 
+
+Definition at line 45 of file analysis.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\index{pygce\+::analysis\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::\+Garmin\+Data\+Filter}!dataset\+\_\+file@{dataset\+\_\+file}}
+\index{dataset\+\_\+file@{dataset\+\_\+file}!pygce\+::analysis\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::\+Garmin\+Data\+Filter}}
+\subsubsection[{\texorpdfstring{dataset\+\_\+file}{dataset_file}}]{\setlength{\rightskip}{0pt plus 5cm}pygce.\+analysis.\+Garmin\+Data\+Filter.\+dataset\+\_\+file}\hypertarget{classpygce_1_1analysis_1_1_garmin_data_filter_a1d609bdd447d36bafce41e43586540ef}{}\label{classpygce_1_1analysis_1_1_garmin_data_filter_a1d609bdd447d36bafce41e43586540ef}
+
+
+Definition at line 43 of file analysis.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/stefano/\+Coding/\+Python/projects/garmin-\/connect-\/export/pygce/\hyperlink{analysis_8py}{analysis.\+py}\end{DoxyCompactItemize}

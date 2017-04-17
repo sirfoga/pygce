@@ -1,0 +1,171 @@
+\hypertarget{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline}{}\section{pygce.\+models.\+garmin.\+timeline.\+G\+C\+Day\+Timeline Class Reference}
+\label{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline}\index{pygce.\+models.\+garmin.\+timeline.\+G\+C\+Day\+Timeline@{pygce.\+models.\+garmin.\+timeline.\+G\+C\+Day\+Timeline}}
+Inheritance diagram for pygce.\+models.\+garmin.\+timeline.\+G\+C\+Day\+Timeline\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a4dd53f447c45ea43629204d32243835e}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, date\+\_\+time, summary\+\_\+html, steps\+\_\+section\+\_\+html, sleep\+\_\+section\+\_\+html, activities\+\_\+section\+\_\+html, breakdown\+\_\+section\+\_\+html)
+\item 
+def \hyperlink{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a868c632c33e0deb2b2ebfccfa35aa839}{parse} (self)
+\item 
+def \hyperlink{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_ae2d3f754907b22c3a87715fa8664cb5d}{\+\_\+\+\_\+getattr\+\_\+\+\_\+} (self, item)
+\item 
+def \hyperlink{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_aea84908a12fe244f70ef0c7d6f9875b7}{to\+\_\+dict} (self)
+\item 
+def \hyperlink{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a89b4a28c05fc57f7588f9aea91c2f5f3}{to\+\_\+csv\+\_\+dict} (self)
+\item 
+def \hyperlink{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a45e446687d33554cb53dea0a2d052c1a}{to\+\_\+json} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a93fbc84cc4bfb4b01ec4678c512dc6f7}{date}
+\item 
+\hyperlink{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a2e73f290ffe476624ddc495bb3edd19b}{sections}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Standard Garmin Connect timeline of day as in webpage.
+Each standard day consists of different sections:
+- summary (day, likes, comment, kcal)
+- steps (total, goal, distance, avg daily)
+- sleep (total, deep total, light total, awake total)
+- activities (for each one: kcal, time, distance, type, name, link)
+- breakdown (highly active %, active %, sedentary %, sleep %)
+\end{DoxyVerb}
+ 
+
+Definition at line 458 of file timeline.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, date\+\_\+time, summary\+\_\+html, steps\+\_\+section\+\_\+html, sleep\+\_\+section\+\_\+html, activities\+\_\+section\+\_\+html, breakdown\+\_\+section\+\_\+html)}{__init__(self, date_time, summary_html, steps_section_html, sleep_section_html, activities_section_html, breakdown_section_html)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+models.\+garmin.\+timeline.\+G\+C\+Day\+Timeline.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{date\+\_\+time, }
+\item[{}]{summary\+\_\+html, }
+\item[{}]{steps\+\_\+section\+\_\+html, }
+\item[{}]{sleep\+\_\+section\+\_\+html, }
+\item[{}]{activities\+\_\+section\+\_\+html, }
+\item[{}]{breakdown\+\_\+section\+\_\+html}
+\end{DoxyParamCaption}
+)}\hypertarget{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a4dd53f447c45ea43629204d32243835e}{}\label{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a4dd53f447c45ea43629204d32243835e}
+\begin{DoxyVerb}:param date_time: datetime
+    Datetime of day
+:param summary_html: str
+    HTML source snippet with information about the day
+:param steps_section_html: str
+    HTML source snippet with information about daily steps
+:param sleep_section_html: str
+    HTML source snippet with information about daily sleep
+:param activities_section_html: str
+    HTML source snippet with information about daily activities
+:param breakdown_section_html: str
+    HTML source snippet with information about daily breakdown
+\end{DoxyVerb}
+ 
+
+Definition at line 470 of file timeline.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\index{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}!\+\_\+\+\_\+getattr\+\_\+\+\_\+@{\+\_\+\+\_\+getattr\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getattr\+\_\+\+\_\+@{\+\_\+\+\_\+getattr\+\_\+\+\_\+}!pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+getattr\+\_\+\+\_\+(self, item)}{__getattr__(self, item)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+models.\+garmin.\+timeline.\+G\+C\+Day\+Timeline.\+\_\+\+\_\+getattr\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{item}
+\end{DoxyParamCaption}
+)}\hypertarget{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_ae2d3f754907b22c3a87715fa8664cb5d}{}\label{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_ae2d3f754907b22c3a87715fa8664cb5d}
+
+
+Definition at line 506 of file timeline.\+py.
+
+\index{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}!parse@{parse}}
+\index{parse@{parse}!pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}}
+\subsubsection[{\texorpdfstring{parse(self)}{parse(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+models.\+garmin.\+timeline.\+G\+C\+Day\+Timeline.\+parse (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a868c632c33e0deb2b2ebfccfa35aa839}{}\label{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a868c632c33e0deb2b2ebfccfa35aa839}
+\begin{DoxyVerb}:return: void
+    Finds all sections to parse, then builds corresponding objects and parses everything
+\end{DoxyVerb}
+ 
+
+Definition at line 497 of file timeline.\+py.
+
+\index{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}!to\+\_\+csv\+\_\+dict@{to\+\_\+csv\+\_\+dict}}
+\index{to\+\_\+csv\+\_\+dict@{to\+\_\+csv\+\_\+dict}!pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}}
+\subsubsection[{\texorpdfstring{to\+\_\+csv\+\_\+dict(self)}{to_csv_dict(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+models.\+garmin.\+timeline.\+G\+C\+Day\+Timeline.\+to\+\_\+csv\+\_\+dict (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a89b4a28c05fc57f7588f9aea91c2f5f3}{}\label{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a89b4a28c05fc57f7588f9aea91c2f5f3}
+\begin{DoxyVerb}:return: {}
+    Like self.to_dict() but with a set with keys and values NOT nested. Also for activities there are totals only
+\end{DoxyVerb}
+ 
+
+Definition at line 517 of file timeline.\+py.
+
+\index{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}!to\+\_\+dict@{to\+\_\+dict}}
+\index{to\+\_\+dict@{to\+\_\+dict}!pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}}
+\subsubsection[{\texorpdfstring{to\+\_\+dict(self)}{to_dict(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+models.\+garmin.\+timeline.\+G\+C\+Day\+Timeline.\+to\+\_\+dict (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_aea84908a12fe244f70ef0c7d6f9875b7}{}\label{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_aea84908a12fe244f70ef0c7d6f9875b7}
+\begin{DoxyVerb}:return: dict
+    Dictionary with keys (obj fields) and values (obj values)
+\end{DoxyVerb}
+ 
+
+Definition at line 509 of file timeline.\+py.
+
+\index{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}!to\+\_\+json@{to\+\_\+json}}
+\index{to\+\_\+json@{to\+\_\+json}!pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}}
+\subsubsection[{\texorpdfstring{to\+\_\+json(self)}{to_json(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+models.\+garmin.\+timeline.\+G\+C\+Day\+Timeline.\+to\+\_\+json (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a45e446687d33554cb53dea0a2d052c1a}{}\label{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a45e446687d33554cb53dea0a2d052c1a}
+\begin{DoxyVerb}:return: json object
+    A json representation of this object
+\end{DoxyVerb}
+ 
+
+Definition at line 531 of file timeline.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\index{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}!date@{date}}
+\index{date@{date}!pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}}
+\subsubsection[{\texorpdfstring{date}{date}}]{\setlength{\rightskip}{0pt plus 5cm}pygce.\+models.\+garmin.\+timeline.\+G\+C\+Day\+Timeline.\+date}\hypertarget{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a93fbc84cc4bfb4b01ec4678c512dc6f7}{}\label{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a93fbc84cc4bfb4b01ec4678c512dc6f7}
+
+
+Definition at line 488 of file timeline.\+py.
+
+\index{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}!sections@{sections}}
+\index{sections@{sections}!pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline@{pygce\+::models\+::garmin\+::timeline\+::\+G\+C\+Day\+Timeline}}
+\subsubsection[{\texorpdfstring{sections}{sections}}]{\setlength{\rightskip}{0pt plus 5cm}pygce.\+models.\+garmin.\+timeline.\+G\+C\+Day\+Timeline.\+sections}\hypertarget{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a2e73f290ffe476624ddc495bb3edd19b}{}\label{classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_a2e73f290ffe476624ddc495bb3edd19b}
+
+
+Definition at line 489 of file timeline.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/stefano/\+Coding/\+Python/projects/garmin-\/connect-\/export/pygce/models/garmin/\hyperlink{timeline_8py}{timeline.\+py}\end{DoxyCompactItemize}

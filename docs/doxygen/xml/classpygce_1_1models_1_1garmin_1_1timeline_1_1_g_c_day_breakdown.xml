@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown" kind="class" language="Python" prot="public">
+    <compoundname>pygce::models::garmin::timeline::GCDayBreakdown</compoundname>
+    <basecompoundref refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section" prot="public" virt="non-virtual">pygce.models.garmin.timeline.GCDaySection</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1a736edad716e1770862ceac10f2d262e3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pygce.models.garmin.timeline.GCDayBreakdown::highly_active</definition>
+        <argsstring></argsstring>
+        <name>highly_active</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="435" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="435" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1afabd12a8a6d22c156f9495483e4419b6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pygce.models.garmin.timeline.GCDayBreakdown::active</definition>
+        <argsstring></argsstring>
+        <name>active</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="436" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="436" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1a03d898e7c3c8131ff30e0316d7257739" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pygce.models.garmin.timeline.GCDayBreakdown::sedentary</definition>
+        <argsstring></argsstring>
+        <name>sedentary</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="437" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="437" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1a26a3f7d4d5903c8ad6221c11ded6d601" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pygce.models.garmin.timeline.GCDayBreakdown::sleeping</definition>
+        <argsstring></argsstring>
+        <name>sleeping</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="438" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="438" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1af19f3c3dad89dff7f543be029b0778f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.models.garmin.timeline.GCDayBreakdown.__init__</definition>
+        <argsstring>(self, raw_html)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>raw_html</type>
+          <defname>raw_html</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param raw_html: str
+    HTML source snippet with information about section
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="427" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="427" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1aac05cc21c76e377ad50dcfcaca3a54da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.models.garmin.timeline.GCDayBreakdown.parse</definition>
+        <argsstring>(self)</argsstring>
+        <name>parse</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="440" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="440" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1a517a2e5b269e95331fb51f531a5b9e4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.models.garmin.timeline.GCDayBreakdown.to_dict</definition>
+        <argsstring>(self)</argsstring>
+        <name>to_dict</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="449" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="449" bodyend="457"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Standard activity in the Garmin Connect timeline of day.
+Common features are highly active %, active %, sedentary %, sleep %
+</verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="25">
+        <label>pygce.models.garmin.timeline.GCDayBreakdown</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>pygce.models.garmin.timeline.GCDaySection</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="28">
+        <label>pygce.models.garmin.timeline.GCDayBreakdown</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>pygce.models.garmin.timeline.GCDaySection</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" line="421" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/timeline.py" bodystart="421" bodyend="458"/>
+    <listofallmembers>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1af19f3c3dad89dff7f543be029b0778f7" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>__init__</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1aae8c8c4a74381fa4ee47881ad498fb8f" prot="public" virt="non-virtual" ambiguityscope="pygce::models::garmin::timeline::GCDaySection."><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>__init__</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1afabd12a8a6d22c156f9495483e4419b6" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>active</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1a736edad716e1770862ceac10f2d262e3" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>highly_active</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1ac70b12b38ec07c1afbd3198a2620fe86" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>html</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1aac05cc21c76e377ad50dcfcaca3a54da" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>parse</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1a03d898e7c3c8131ff30e0316d7257739" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>sedentary</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1a26a3f7d4d5903c8ad6221c11ded6d601" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>sleeping</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1ae04dcff466d78ae686dce462057260a9" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>soup</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1a3dacbeacfedec2f69dcbb9fe6870f8a3" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>tag</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1a3a8d885a0155c9fa13843609fb7bf80d" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>to_csv_dict</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown_1a517a2e5b269e95331fb51f531a5b9e4b" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>to_dict</name></member>
+      <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1a810c65491986e687542ee5a4f02c51d7" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayBreakdown</scope><name>to_json</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

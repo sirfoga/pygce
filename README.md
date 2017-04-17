@@ -60,6 +60,12 @@ droven all around ny,00:03:41,3.38,10272,3.4,27,2,03:01:00,10045,00:02:33
 ```
 Browse a [`sample csv output`](sample.csv) for 3 days.
 
+
+## Documentation
+- You can browse the [html](docs/doxygen/html/index.html) (or if you prefer the [epydoc docs](docs/epydoc/html/index.html))
+- There is also the [pdf](docs/doxygen/pdf/api.pdf) version (for the epydoc pdfs go [here](docs/epydoc/pdf)
+
+
 ## Questions and issues
 The one thing to note is that you should have a [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) downloaded locally: when `pygce` runs, it opens a `Google Chrome` window and starts navigating through your Garmin Connect timeline, saving the results.
 

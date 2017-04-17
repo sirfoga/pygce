@@ -1,0 +1,31 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="object",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="pygce.analysis.GarminData\lFilter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1analysis_1_1_garmin_data_filter.html"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="pygce.analysis.StatsAnalysis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1analysis_1_1_stats_analysis.html"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="pygce.analysis.Activities\lDataAnalysis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1analysis_1_1_activities_data_analysis.html"];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="pygce.analysis.TimelineData\lAnalysis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1analysis_1_1_timeline_data_analysis.html"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="pygce.models.bot.GarminConnectBot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="pygce.models.garmin.timeline.\lGCDaySection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section.html"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="pygce.models.garmin.timeline.\lGCDayActivities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities.html"];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="pygce.models.garmin.timeline.\lGCDayBreakdown",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown.html"];
+  Node7 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="pygce.models.garmin.timeline.\lGCDaySleep",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_sleep.html"];
+  Node7 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="pygce.models.garmin.timeline.\lGCDaySteps",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_steps.html"];
+  Node7 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="pygce.models.garmin.timeline.\lGCDaySummary",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary.html"];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="pygce.models.garmin.timeline.\lGCDayTimeline",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline.html"];
+}
