@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacepygce_1_1analysis_1_1models" kind="namespace" language="Python">
+    <compoundname>pygce::analysis::models</compoundname>
+    <innerclass refid="classpygce_1_1analysis_1_1models_1_1_activities_data_analysis" prot="public">pygce::analysis::models::ActivitiesDataAnalysis</innerclass>
+    <innerclass refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter" prot="public">pygce::analysis::models::GarminDataFilter</innerclass>
+    <innerclass refid="classpygce_1_1analysis_1_1models_1_1_stats_analysis" prot="public">pygce::analysis::models::StatsAnalysis</innerclass>
+    <innerclass refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis" prot="public">pygce::analysis::models::TimelineDataAnalysis</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

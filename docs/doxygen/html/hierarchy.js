@@ -1,10 +1,10 @@
 var hierarchy =
 [
     [ "object", null, [
-      [ "pygce.analysis.GarminDataFilter", "classpygce_1_1analysis_1_1_garmin_data_filter.html", [
-        [ "pygce.analysis.StatsAnalysis", "classpygce_1_1analysis_1_1_stats_analysis.html", [
-          [ "pygce.analysis.ActivitiesDataAnalysis", "classpygce_1_1analysis_1_1_activities_data_analysis.html", null ],
-          [ "pygce.analysis.TimelineDataAnalysis", "classpygce_1_1analysis_1_1_timeline_data_analysis.html", null ]
+      [ "pygce.analysis.models.GarminDataFilter", "classpygce_1_1analysis_1_1models_1_1_garmin_data_filter.html", [
+        [ "pygce.analysis.models.StatsAnalysis", "classpygce_1_1analysis_1_1models_1_1_stats_analysis.html", [
+          [ "pygce.analysis.models.ActivitiesDataAnalysis", "classpygce_1_1analysis_1_1models_1_1_activities_data_analysis.html", null ],
+          [ "pygce.analysis.models.TimelineDataAnalysis", "classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html", null ]
         ] ]
       ] ],
       [ "pygce.models.bot.GarminConnectBot", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html", null ],

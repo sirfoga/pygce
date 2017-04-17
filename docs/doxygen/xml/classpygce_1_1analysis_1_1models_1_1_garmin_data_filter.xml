@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter" kind="class" language="Python" prot="public">
+    <compoundname>pygce::analysis::models::GarminDataFilter</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+    <derivedcompoundref refid="classpygce_1_1analysis_1_1models_1_1_stats_analysis" prot="public" virt="non-virtual">pygce.analysis.models.StatsAnalysis</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1a7bb7be05577c2d31546e27823a5d11c5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pygce.analysis.models.GarminDataFilter::dataset_file</definition>
+        <argsstring></argsstring>
+        <name>dataset_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" line="40" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1ae5dcf7d3dd4f98145960b2a751b163d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.analysis.models.GarminDataFilter.__init__</definition>
+        <argsstring>(self, dataset_file)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1a7bb7be05577c2d31546e27823a5d11c5" kindref="member">dataset_file</ref></type>
+          <defname>dataset_file</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param dataset_file: str
+    Path to folder with data to analyse
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" line="32" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" bodystart="32" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1ae502093f9a92b498b42dd8b0257c22dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.analysis.models.GarminDataFilter.parse_csv</definition>
+        <argsstring>(self)</argsstring>
+        <name>parse_csv</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: tuple [], [] of []
+    Headers of csv file and data
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" line="42" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" bodystart="42" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1aba928d8e942c743cf1553760cdb95ea1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.analysis.models.GarminDataFilter.convert_time_columns</definition>
+        <argsstring>(headers, headers_to_convert, data)</argsstring>
+        <name>convert_time_columns</name>
+        <param>
+          <type>headers</type>
+          <defname>headers</defname>
+        </param>
+        <param>
+          <type>headers_to_convert</type>
+          <defname>headers_to_convert</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param headers: [] of str
+    Column names of data
+:param headers_to_convert: [] of str
+    Column names of data to convert from time format to float
+:param data: [] of []
+    Raw data
+:return: [] of []
+    Input data but with converted time columns
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" line="51" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" bodystart="51" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1a7220b9a58e6a9e4fe5dd679b7c8dd3ae" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pygce.analysis.models.GarminDataFilter.fix_floats</definition>
+        <argsstring>(headers, headers_to_fix, data)</argsstring>
+        <name>fix_floats</name>
+        <param>
+          <type>headers</type>
+          <defname>headers</defname>
+        </param>
+        <param>
+          <type>headers_to_fix</type>
+          <defname>headers_to_fix</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:param headers: [] of str
+    Column names of data
+:param headers_to_fix: [] of str
+    Column names of data to fix the float format
+:param data: [] of []
+    Raw data
+:return: [] of []
+    Input data but with fixed floats in columns
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" line="71" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" bodystart="71" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Parses and fixes raw data </verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="12">
+        <label>pygce.analysis.models.GarminDataFilter</label>
+        <link refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>pygce.analysis.models.StatsAnalysis</label>
+        <link refid="classpygce_1_1analysis_1_1models_1_1_stats_analysis"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>pygce.analysis.models.ActivitiesDataAnalysis</label>
+        <link refid="classpygce_1_1analysis_1_1models_1_1_activities_data_analysis"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>object</label>
+      </node>
+      <node id="16">
+        <label>pygce.analysis.models.TimelineDataAnalysis</label>
+        <link refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="17">
+        <label>pygce.analysis.models.GarminDataFilter</label>
+        <link refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" line="29" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" bodystart="29" bodyend="91"/>
+    <listofallmembers>
+      <member refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1ae5dcf7d3dd4f98145960b2a751b163d2" prot="public" virt="non-virtual"><scope>pygce::analysis::models::GarminDataFilter</scope><name>__init__</name></member>
+      <member refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1aba928d8e942c743cf1553760cdb95ea1" prot="public" virt="non-virtual"><scope>pygce::analysis::models::GarminDataFilter</scope><name>convert_time_columns</name></member>
+      <member refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1a7bb7be05577c2d31546e27823a5d11c5" prot="public" virt="non-virtual"><scope>pygce::analysis::models::GarminDataFilter</scope><name>dataset_file</name></member>
+      <member refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1a7220b9a58e6a9e4fe5dd679b7c8dd3ae" prot="public" virt="non-virtual"><scope>pygce::analysis::models::GarminDataFilter</scope><name>fix_floats</name></member>
+      <member refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1ae502093f9a92b498b42dd8b0257c22dd" prot="public" virt="non-virtual"><scope>pygce::analysis::models::GarminDataFilter</scope><name>parse_csv</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

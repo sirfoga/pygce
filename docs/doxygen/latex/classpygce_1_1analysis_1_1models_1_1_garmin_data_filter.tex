@@ -1,0 +1,129 @@
+\hypertarget{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter}{}\section{pygce.\+analysis.\+models.\+Garmin\+Data\+Filter Class Reference}
+\label{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter}\index{pygce.\+analysis.\+models.\+Garmin\+Data\+Filter@{pygce.\+analysis.\+models.\+Garmin\+Data\+Filter}}
+Inheritance diagram for pygce.\+analysis.\+models.\+Garmin\+Data\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_ae5dcf7d3dd4f98145960b2a751b163d2}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_a7bb7be05577c2d31546e27823a5d11c5}{dataset\+\_\+file})
+\item 
+def \hyperlink{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_ae502093f9a92b498b42dd8b0257c22dd}{parse\+\_\+csv} (self)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_aba928d8e942c743cf1553760cdb95ea1}{convert\+\_\+time\+\_\+columns} (headers, headers\+\_\+to\+\_\+convert, data)
+\item 
+def \hyperlink{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_a7220b9a58e6a9e4fe5dd679b7c8dd3ae}{fix\+\_\+floats} (headers, headers\+\_\+to\+\_\+fix, data)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_a7bb7be05577c2d31546e27823a5d11c5}{dataset\+\_\+file}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Parses and fixes raw data \end{DoxyVerb}
+ 
+
+Definition at line 29 of file models.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, dataset\+\_\+file)}{__init__(self, dataset_file)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Garmin\+Data\+Filter.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{dataset\+\_\+file}
+\end{DoxyParamCaption}
+)}\hypertarget{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_ae5dcf7d3dd4f98145960b2a751b163d2}{}\label{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_ae5dcf7d3dd4f98145960b2a751b163d2}
+\begin{DoxyVerb}:param dataset_file: str
+    Path to folder with data to analyse
+\end{DoxyVerb}
+ 
+
+Definition at line 32 of file models.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\index{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter}!convert\+\_\+time\+\_\+columns@{convert\+\_\+time\+\_\+columns}}
+\index{convert\+\_\+time\+\_\+columns@{convert\+\_\+time\+\_\+columns}!pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter}}
+\subsubsection[{\texorpdfstring{convert\+\_\+time\+\_\+columns(headers, headers\+\_\+to\+\_\+convert, data)}{convert_time_columns(headers, headers_to_convert, data)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Garmin\+Data\+Filter.\+convert\+\_\+time\+\_\+columns (
+\begin{DoxyParamCaption}
+\item[{}]{headers, }
+\item[{}]{headers\+\_\+to\+\_\+convert, }
+\item[{}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_aba928d8e942c743cf1553760cdb95ea1}{}\label{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_aba928d8e942c743cf1553760cdb95ea1}
+\begin{DoxyVerb}:param headers: [] of str
+    Column names of data
+:param headers_to_convert: [] of str
+    Column names of data to convert from time format to float
+:param data: [] of []
+    Raw data
+:return: [] of []
+    Input data but with converted time columns
+\end{DoxyVerb}
+ 
+
+Definition at line 51 of file models.\+py.
+
+\index{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter}!fix\+\_\+floats@{fix\+\_\+floats}}
+\index{fix\+\_\+floats@{fix\+\_\+floats}!pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter}}
+\subsubsection[{\texorpdfstring{fix\+\_\+floats(headers, headers\+\_\+to\+\_\+fix, data)}{fix_floats(headers, headers_to_fix, data)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Garmin\+Data\+Filter.\+fix\+\_\+floats (
+\begin{DoxyParamCaption}
+\item[{}]{headers, }
+\item[{}]{headers\+\_\+to\+\_\+fix, }
+\item[{}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_a7220b9a58e6a9e4fe5dd679b7c8dd3ae}{}\label{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_a7220b9a58e6a9e4fe5dd679b7c8dd3ae}
+\begin{DoxyVerb}:param headers: [] of str
+    Column names of data
+:param headers_to_fix: [] of str
+    Column names of data to fix the float format
+:param data: [] of []
+    Raw data
+:return: [] of []
+    Input data but with fixed floats in columns
+\end{DoxyVerb}
+ 
+
+Definition at line 71 of file models.\+py.
+
+\index{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter}!parse\+\_\+csv@{parse\+\_\+csv}}
+\index{parse\+\_\+csv@{parse\+\_\+csv}!pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter}}
+\subsubsection[{\texorpdfstring{parse\+\_\+csv(self)}{parse_csv(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Garmin\+Data\+Filter.\+parse\+\_\+csv (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_ae502093f9a92b498b42dd8b0257c22dd}{}\label{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_ae502093f9a92b498b42dd8b0257c22dd}
+\begin{DoxyVerb}:return: tuple [], [] of []
+    Headers of csv file and data
+\end{DoxyVerb}
+ 
+
+Definition at line 42 of file models.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\index{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter}!dataset\+\_\+file@{dataset\+\_\+file}}
+\index{dataset\+\_\+file@{dataset\+\_\+file}!pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter@{pygce\+::analysis\+::models\+::\+Garmin\+Data\+Filter}}
+\subsubsection[{\texorpdfstring{dataset\+\_\+file}{dataset_file}}]{\setlength{\rightskip}{0pt plus 5cm}pygce.\+analysis.\+models.\+Garmin\+Data\+Filter.\+dataset\+\_\+file}\hypertarget{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_a7bb7be05577c2d31546e27823a5d11c5}{}\label{classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_a7bb7be05577c2d31546e27823a5d11c5}
+
+
+Definition at line 40 of file models.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/stefano/\+Coding/\+Python/projects/garmin-\/connect-\/export/pygce/analysis/\hyperlink{models_8py}{models.\+py}\end{DoxyCompactItemize}

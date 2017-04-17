@@ -3,7 +3,7 @@ var searchData=
   ['garmin_5fconnect_5factivities_5furl',['GARMIN_CONNECT_ACTIVITIES_URL',['../namespacepygce_1_1models_1_1garmin_1_1utils.html#a147f822f3288cb74ff6012414e346e6f',1,'pygce::models::garmin::utils']]],
   ['garmin_5fconnect_5furl',['GARMIN_CONNECT_URL',['../namespacepygce_1_1models_1_1garmin_1_1utils.html#a68b54ed8a5dee0f2fdb43d107f19699f',1,'pygce::models::garmin::utils']]],
   ['garminconnectbot',['GarminConnectBot',['../classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html',1,'pygce::models::bot']]],
-  ['garmindatafilter',['GarminDataFilter',['../classpygce_1_1analysis_1_1_garmin_data_filter.html',1,'pygce::analysis']]],
+  ['garmindatafilter',['GarminDataFilter',['../classpygce_1_1analysis_1_1models_1_1_garmin_data_filter.html',1,'pygce::analysis::models']]],
   ['gcdayactivities',['GCDayActivities',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities.html',1,'pygce::models::garmin::timeline']]],
   ['gcdaybreakdown',['GCDayBreakdown',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown.html',1,'pygce::models::garmin::timeline']]],
   ['gcdaysection',['GCDaySection',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section.html',1,'pygce::models::garmin::timeline']]],
