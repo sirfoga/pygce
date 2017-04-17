@@ -5,6 +5,7 @@
 [![PyPI version](https://badge.fury.io/py/pygce.svg)](https://pypi.python.org/pypi/pygce) [![Code Health](https://landscape.io/github/sirfoga/pygce/master/landscape.svg?style=flat
 )](https://landscape.io/github/sirfoga/pygce/master)
 
+There is a [detailed blog post](https://sirfoga.github.io/2017/04/16/pygce) explaining all this fuss in a nice and easy way. Please, take a look.
 
 ## Install
 ```
