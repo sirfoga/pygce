@@ -12,6 +12,10 @@ All notable changes to this project will be documented in this file.
 - show correlation matrix
 - docs
 - gitignore with latex
+- analysis.cli
+
+### Refactored
+- analysis.models
 
 ## 0.0.9 - 2017-04-16
 

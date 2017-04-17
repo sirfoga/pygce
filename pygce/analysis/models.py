@@ -16,9 +16,6 @@
 # limitations under the License.
 
 
-import argparse
-import os
-
 import matplotlib.pyplot as plt
 from hal.files.models import Document
 from hal.ml.analysis import correlation
@@ -26,7 +23,7 @@ from hal.ml.data.parser import parse_csv_file
 from hal.ml.utils import matrix as m_utils
 from sklearn import linear_model
 
-from models.garmin import utils  # 'from models.garmin import utils' when testing local script
+from pygce.models.garmin import utils  # 'from models.garmin import utils' when testing local script
 
 
 class GarminDataFilter(object):
@@ -302,57 +299,3 @@ class ActivitiesDataAnalysis(StatsAnalysis):
 
         self.show_correlation_matrix("Garmin activities data " + Document(self.dataset_file).name.strip(),
                                      self.HEADERS_TO_ANALYZE)
-
-
-def create_args():
-    """
-    :return: ArgumentParser
-        Parser that handles cmd arguments.
-    """
-
-    parser = argparse.ArgumentParser(
-        usage="-f <path to folder with data files to analyse>")
-    parser.add_argument("-f", dest="folder_path", help="path to folder with data files to analyse", required=True)
-    return parser
-
-
-def parse_args(parser):
-    """
-    :param parser: ArgumentParser
-        Object that holds cmd arguments.
-    :return: tuple
-        Values of arguments.
-    """
-
-    args = parser.parse_args()
-
-    return str(args.folder_path)
-
-
-def check_args(folder_path):
-    """
-    :param folder_path: str
-        Path to folder with data files to analyse
-    """
-
-    assert os.path.exists(folder_path)
-
-    return True
-
-
-def main():
-    folder_path = parse_args(create_args())
-    if check_args(folder_path):
-        for f in os.listdir(folder_path):
-            file_path = os.path.join(folder_path, f)
-
-            if os.path.isfile(file_path) and str(file_path).endswith(".csv"):
-                gc = TimelineDataAnalysis(file_path)
-                gc.show_correlation_matrix_of_data()
-                # gc.predict_feature("SLEEP:deep_sleep_time")
-    else:
-        print("Error while parsing args.")
-
-
-if __name__ == '__main__':
-    main()
