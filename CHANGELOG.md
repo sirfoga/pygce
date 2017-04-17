@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 - docs
 - gitignore with latex
 - analysis.cli
+- updated to hal 4.4.3
 
 ### Refactored
 - analysis.models

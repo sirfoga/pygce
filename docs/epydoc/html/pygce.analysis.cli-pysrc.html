@@ -132,16 +132,17 @@ pygce.cli.check_args" class="py-name" href="#" onclick="return doclink('link-5',
 <a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"> </tt>
 <a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt><tt class="py-name">file_path</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">file_path</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">endswith</tt><tt class="py-op">(</tt><tt class="py-string">".csv"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
 <a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">                <tt class="py-name">gc</tt> <tt class="py-op">=</tt> <tt id="link-6" class="py-name"><a title="pygce.analysis.models.TimelineDataAnalysis" class="py-name" href="#" onclick="return doclink('link-6', 'TimelineDataAnalysis', 'link-1');">TimelineDataAnalysis</a></tt><tt class="py-op">(</tt><tt class="py-name">file_path</tt><tt class="py-op">)</tt> </tt>
-<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">                <tt class="py-name">gc</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method pygce.analysis.models.TimelineDataAnalysis.show_correlation_matrix_of_data()=pygce.analysis.models.TimelineDataAnalysis-class.html#show_correlation_matrix_of_data"><a title="pygce.analysis.models.TimelineDataAnalysis.show_correlation_matrix_of_data" class="py-name" href="#" onclick="return doclink('link-7', 'show_correlation_matrix_of_data', 'link-7');">show_correlation_matrix_of_data</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
-<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">                <tt class="py-comment"># gc.predict_feature("SLEEP:deep_sleep_time")</tt> </tt>
-<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
-<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Error while parsing args."</tt><tt class="py-op">)</tt> </tt>
-</div><a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"> </tt>
-<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"> </tt>
-<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">'__main__'</tt><tt class="py-op">:</tt> </tt>
-<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">    <tt id="link-8" class="py-name" targets="Function pygce.analysis.cli.main()=pygce.analysis.cli-module.html#main,Function pygce.cli.main()=pygce.cli-module.html#main"><a title="pygce.analysis.cli.main
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">                <tt class="py-name">gc</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method pygce.analysis.models.TimelineDataAnalysis.cluster_analyze()=pygce.analysis.models.TimelineDataAnalysis-class.html#cluster_analyze"><a title="pygce.analysis.models.TimelineDataAnalysis.cluster_analyze" class="py-name" href="#" onclick="return doclink('link-7', 'cluster_analyze', 'link-7');">cluster_analyze</a></tt><tt class="py-op">(</tt><tt class="py-name">n_clusters</tt><tt class="py-op">=</tt><tt class="py-number">4</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">                <tt class="py-comment"># gc.show_correlation_matrix_of_data()</tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">                <tt class="py-comment"># gc.predict_feature("SLEEP:deep_sleep_time")</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"Error while parsing args."</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line"> </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">'__main__'</tt><tt class="py-op">:</tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line">    <tt id="link-8" class="py-name" targets="Function pygce.analysis.cli.main()=pygce.analysis.cli-module.html#main,Function pygce.cli.main()=pygce.cli-module.html#main"><a title="pygce.analysis.cli.main
 pygce.cli.main" class="py-name" href="#" onclick="return doclink('link-8', 'main', 'link-8');">main</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
-<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line"> </tt><script type="text/javascript">
 <!--
 expandto(location.href);
 // -->
@@ -176,7 +177,7 @@ expandto(location.href);
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr 17 12:17:15 2017
+    Generated by Epydoc 3.0.1 on Mon Apr 17 15:53:06 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

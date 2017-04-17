@@ -128,8 +128,7 @@
     <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a1a02ca1184152091fc1f66306e1ac02c" kind="function"><name>parse_csv</name></member>
     <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1ac5f4540c89ea52ccbd5c28ce850bc1d3" kind="function"><name>show_correlation_matrix_of_data</name></member>
     <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1ab769c6f075333081a68712e0ecf8b094" kind="function"><name>predict_feature</name></member>
-    <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a7d55131ad1d82897d94b009e8d48ea26" kind="function"><name>cluster_analyze</name></member>
-    <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a20cb1d0d2f9d1ccb640d36c5ae112311" kind="function"><name>show_bar_chart</name></member>
+    <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a4bdbc9b67a365b2e0d5a76e7bd811ce5" kind="function"><name>cluster_analyze</name></member>
   </compound>
   <compound refid="namespacepygce" kind="namespace"><name>pygce</name>
   </compound>

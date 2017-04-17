@@ -56,7 +56,6 @@ pygce.analysis.models.StatsAnalysis.__init__	pygce.analysis.models.StatsAnalysis
 pygce.analysis.models.TimelineDataAnalysis	pygce.analysis.models.TimelineDataAnalysis-class.html
 pygce.analysis.models.GarminDataFilter.fix_floats	pygce.analysis.models.GarminDataFilter-class.html#fix_floats
 pygce.analysis.models.TimelineDataAnalysis.__init__	pygce.analysis.models.TimelineDataAnalysis-class.html#__init__
-pygce.analysis.models.TimelineDataAnalysis.show_bar_chart	pygce.analysis.models.TimelineDataAnalysis-class.html#show_bar_chart
 pygce.analysis.models.TimelineDataAnalysis.cluster_analyze	pygce.analysis.models.TimelineDataAnalysis-class.html#cluster_analyze
 pygce.analysis.models.TimelineDataAnalysis.HEADERS_TO_ANALYZE	pygce.analysis.models.TimelineDataAnalysis-class.html#HEADERS_TO_ANALYZE
 pygce.analysis.models.TimelineDataAnalysis.TIME_HEADERS_TO_CONVERT	pygce.analysis.models.TimelineDataAnalysis-class.html#TIME_HEADERS_TO_CONVERT

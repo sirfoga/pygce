@@ -17,12 +17,7 @@ def \hyperlink{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ac5f4
 \item 
 def \hyperlink{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ab769c6f075333081a68712e0ecf8b094}{predict\+\_\+feature} (self, feature)
 \item 
-def \hyperlink{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a7d55131ad1d82897d94b009e8d48ea26}{cluster\+\_\+analyze} (self)
-\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-def \hyperlink{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a20cb1d0d2f9d1ccb640d36c5ae112311}{show\+\_\+bar\+\_\+chart} (title, x\+\_\+labels, y\+\_\+values, y\+\_\+label)
+def \hyperlink{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a4bdbc9b67a365b2e0d5a76e7bd811ce5}{cluster\+\_\+analyze} (self, n\+\_\+clusters=6)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -38,7 +33,7 @@ list \hyperlink{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_afae
 \begin{DoxyVerb}Machine-learn timeline data \end{DoxyVerb}
  
 
-Definition at line 122 of file models.\+py.
+Definition at line 123 of file models.\+py.
 
 
 
@@ -56,26 +51,30 @@ Definition at line 122 of file models.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 154 of file models.\+py.
+Definition at line 155 of file models.\+py.
 
 
 
 \subsection{Member Function Documentation}
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!cluster\+\_\+analyze@{cluster\+\_\+analyze}}
 \index{cluster\+\_\+analyze@{cluster\+\_\+analyze}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
-\subsubsection[{\texorpdfstring{cluster\+\_\+analyze(self)}{cluster_analyze(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+cluster\+\_\+analyze (
+\subsubsection[{\texorpdfstring{cluster\+\_\+analyze(self, n\+\_\+clusters=6)}{cluster_analyze(self, n_clusters=6)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+cluster\+\_\+analyze (
 \begin{DoxyParamCaption}
-\item[{}]{self}
+\item[{}]{self, }
+\item[{}]{n\+\_\+clusters = {\ttfamily 6}}
 \end{DoxyParamCaption}
-)}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a7d55131ad1d82897d94b009e8d48ea26}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a7d55131ad1d82897d94b009e8d48ea26}
-\begin{DoxyVerb}:return: void
+)}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a4bdbc9b67a365b2e0d5a76e7bd811ce5}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a4bdbc9b67a365b2e0d5a76e7bd811ce5}
+\begin{DoxyVerb}:param n_clusters: int
+    Number of clusters
+:return: void
     Computes cluster analysis: see days based on differences.
     Each day is different from one another, there are days where you trained more, others where you ate more ...
     The goal is to divide your days into categories (e.g highly-active, active ...) based on data logs.
+    This way, the input matrix consists of multiple vectors with each one consisting of one day's values.
 \end{DoxyVerb}
  
 
-Definition at line 206 of file models.\+py.
+Definition at line 208 of file models.\+py.
 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!parse\+\_\+csv@{parse\+\_\+csv}}
 \index{parse\+\_\+csv@{parse\+\_\+csv}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
@@ -89,7 +88,7 @@ Definition at line 206 of file models.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 162 of file models.\+py.
+Definition at line 163 of file models.\+py.
 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!predict\+\_\+feature@{predict\+\_\+feature}}
 \index{predict\+\_\+feature@{predict\+\_\+feature}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
@@ -106,32 +105,7 @@ Definition at line 162 of file models.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 181 of file models.\+py.
-
-\index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!show\+\_\+bar\+\_\+chart@{show\+\_\+bar\+\_\+chart}}
-\index{show\+\_\+bar\+\_\+chart@{show\+\_\+bar\+\_\+chart}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
-\subsubsection[{\texorpdfstring{show\+\_\+bar\+\_\+chart(title, x\+\_\+labels, y\+\_\+values, y\+\_\+label)}{show_bar_chart(title, x_labels, y_values, y_label)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+show\+\_\+bar\+\_\+chart (
-\begin{DoxyParamCaption}
-\item[{}]{title, }
-\item[{}]{x\+\_\+labels, }
-\item[{}]{y\+\_\+values, }
-\item[{}]{y\+\_\+label}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a20cb1d0d2f9d1ccb640d36c5ae112311}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a20cb1d0d2f9d1ccb640d36c5ae112311}
-\begin{DoxyVerb}:param title: str
-    Title of chart
-:param x_labels: [] of str
-    Names for each variable
-:param y_values: [] of float
-    Values of x labels
-:param y_label: str
-    Label of y axis
-:return: void
-    Show bar chart
-\end{DoxyVerb}
- 
-
-Definition at line 217 of file models.\+py.
+Definition at line 182 of file models.\+py.
 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data@{show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data}}
 \index{show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data@{show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
@@ -145,7 +119,7 @@ Definition at line 217 of file models.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 172 of file models.\+py.
+Definition at line 173 of file models.\+py.
 
 
 
@@ -177,7 +151,7 @@ Definition at line 172 of file models.\+py.
 \end{DoxyCode}
 
 
-Definition at line 125 of file models.\+py.
+Definition at line 126 of file models.\+py.
 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT@{T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT}}
 \index{T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT@{T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
@@ -196,7 +170,7 @@ Definition at line 125 of file models.\+py.
 \end{DoxyCode}
 
 
-Definition at line 144 of file models.\+py.
+Definition at line 145 of file models.\+py.
 
 
 
