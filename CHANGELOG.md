@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - MLAnalysis superclass
 - select_k_best
+- cluster_3d_plot
 
 ## 0.1 - 2017-04-17
 
