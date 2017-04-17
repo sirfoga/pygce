@@ -102,27 +102,23 @@ class StatsAnalysis(GarminDataFilter):
 
         GarminDataFilter.__init__(self, dataset_file)
 
-    def save_correlation_matrix(self, title_image, headers_to_analyze):
+    def show_correlation_matrix(self, title_image, headers_to_analyze):
         """
         :param title_image: str
             Title of output image
         :param headers_to_analyze: [] of str
             Compute correlation matrix of only these headers
         :return: void
-            Saves correlation matrix of data of files in folder
+            Shows correlation matrix of data of files in folder
         """
 
-        print("Analysing file ", str(self.dataset_file))
-
-        file_name = Document(self.dataset_file).name.strip()
-        output_file_path = file_name + ".png"  # save output as image
+        print("Computing correlation matrix of file ", str(self.dataset_file))
         headers, data = self.parse_csv()  # parse raw data
-        correlation.save_correlation_matrix_of_columns(
+        correlation.show_correlation_matrix_of_columns(
             title_image,
             headers_to_analyze,  # headers to test
             headers,
-            data,
-            output_file_path
+            data
         )
 
 
@@ -176,13 +172,13 @@ class TimelineDataAnalysis(StatsAnalysis):
         data = self.convert_time_columns(headers, self.TIME_HEADERS_TO_CONVERT, data)
         return headers, data
 
-    def save_correlation_matrix_of_data(self):
+    def show_correlation_matrix_of_data(self):
         """
         :return: void
-            Saves correlation matrix of data of files in folder
+            Shows correlation matrix of data of files in folder
         """
 
-        self.save_correlation_matrix("Garmin timeline data " + Document(self.dataset_file).name.strip(),
+        self.show_correlation_matrix("Garmin timeline data " + Document(self.dataset_file).name.strip(),
                                      self.HEADERS_TO_ANALYZE)
 
     def predict_feature(self, feature):
@@ -194,26 +190,31 @@ class TimelineDataAnalysis(StatsAnalysis):
         """
 
         headers, raw_data = self.parse_csv()  # get columns names and raw data
-        model = linear_model.LinearRegression()  # model to fit data
+        clf = linear_model.LinearRegression()  # model to fit data
 
         print("Predicting \"", feature, "\"")
         x_matrix_features = self.HEADERS_TO_ANALYZE
         x_matrix_features.remove(feature)  # do NOT include feature to predict in input matrix
         x_data = m_utils.get_subset_of_matrix(x_matrix_features, headers, raw_data)  # input matrix
         y_data = m_utils.get_subset_of_matrix([feature], headers, raw_data)  # output matrix
+        clf.fit(x_data, y_data)
 
-        print("Fitting data ...")
-        model.fit(x_data, y_data)
-
-        coeffs = {}  # dict feature -> coefficient
+        coefficients = {}  # dict feature -> coefficient
         for i in range(len(x_matrix_features)):
-            coeffs[x_matrix_features[i]] = model.coef_[0][i]
+            coefficients[x_matrix_features[i]] = clf.coef_[0][i]
 
-        print("Coefficients:")
-        for k in coeffs.keys():
-            print(k, ":", coeffs[k])
+        self.show_bar_chart("Linear fit of " + feature, [k for k in coefficients.keys()], coefficients.values(),
+                            "Coefficient")
 
-        self.show_bar_chart("Linear fit of " + feature, [k for k in coeffs.keys()], coeffs.values(), "Coefficient")
+    def cluster_analyze(self):
+        """
+        :return: void
+            Computes cluster analysis: see days based on differences.
+            Each day is different from one another, there are days where you trained more, others where you ate more ...
+            The goal is to divide your days into categories (e.g highly-active, active ...) based on data logs.
+        """
+
+        pass
 
     @staticmethod
     def show_bar_chart(title, x_labels, y_values, y_label):
@@ -293,13 +294,13 @@ class ActivitiesDataAnalysis(StatsAnalysis):
         data = self.fix_floats(headers, self.HEADERS_WITH_MALFORMED_FLOATS, data)
         return headers, data
 
-    def save_correlation_matrix_of_data(self):
+    def shows_correlation_matrix_of_data(self):
         """
         :return: void
-            Saves correlation matrix of data of files in folder
+            Shows correlation matrix of data of files in folder
         """
 
-        self.save_correlation_matrix("Garmin activities data " + Document(self.dataset_file).name.strip(),
+        self.show_correlation_matrix("Garmin activities data " + Document(self.dataset_file).name.strip(),
                                      self.HEADERS_TO_ANALYZE)
 
 
@@ -344,9 +345,11 @@ def main():
     if check_args(folder_path):
         for f in os.listdir(folder_path):
             file_path = os.path.join(folder_path, f)
+
             if os.path.isfile(file_path) and str(file_path).endswith(".csv"):
                 gc = TimelineDataAnalysis(file_path)
-                gc.predict_feature("SLEEP:deep_sleep_time")
+                gc.show_correlation_matrix_of_data()
+                # gc.predict_feature("SLEEP:deep_sleep_time")
     else:
         print("Error while parsing args.")
 

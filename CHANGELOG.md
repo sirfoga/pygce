@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 - GCDaySection.parse_json, GCDaySection.parse_csv
 - test suite
 
+## 0.1 - 2017-04-17
+
+### Added
+- cluster analyze
+- show correlation matrix
+
 ## 0.0.9 - 2017-04-16
 
 ### Added
