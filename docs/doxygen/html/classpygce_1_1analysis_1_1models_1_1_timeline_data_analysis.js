@@ -1,6 +1,7 @@
 var classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis =
 [
     [ "__init__", "classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html#a7fccb7531cafe3b618ad7026db2d3b53", null ],
+    [ "cluster_3d_plot", "classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html#a981ac0211fd075b7fae599a09f385314", null ],
     [ "cluster_analyze", "classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html#a4bdbc9b67a365b2e0d5a76e7bd811ce5", null ],
     [ "parse_csv", "classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html#a1a02ca1184152091fc1f66306e1ac02c", null ],
     [ "predict_feature", "classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html#ab769c6f075333081a68712e0ecf8b094", null ],

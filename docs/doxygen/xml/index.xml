@@ -132,6 +132,7 @@
     <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1ac5f4540c89ea52ccbd5c28ce850bc1d3" kind="function"><name>show_correlation_matrix_of_data</name></member>
     <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1ab769c6f075333081a68712e0ecf8b094" kind="function"><name>predict_feature</name></member>
     <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a4bdbc9b67a365b2e0d5a76e7bd811ce5" kind="function"><name>cluster_analyze</name></member>
+    <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a981ac0211fd075b7fae599a09f385314" kind="function"><name>cluster_3d_plot</name></member>
     <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a2f8938bff9d88b45dbdc7342b84d1bc6" kind="function"><name>select_k_best</name></member>
   </compound>
   <compound refid="namespacepygce" kind="namespace"><name>pygce</name>

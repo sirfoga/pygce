@@ -51,6 +51,8 @@ setup(
     },
     install_requires=[
         "bs4",
-        "lxml"
+        "lxml",
+        "numpy",
+        "sklearn"
     ]
 )

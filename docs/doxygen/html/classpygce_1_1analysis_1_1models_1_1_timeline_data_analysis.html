@@ -138,6 +138,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab769c6f075333081a68712e0ecf8b094"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bdbc9b67a365b2e0d5a76e7bd811ce5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html#a4bdbc9b67a365b2e0d5a76e7bd811ce5">cluster_analyze</a> (self, n_clusters=6)</td></tr>
 <tr class="separator:a4bdbc9b67a365b2e0d5a76e7bd811ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981ac0211fd075b7fae599a09f385314"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html#a981ac0211fd075b7fae599a09f385314">cluster_3d_plot</a> (self, labels, n_clusters=6)</td></tr>
+<tr class="separator:a981ac0211fd075b7fae599a09f385314"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f8938bff9d88b45dbdc7342b84d1bc6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html#a2f8938bff9d88b45dbdc7342b84d1bc6">select_k_best</a> (self, feature, k=5)</td></tr>
 <tr class="separator:a2f8938bff9d88b45dbdc7342b84d1bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classpygce_1_1analysis_1_1models_1_1_stats_analysis"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classpygce_1_1analysis_1_1models_1_1_stats_analysis')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classpygce_1_1analysis_1_1models_1_1_stats_analysis.html">pygce.analysis.models.StatsAnalysis</a></td></tr>
@@ -171,7 +173,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Analyzes and provides insights into Garmin timeline data </pre> 
-<p>Definition at line <a class="el" href="models_8py_source.html#l00137">137</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
+<p>Definition at line <a class="el" href="models_8py_source.html#l00138">138</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7fccb7531cafe3b618ad7026db2d3b53"></a>
 <div class="memitem">
@@ -199,11 +201,51 @@ Additional Inherited Members</h2></td></tr>
 <pre class="fragment">:param dataset_file: str
     Path to folder with data to analyse
 </pre> 
-<p>Definition at line <a class="el" href="models_8py_source.html#l00168">168</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
+<p>Definition at line <a class="el" href="models_8py_source.html#l00169">169</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a981ac0211fd075b7fae599a09f385314"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def pygce.analysis.models.TimelineDataAnalysis.cluster_3d_plot </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>labels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n_clusters</em> = <code>6</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">:param labels: [] of str (len = 3)
+    Features to cluster data. Each item must be in the csv data file. Each label is one of x, y, z axis
+:param n_clusters: int
+    Number of clusters
+:return: void
+    Plots 3D chart with clusters based on selected features
+</pre> 
+<p>Definition at line <a class="el" href="models_8py_source.html#l00263">263</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a4bdbc9b67a365b2e0d5a76e7bd811ce5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -235,7 +277,7 @@ Additional Inherited Members</h2></td></tr>
     The goal is to divide your days into categories (e.g highly-active, active ...) based on data logs.
     This way, the input matrix consists of multiple vectors with each one consisting of one day's values.
 </pre> 
-<p>Definition at line <a class="el" href="models_8py_source.html#l00224">224</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
+<p>Definition at line <a class="el" href="models_8py_source.html#l00225">225</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
 
 </div>
 </div>
@@ -255,7 +297,7 @@ Additional Inherited Members</h2></td></tr>
 <pre class="fragment">:return: tuple [], [] of []
     Headers of csv file and data
 </pre> 
-<p>Definition at line <a class="el" href="models_8py_source.html#l00176">176</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
+<p>Definition at line <a class="el" href="models_8py_source.html#l00177">177</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
 
 </div>
 </div>
@@ -287,7 +329,7 @@ Additional Inherited Members</h2></td></tr>
 :return: void
     Predicts feature with linear regression
 </pre> 
-<p>Definition at line <a class="el" href="models_8py_source.html#l00195">195</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
+<p>Definition at line <a class="el" href="models_8py_source.html#l00196">196</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
 
 </div>
 </div>
@@ -327,7 +369,7 @@ Additional Inherited Members</h2></td></tr>
 :return: void
     Selects the best features to predict feature
 </pre> 
-<p>Definition at line <a class="el" href="models_8py_source.html#l00262">262</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
+<p>Definition at line <a class="el" href="models_8py_source.html#l00314">314</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
 
 </div>
 </div>
@@ -347,7 +389,7 @@ Additional Inherited Members</h2></td></tr>
 <pre class="fragment">:return: void
     Shows correlation matrix of data of files in folder
 </pre> 
-<p>Definition at line <a class="el" href="models_8py_source.html#l00186">186</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
+<p>Definition at line <a class="el" href="models_8py_source.html#l00187">187</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
 
 </div>
 </div>
@@ -370,7 +412,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= [</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;        <span class="stringliteral">&quot;SUMMARY:kcal_count&quot;</span>,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        <span class="stringliteral">&quot;STEPS:distance&quot;</span>,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        <span class="stringliteral">&quot;SLEEP:light_sleep_time&quot;</span>,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        <span class="stringliteral">&quot;BREAKDOWN:sleeping&quot;</span>,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <span class="stringliteral">&quot;BREAKDOWN:highly_active&quot;</span>,</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <span class="stringliteral">&quot;ACTIVITIES:kcal&quot;</span>,</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="stringliteral">&quot;BREAKDOWN:active&quot;</span>,</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="stringliteral">&quot;STEPS:total&quot;</span>,</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="stringliteral">&quot;STEPS:avg&quot;</span>,</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="stringliteral">&quot;BREAKDOWN:sedentary&quot;</span>,</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="stringliteral">&quot;SLEEP:awake_sleep_time&quot;</span>,</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="stringliteral">&quot;SLEEP:total_sleep_time&quot;</span>,</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="stringliteral">&quot;SLEEP:deep_sleep_time&quot;</span>,</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="stringliteral">&quot;ACTIVITIES:duration&quot;</span>,</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="stringliteral">&quot;ACTIVITIES:distance&quot;</span>,</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="stringliteral">&quot;STEPS:goal&quot;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ]</div></div><!-- fragment -->
-<p>Definition at line <a class="el" href="models_8py_source.html#l00140">140</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
+<p>Definition at line <a class="el" href="models_8py_source.html#l00141">141</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
 
 </div>
 </div>
@@ -392,7 +434,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= [</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;        <span class="stringliteral">&quot;SLEEP:nap_time&quot;</span>,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        <span class="stringliteral">&quot;SLEEP:light_sleep_time&quot;</span>,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        <span class="stringliteral">&quot;SLEEP:awake_sleep_time&quot;</span>,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        <span class="stringliteral">&quot;SLEEP:total_sleep_time&quot;</span>,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <span class="stringliteral">&quot;SLEEP:deep_sleep_time&quot;</span>,</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <span class="stringliteral">&quot;SLEEP:night_sleep_time&quot;</span>,</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="stringliteral">&quot;ACTIVITIES:duration&quot;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    ]</div></div><!-- fragment -->
-<p>Definition at line <a class="el" href="models_8py_source.html#l00158">158</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
+<p>Definition at line <a class="el" href="models_8py_source.html#l00159">159</a> of file <a class="el" href="models_8py_source.html">models.py</a>.</p>
 
 </div>
 </div>

@@ -297,7 +297,7 @@ class TimelineDataAnalysis(StatsAnalysis):
             [c["y"] for c in cluster_centers],  # y positions of centers of all clusters
             [c["z"] for c in cluster_centers],  # z positions of centers of all clusters
             marker='o',
-            s=400,
+            s=800,
             linewidth=5,
             color='w'
         )  # plot centroids
