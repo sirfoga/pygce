@@ -18,6 +18,8 @@ def \hyperlink{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ac5f4
 def \hyperlink{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ab769c6f075333081a68712e0ecf8b094}{predict\+\_\+feature} (self, feature)
 \item 
 def \hyperlink{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a4bdbc9b67a365b2e0d5a76e7bd811ce5}{cluster\+\_\+analyze} (self, n\+\_\+clusters=6)
+\item 
+def \hyperlink{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a2f8938bff9d88b45dbdc7342b84d1bc6}{select\+\_\+k\+\_\+best} (self, feature, k=5)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -30,10 +32,10 @@ list \hyperlink{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_afae
 
 
 \subsection{Detailed Description}
-\begin{DoxyVerb}Machine-learn timeline data \end{DoxyVerb}
+\begin{DoxyVerb}Analyzes and provides insights into Garmin timeline data \end{DoxyVerb}
  
 
-Definition at line 123 of file models.\+py.
+Definition at line 137 of file models.\+py.
 
 
 
@@ -51,7 +53,7 @@ Definition at line 123 of file models.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 155 of file models.\+py.
+Definition at line 168 of file models.\+py.
 
 
 
@@ -74,7 +76,7 @@ Definition at line 155 of file models.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 208 of file models.\+py.
+Definition at line 224 of file models.\+py.
 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!parse\+\_\+csv@{parse\+\_\+csv}}
 \index{parse\+\_\+csv@{parse\+\_\+csv}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
@@ -88,7 +90,7 @@ Definition at line 208 of file models.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 163 of file models.\+py.
+Definition at line 176 of file models.\+py.
 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!predict\+\_\+feature@{predict\+\_\+feature}}
 \index{predict\+\_\+feature@{predict\+\_\+feature}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
@@ -100,12 +102,32 @@ Definition at line 163 of file models.\+py.
 )}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ab769c6f075333081a68712e0ecf8b094}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ab769c6f075333081a68712e0ecf8b094}
 \begin{DoxyVerb}:param feature: str
     Name of feature (column name) to predict
-:return: TODO
-    TODO
+:return: void
+    Predicts feature with linear regression
 \end{DoxyVerb}
  
 
-Definition at line 182 of file models.\+py.
+Definition at line 195 of file models.\+py.
+
+\index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!select\+\_\+k\+\_\+best@{select\+\_\+k\+\_\+best}}
+\index{select\+\_\+k\+\_\+best@{select\+\_\+k\+\_\+best}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
+\subsubsection[{\texorpdfstring{select\+\_\+k\+\_\+best(self, feature, k=5)}{select_k_best(self, feature, k=5)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+select\+\_\+k\+\_\+best (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{feature, }
+\item[{}]{k = {\ttfamily 5}}
+\end{DoxyParamCaption}
+)}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a2f8938bff9d88b45dbdc7342b84d1bc6}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a2f8938bff9d88b45dbdc7342b84d1bc6}
+\begin{DoxyVerb}:param feature: str
+    Name of feature (column name) to predict
+:param k: int
+    Number of features to select
+:return: void
+    Selects the best features to predict feature
+\end{DoxyVerb}
+ 
+
+Definition at line 262 of file models.\+py.
 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data@{show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data}}
 \index{show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data@{show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
@@ -119,7 +141,7 @@ Definition at line 182 of file models.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 173 of file models.\+py.
+Definition at line 186 of file models.\+py.
 
 
 
@@ -145,13 +167,12 @@ Definition at line 173 of file models.\+py.
 14         \textcolor{stringliteral}{"SLEEP:deep\_sleep\_time"},
 15         \textcolor{stringliteral}{"ACTIVITIES:duration"},
 16         \textcolor{stringliteral}{"ACTIVITIES:distance"},
-17         \textcolor{stringliteral}{"STEPS:goal"},
-18         \textcolor{stringliteral}{"SLEEP:night\_sleep\_time"}
-19     ]
+17         \textcolor{stringliteral}{"STEPS:goal"}
+18     ]
 \end{DoxyCode}
 
 
-Definition at line 126 of file models.\+py.
+Definition at line 140 of file models.\+py.
 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT@{T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT}}
 \index{T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT@{T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
@@ -170,7 +191,7 @@ Definition at line 126 of file models.\+py.
 \end{DoxyCode}
 
 
-Definition at line 145 of file models.\+py.
+Definition at line 158 of file models.\+py.
 
 
 

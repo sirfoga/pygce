@@ -232,36 +232,36 @@
 Common features are total, deep total, light total, awake total
 </verbatim> </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="40">
+      <node id="41">
         <label>pygce.models.garmin.timeline.GCDaySleep</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_sleep"/>
-        <childnode refid="41" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="41">
-        <label>pygce.models.garmin.timeline.GCDaySection</label>
-        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
         <childnode refid="42" relation="public-inheritance">
         </childnode>
       </node>
       <node id="42">
+        <label>pygce.models.garmin.timeline.GCDaySection</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
         <label>object</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="43">
+      <node id="44">
         <label>pygce.models.garmin.timeline.GCDaySleep</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_sleep"/>
-        <childnode refid="44" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="44">
-        <label>pygce.models.garmin.timeline.GCDaySection</label>
-        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
         <childnode refid="45" relation="public-inheritance">
         </childnode>
       </node>
       <node id="45">
+        <label>pygce.models.garmin.timeline.GCDaySection</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
         <label>object</label>
       </node>
     </collaborationgraph>

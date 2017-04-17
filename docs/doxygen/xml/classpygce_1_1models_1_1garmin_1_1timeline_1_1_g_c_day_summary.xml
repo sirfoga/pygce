@@ -167,36 +167,36 @@
 Common features are likes, comment, kcal
 </verbatim> </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="53">
+      <node id="54">
         <label>pygce.models.garmin.timeline.GCDaySection</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
-        <childnode refid="54" relation="public-inheritance">
+        <childnode refid="55" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="54">
+      <node id="55">
         <label>object</label>
       </node>
-      <node id="52">
+      <node id="53">
         <label>pygce.models.garmin.timeline.GCDaySummary</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary"/>
-        <childnode refid="53" relation="public-inheritance">
+        <childnode refid="54" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="56">
+      <node id="57">
         <label>pygce.models.garmin.timeline.GCDaySection</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
-        <childnode refid="57" relation="public-inheritance">
+        <childnode refid="58" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="57">
+      <node id="58">
         <label>object</label>
       </node>
-      <node id="55">
+      <node id="56">
         <label>pygce.models.garmin.timeline.GCDaySummary</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary"/>
-        <childnode refid="56" relation="public-inheritance">
+        <childnode refid="57" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

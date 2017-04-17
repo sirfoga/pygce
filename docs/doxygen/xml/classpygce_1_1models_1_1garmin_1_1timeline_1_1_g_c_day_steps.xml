@@ -161,36 +161,36 @@
 Common features are total, goal, distance, avg daily
 </verbatim> </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="46">
+      <node id="47">
         <label>pygce.models.garmin.timeline.GCDaySteps</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_steps"/>
-        <childnode refid="47" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="47">
-        <label>pygce.models.garmin.timeline.GCDaySection</label>
-        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
         <childnode refid="48" relation="public-inheritance">
         </childnode>
       </node>
       <node id="48">
+        <label>pygce.models.garmin.timeline.GCDaySection</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="49">
         <label>object</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="49">
+      <node id="50">
         <label>pygce.models.garmin.timeline.GCDaySteps</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_steps"/>
-        <childnode refid="50" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="50">
-        <label>pygce.models.garmin.timeline.GCDaySection</label>
-        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
         <childnode refid="51" relation="public-inheritance">
         </childnode>
       </node>
       <node id="51">
+        <label>pygce.models.garmin.timeline.GCDaySection</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="52">
         <label>object</label>
       </node>
     </collaborationgraph>

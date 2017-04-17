@@ -17,12 +17,13 @@
 
 
 import matplotlib.pyplot as plt
+import numpy as np
 from hal.charts.bar import create_symlog_bar_chart, create_multiple_bar_chart
 from hal.files.models import Document
 from hal.ml.analysis import correlation
 from hal.ml.data.parser import parse_csv_file
 from hal.ml.utils import matrix as m_utils
-from sklearn import linear_model, cluster
+from sklearn import linear_model, cluster, feature_selection
 
 from pygce.models.garmin import utils
 
@@ -120,8 +121,20 @@ class StatsAnalysis(GarminDataFilter):
         )
 
 
+class MLAnalysis(GarminDataFilter):
+    """ Carries out popular machine-learning tasks on Garmin data """
+
+    def __init__(self, dataset_file):
+        """
+        :param dataset_file: str
+            Path to folder with data to analyse
+        """
+
+        GarminDataFilter.__init__(self, dataset_file)
+
+
 class TimelineDataAnalysis(StatsAnalysis):
-    """ Machine-learn timeline data """
+    """ Analyzes and provides insights into Garmin timeline data """
 
     HEADERS_TO_ANALYZE = [
         "SUMMARY:kcal_count",
@@ -139,8 +152,7 @@ class TimelineDataAnalysis(StatsAnalysis):
         "SLEEP:deep_sleep_time",
         "ACTIVITIES:duration",
         "ACTIVITIES:distance",
-        "STEPS:goal",
-        "SLEEP:night_sleep_time"
+        "STEPS:goal"
     ]  # get correlation analysis only for these columns
     TIME_HEADERS_TO_CONVERT = [
         "SLEEP:nap_time",
@@ -183,15 +195,14 @@ class TimelineDataAnalysis(StatsAnalysis):
         """
         :param feature: str
             Name of feature (column name) to predict
-        :return: TODO
-            TODO
+        :return: void
+            Predicts feature with linear regression
         """
 
+        print("Predicting ", feature, "with data from file", self.dataset_file)
         headers, raw_data = self.parse_csv()  # get columns names and raw data
         clf = linear_model.LinearRegression()  # model to fit data
-
-        print("Predicting \"", feature, "\"")
-        x_matrix_features = self.HEADERS_TO_ANALYZE
+        x_matrix_features = self.HEADERS_TO_ANALYZE.copy()
         x_matrix_features.remove(feature)  # do NOT include feature to predict in input matrix
         x_data = m_utils.get_subset_of_matrix(x_matrix_features, headers, raw_data)  # input matrix
         y_data = m_utils.get_subset_of_matrix([feature], headers, raw_data)  # output matrix
@@ -201,9 +212,12 @@ class TimelineDataAnalysis(StatsAnalysis):
         for i in range(len(x_matrix_features)):
             coefficients[x_matrix_features[i]] = clf.coef_[0][i]
 
-        chart = create_symlog_bar_chart("Linear fit of " + feature, [k for k in coefficients.keys()],
-                                        coefficients.values(),
-                              "Coefficient")
+        chart = create_symlog_bar_chart(
+            "Linear fit of " + feature,
+            [k for k in coefficients.keys()],
+            coefficients.values(),
+            "Coefficient"
+        )
         plt.show()
 
     def cluster_analyze(self, n_clusters=6):
@@ -218,7 +232,6 @@ class TimelineDataAnalysis(StatsAnalysis):
         """
 
         print("Clustering file", self.dataset_file)
-
         headers, raw_data = self.parse_csv()  # get columns names and raw data
         x_data = m_utils.get_subset_of_matrix(self.HEADERS_TO_ANALYZE, headers, raw_data)  # input matrix
         kmeans = cluster.KMeans(n_clusters=n_clusters, random_state=0).fit(x_data)
@@ -237,12 +250,44 @@ class TimelineDataAnalysis(StatsAnalysis):
         vals_headers.append(kmeans.labels_)
         days = [str(row[headers.index("date")]) for row in raw_data]  # get list of days (x values)
 
-        chart = create_multiple_bar_chart("Days", days, vals_headers, headers_to_plot)  # create chart
+        chart = create_multiple_bar_chart(
+            "Days",
+            days,
+            vals_headers,
+            headers_to_plot
+        )  # create chart
         plt.show()  # show bar chart
+
+    def select_k_best(self, feature, k=5):
+        """
+        :param feature: str
+            Name of feature (column name) to predict
+        :param k: int
+            Number of features to select
+        :return: void
+            Selects the best features to predict feature
+        """
+
+        print("Selecting k best features of data file", self.dataset_file)
+        headers, raw_data = self.parse_csv()  # get columns names and raw data
+        sel = feature_selection.SelectKBest(feature_selection.f_regression, k=k)  # model to select data
+        x_matrix_features = self.HEADERS_TO_ANALYZE.copy()  # not edit main list of headers
+        x_matrix_features.remove(feature)  # do NOT include feature to predict in input matrix
+        x_data = m_utils.get_subset_of_matrix(x_matrix_features, headers, raw_data)  # input matrix
+        y_data = m_utils.get_subset_of_matrix([feature], headers, raw_data)  # output matrix
+        sel.fit(x_data, y_data)  # fit
+
+        top_k_features_indices = np.array(sel.scores_).argsort()[-k:][::-1]  # indices of top k features
+        top_k_features = [x_matrix_features[i] for i in top_k_features_indices]  # names of top k features
+        top_k_features_scores = [sel.scores_[i] for i in top_k_features_indices]  # scores of top k features
+
+        chart = create_symlog_bar_chart("Most " + str(k) + " correlated features with " + feature, top_k_features,
+                                        top_k_features_scores, "score")
+        plt.show()
 
 
 class ActivitiesDataAnalysis(StatsAnalysis):
-    """ Machine-learn activities data """
+    """ Analyzes and provides insights into Garmin activities data """
 
     HEADERS_TO_ANALYZE = [
         "Distance",

@@ -195,24 +195,24 @@ Each standard day consists of different sections:
 - breakdown (highly active %, active %, sedentary %, sleep %)
 </verbatim> </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="58">
+      <node id="59">
         <label>pygce.models.garmin.timeline.GCDayTimeline</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline"/>
-        <childnode refid="59" relation="public-inheritance">
+        <childnode refid="60" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="59">
+      <node id="60">
         <label>object</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="60">
+      <node id="61">
         <label>pygce.models.garmin.timeline.GCDayTimeline</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline"/>
-        <childnode refid="61" relation="public-inheritance">
+        <childnode refid="62" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="61">
+      <node id="62">
         <label>object</label>
       </node>
     </collaborationgraph>

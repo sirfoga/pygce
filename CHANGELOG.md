@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 - GCDaySection.parse_json, GCDaySection.parse_csv
 - test suite
 
+## 0.1.1 - 2017-04-17
+
+### Added
+- MLAnalysis superclass
+- select_k_best
+
 ## 0.1 - 2017-04-17
 
 ### Added

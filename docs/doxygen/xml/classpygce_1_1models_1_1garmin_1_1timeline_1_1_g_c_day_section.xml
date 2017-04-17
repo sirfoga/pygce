@@ -163,54 +163,54 @@
 <para><verbatim>Standard section in the Garmin Connect timeline of day.
 </verbatim> </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="34">
+      <node id="35">
         <label>pygce.models.garmin.timeline.GCDayBreakdown</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown"/>
-        <childnode refid="31" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="35">
-        <label>pygce.models.garmin.timeline.GCDaySleep</label>
-        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_sleep"/>
-        <childnode refid="31" relation="public-inheritance">
+        <childnode refid="32" relation="public-inheritance">
         </childnode>
       </node>
       <node id="36">
+        <label>pygce.models.garmin.timeline.GCDaySleep</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_sleep"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="37">
         <label>pygce.models.garmin.timeline.GCDaySteps</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_steps"/>
-        <childnode refid="31" relation="public-inheritance">
+        <childnode refid="32" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="33">
+      <node id="34">
         <label>pygce.models.garmin.timeline.GCDayActivities</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities"/>
-        <childnode refid="31" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="31">
-        <label>pygce.models.garmin.timeline.GCDaySection</label>
-        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
         <childnode refid="32" relation="public-inheritance">
         </childnode>
       </node>
       <node id="32">
+        <label>pygce.models.garmin.timeline.GCDaySection</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="33">
         <label>object</label>
       </node>
-      <node id="37">
+      <node id="38">
         <label>pygce.models.garmin.timeline.GCDaySummary</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary"/>
-        <childnode refid="31" relation="public-inheritance">
+        <childnode refid="32" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="38">
+      <node id="39">
         <label>pygce.models.garmin.timeline.GCDaySection</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
-        <childnode refid="39" relation="public-inheritance">
+        <childnode refid="40" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="39">
+      <node id="40">
         <label>object</label>
       </node>
     </collaborationgraph>

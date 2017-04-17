@@ -76,15 +76,16 @@
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>os.path.isfile(file_path)<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>str(file_path).endswith(</highlight><highlight class="stringliteral">&quot;.csv&quot;</highlight><highlight class="normal">):</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gc<sp/>=<sp/>TimelineDataAnalysis(file_path)</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gc.cluster_analyze(n_clusters=4)</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>gc.show_correlation_matrix_of_data()</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>gc.predict_feature(&quot;SLEEP:deep_sleep_time&quot;)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Error<sp/>while<sp/>parsing<sp/>args.&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>gc.show_correlation_matrix_of_data()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>gc.predict_feature(&quot;SLEEP:deep_sleep_time&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>gc.cluster_analyze(n_clusters=4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gc.select_k_best(</highlight><highlight class="stringliteral">&quot;SLEEP:deep_sleep_time&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Error<sp/>while<sp/>parsing<sp/>args.&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;__main__&apos;</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacepygce_1_1analysis_1_1cli_1a172ae5d6f63e3600d4b184c6e23cd375" kindref="member">main</ref>()</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;__main__&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacepygce_1_1analysis_1_1cli_1a172ae5d6f63e3600d4b184c6e23cd375" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
     <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/cli.py"/>
   </compounddef>

@@ -65,7 +65,7 @@
 </center>
 <hr />
 <pre class="literalblock">
-Machine-learn timeline data 
+Analyzes and provides insights into Garmin timeline data 
 
 </pre>
 
@@ -177,6 +177,25 @@ Machine-learn timeline data
       
     </td>
   </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pygce.analysis.models.TimelineDataAnalysis-class.html#select_k_best" class="summary-sig-name">select_k_best</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">feature</span>,
+        <span class="summary-sig-arg">k</span>=<span class="summary-sig-default">5</span>)</span><br />
+      :param feature: str...</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pygce.analysis.models-pysrc.html#TimelineDataAnalysis.select_k_best">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
   <tr>
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pygce.analysis.models.StatsAnalysis-class.html">StatsAnalysis</a></code></b>:
@@ -250,8 +269,7 @@ Machine-learn timeline data
 EAKDOWN:sleeping&quot;, &quot;BREAKDOWN:highly_active&quot;, &quot;ACTIVITIES:kcal&quot;, &quot;BREA\
 KDOWN:active&quot;, &quot;STEPS:total&quot;, &quot;STEPS:avg&quot;, &quot;BREAKDOWN:sedentary&quot;, &quot;SLE\
 EP:awake_sleep_time&quot;, &quot;SLEEP:total_sleep_time&quot;, &quot;SLEEP:deep_sleep_time\
-&quot;, &quot;ACTIVITIES:duration&quot;, &quot;ACTIVITIES:distance&quot;, &quot;STEPS:goal&quot;, &quot;SLEEP:\
-night_sleep_time&quot;]">[&quot;SUMMARY:kcal_count&quot;, &quot;STEPS:distance&quot;, <code class="variable-ellipsis">...</code></code>
+&quot;, &quot;ACTIVITIES:duration&quot;, &quot;ACTIVITIES:distance&quot;, &quot;STEPS:goal&quot;]">[&quot;SUMMARY:kcal_count&quot;, &quot;STEPS:distance&quot;, <code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
@@ -406,8 +424,8 @@ _time&quot;, &quot;ACTIVITIES:duration&quot;]">[&quot;SLEEP:nap_time&quot;, &quo
 
 :param feature: str
     Name of feature (column name) to predict
-:return: TODO
-    TODO
+:return: void
+    Predicts feature with linear regression
 
 </pre>
   <dl class="fields">
@@ -438,6 +456,36 @@ _time&quot;, &quot;ACTIVITIES:duration&quot;]">[&quot;SLEEP:nap_time&quot;, &quo
     Each day is different from one another, there are days where you trained more, others where you ate more ...
     The goal is to divide your days into categories (e.g highly-active, active ...) based on data logs.
     This way, the input matrix consists of multiple vectors with each one consisting of one day's values.
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="select_k_best"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">select_k_best</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">feature</span>,
+        <span class="sig-arg">k</span>=<span class="sig-default">5</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pygce.analysis.models-pysrc.html#TimelineDataAnalysis.select_k_best">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+:param feature: str
+    Name of feature (column name) to predict
+:param k: int
+    Number of features to select
+:return: void
+    Selects the best features to predict feature
 
 </pre>
   <dl class="fields">
@@ -479,8 +527,7 @@ _time&quot;, &quot;ACTIVITIES:duration&quot;]">[&quot;SLEEP:nap_time&quot;, &quo
 EAKDOWN:sleeping&quot;, &quot;BREAKDOWN:highly_active&quot;, &quot;ACTIVITIES:kcal&quot;, &quot;BREA<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 KDOWN:active&quot;, &quot;STEPS:total&quot;, &quot;STEPS:avg&quot;, &quot;BREAKDOWN:sedentary&quot;, &quot;SLE<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 EP:awake_sleep_time&quot;, &quot;SLEEP:total_sleep_time&quot;, &quot;SLEEP:deep_sleep_time<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-&quot;, &quot;ACTIVITIES:duration&quot;, &quot;ACTIVITIES:distance&quot;, &quot;STEPS:goal&quot;, &quot;SLEEP:<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-night_sleep_time&quot;]
+&quot;, &quot;ACTIVITIES:duration&quot;, &quot;ACTIVITIES:distance&quot;, &quot;STEPS:goal&quot;]
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -535,7 +582,7 @@ _time&quot;, &quot;ACTIVITIES:duration&quot;]
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Mon Apr 17 15:53:06 2017
+    Generated by Epydoc 3.0.1 on Mon Apr 17 17:14:00 2017
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

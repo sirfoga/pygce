@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "object", null, [
       [ "pygce.analysis.models.GarminDataFilter", "classpygce_1_1analysis_1_1models_1_1_garmin_data_filter.html", [
+        [ "pygce.analysis.models.MLAnalysis", "classpygce_1_1analysis_1_1models_1_1_m_l_analysis.html", null ],
         [ "pygce.analysis.models.StatsAnalysis", "classpygce_1_1analysis_1_1models_1_1_stats_analysis.html", [
           [ "pygce.analysis.models.ActivitiesDataAnalysis", "classpygce_1_1analysis_1_1models_1_1_activities_data_analysis.html", null ],
           [ "pygce.analysis.models.TimelineDataAnalysis", "classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html", null ]

@@ -219,36 +219,36 @@
 Common features are kcal, time, distance, type, name, link
 </verbatim> </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="19">
+      <node id="20">
         <label>pygce.models.garmin.timeline.GCDayActivities</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities"/>
-        <childnode refid="20" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>pygce.models.garmin.timeline.GCDaySection</label>
-        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
         <childnode refid="21" relation="public-inheritance">
         </childnode>
       </node>
       <node id="21">
+        <label>pygce.models.garmin.timeline.GCDaySection</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
         <label>object</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="22">
+      <node id="23">
         <label>pygce.models.garmin.timeline.GCDayActivities</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities"/>
-        <childnode refid="23" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="23">
-        <label>pygce.models.garmin.timeline.GCDaySection</label>
-        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
         <childnode refid="24" relation="public-inheritance">
         </childnode>
       </node>
       <node id="24">
+        <label>pygce.models.garmin.timeline.GCDaySection</label>
+        <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
         <label>object</label>
       </node>
     </collaborationgraph>

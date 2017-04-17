@@ -66,9 +66,10 @@ def main():
 
             if os.path.isfile(file_path) and str(file_path).endswith(".csv"):
                 gc = TimelineDataAnalysis(file_path)
-                gc.cluster_analyze(n_clusters=4)
                 # gc.show_correlation_matrix_of_data()
                 # gc.predict_feature("SLEEP:deep_sleep_time")
+                # gc.cluster_analyze(n_clusters=4)
+                gc.select_k_best("SLEEP:deep_sleep_time")
     else:
         print("Error while parsing args.")
 

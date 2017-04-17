@@ -5,6 +5,7 @@ var dir_10899d196ec9ee259211439645d3c235 =
     [ "models.py", "models_8py.html", [
       [ "GarminDataFilter", "classpygce_1_1analysis_1_1models_1_1_garmin_data_filter.html", "classpygce_1_1analysis_1_1models_1_1_garmin_data_filter" ],
       [ "StatsAnalysis", "classpygce_1_1analysis_1_1models_1_1_stats_analysis.html", "classpygce_1_1analysis_1_1models_1_1_stats_analysis" ],
+      [ "MLAnalysis", "classpygce_1_1analysis_1_1models_1_1_m_l_analysis.html", "classpygce_1_1analysis_1_1models_1_1_m_l_analysis" ],
       [ "TimelineDataAnalysis", "classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html", "classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis" ],
       [ "ActivitiesDataAnalysis", "classpygce_1_1analysis_1_1models_1_1_activities_data_analysis.html", "classpygce_1_1analysis_1_1models_1_1_activities_data_analysis" ]
     ] ]
