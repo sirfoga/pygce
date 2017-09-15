@@ -4,12 +4,14 @@ All notable changes to this project will be documented in this file.
 # TODO
 - GCDaySection.parse_json, GCDaySection.parse_csv
 - test suite
+- better error handling
 
 ## 0.1.2 - 2017-09-15
 
 ### Fixed
 - pyhal dependencies
 - readme installation note
+- error handling in timeline parser
 
 ## 0.1.2 - 2017-04-17
 

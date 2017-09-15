@@ -240,13 +240,17 @@ class GCDaySleep(GCDaySection):
             Finds value of night/nap/total sleep times
         """
 
-        container = self.soup.find_all("div", {"class": "equation centered"})[0]
-        times = container.find_all("div", {"class": "data-bit"})
-        times = [str(t.text).strip() for t in times]  # strip texts
+        try:
+            container = \
+            self.soup.find_all("div", {"class": "equation centered"})[0]
+            times = container.find_all("div", {"class": "data-bit"})
+            times = [str(t.text).strip() for t in times]  # strip texts
 
-        self.night_sleep_time = utils.parse_hh_mm(times[0])
-        self.nap_time = utils.parse_hh_mm(times[1])
-        self.total_sleep_time = utils.parse_hh_mm(times[2].split(" ")[0])
+            self.night_sleep_time = utils.parse_hh_mm(times[0])
+            self.nap_time = utils.parse_hh_mm(times[1])
+            self.total_sleep_time = utils.parse_hh_mm(times[2].split(" ")[0])
+        except:
+            print("Error parsing sleep totals")
 
     def parse_bed_time(self):
         """
@@ -254,11 +258,17 @@ class GCDaySleep(GCDaySection):
             Finds hour start/end sleep
         """
 
-        times = self.soup.find_all("div", {"class": "time-inline-edit-placeholder"})
-        times = [str(t.text).strip() for t in times]  # strip texts
-
-        self.bed_time = datetime.strptime(times[0], "%I:%M %p").time()  # account for AM/PM
-        self.wake_time = datetime.strptime(times[1], "%I:%M %p").time()  # account for AM/PM
+        try:
+            times = self.soup.find_all(
+                "div", {"class": "time-inline-edit-placeholder"}
+            )
+            times = [str(t.text).strip() for t in times]  # strip texts
+            self.bed_time = datetime.strptime(
+                times[0], "%I:%M %p").time()  # account for AM/PM
+            self.wake_time = datetime.strptime(
+                times[1], "%I:%M %p").time()  # account for AM/PM
+        except:
+            print("Error parsing bed time")
 
     def parse_sleep_times(self):
         """
@@ -266,17 +276,26 @@ class GCDaySleep(GCDaySection):
             Finds deep/light/awake sleep times
         """
 
-        container = self.soup.find_all("div", {
-            "class": "span4 text-center sleep-chart-secondary deep-sleep-circle-chart-placeholder"})[0]
-        self.deep_sleep_time = utils.parse_hh_mm(container.find_all("span")[0].text.split("hrs")[0])
+        try:
+            container = self.soup.find_all("div", {
+                "class": "span4 text-center sleep-chart-secondary deep-sleep-circle-chart-placeholder"})[
+                0]
+            self.deep_sleep_time = utils.parse_hh_mm(
+                container.find_all("span")[0].text.split("hrs")[0])
 
-        container = self.soup.find_all("div", {
-            "class": "span4 text-center sleep-chart-secondary light-sleep-circle-chart-placeholder"})[0]
-        self.light_sleep_time = utils.parse_hh_mm(container.find_all("span")[0].text.split("hrs")[0])
+            container = self.soup.find_all("div", {
+                "class": "span4 text-center sleep-chart-secondary light-sleep-circle-chart-placeholder"})[
+                0]
+            self.light_sleep_time = utils.parse_hh_mm(
+                container.find_all("span")[0].text.split("hrs")[0])
 
-        container = self.soup.find_all("div", {
-            "class": "span4 text-center sleep-chart-secondary awake-circle-chart-placeholder"})[0]
-        self.awake_sleep_time = utils.parse_hh_mm(container.find_all("span")[0].text.split("hrs")[0])
+            container = self.soup.find_all("div", {
+                "class": "span4 text-center sleep-chart-secondary awake-circle-chart-placeholder"})[
+                0]
+            self.awake_sleep_time = utils.parse_hh_mm(
+                container.find_all("span")[0].text.split("hrs")[0])
+        except:
+            print("Error parsing sleep times")
 
     def to_dict(self):
         return {
