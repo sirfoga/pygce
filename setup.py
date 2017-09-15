@@ -51,6 +51,7 @@ setup(
     },
     install_requires=[
         "bs4",
+        "pyhal",
         "lxml",
         "numpy",
         "sklearn"

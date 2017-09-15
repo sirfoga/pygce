@@ -1,17 +1,25 @@
 # PyGCE
 
-*A tool to export, save, and analyze your Garmin Connect data*
+*Export, save, and analyze your Garmin Connect data*
 
-[![PyPI version](https://badge.fury.io/py/pygce.svg)](https://pypi.python.org/pypi/pygce) [![Code Health](https://landscape.io/github/sirfoga/pygce/master/landscape.svg?style=flat
-)](https://landscape.io/github/sirfoga/pygce/master)
+[![Code Health](https://landscape.io/github/sirfoga/pygce/master/landscape.svg?style=flat
+)](https://landscape.io/github/sirfoga/pygce/master) [![Python version](https://img.shields.io/badge/Python-3.5-blue.svg)](https://www.python.org/download/releases/3.4.0/)
+
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/licenses/Apache-2.0)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sirfoga/scrapebots/issues)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 There is a [detailed blog post](https://sirfoga.github.io/2017/04/16/pygce) explaining all this fuss in a nice and easy way. Please, take a look.
 
 ## Install
+```shell
+$ git clone https://github.com/sirfoga/pygce && cd pygce
+$ pip3 uninstall pygce  # remove previous installations
+$ python3 setup.py install --force  # install (forcing files replacing)
 ```
-$ pip3 install . --upgrade --force-reinstall
-```
-*To install from source, planned a pip-package for the future*
+*As long as the [new](https://pypi.org/) pypi website is not ready, I cannot 
+update the 
+package via `pip`: for now, installation from source is recommended.*
 
 
 ## Usage
@@ -79,8 +87,7 @@ There is lots of machine-learning stuff already done, and you can browse some sa
 ## Questions and issues
 The one thing to note is that you should have a [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) downloaded locally: when `pygce` runs, it opens a `Google Chrome` window and starts navigating through your Garmin Connect timeline, saving the results.
 
-The [github issue tracker](https://github.com/sirfoga/pygce/issues) is **only** for bug reports and feature requests. Anything else, such as questions for help in using the library, should be posted as [pull requests](https://github.com/sirfoga/pygce/pulls).
-
+The [github issue tracker](https://github.com/sirfoga/pygce/issues) is **only** for bug reports and feature requests.
 
 ## License
 [Apache License](http://www.apache.org/licenses/LICENSE-2.0) Version 2.0, January 2004

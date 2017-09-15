@@ -21,7 +21,7 @@ import json
 from datetime import timedelta
 
 from bs4 import BeautifulSoup
-from hal.internet.selenium import SeleniumForm
+from hal.internet.selenium_bots import SeleniumForm
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -34,7 +34,12 @@ class GarminConnectBot(object):
     """ Navigate through Garmin Connect app via a bot """
 
     USER_DASHBOARD = "https://connect.garmin.com/modern/"
-    LOGIN_URL = "https://sso.garmin.com/sso/login?service=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F&webhost=olaxpw-conctmodern005.garmin.com&source=https%3A%2F%2Fconnect.garmin.com%2Fen-US%2Fsignin&redirectAfterAccountLoginUrl=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F&redirectAfterAccountCreationUrl=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F&gauthHost=https%3A%2F%2Fsso.garmin.com%2Fsso&locale=en_US&id=gauth-widget&clientId=GarminConnect&initialFocus=true&embedWidget=false&mobile=false#"
+    LOGIN_URL = "https://sso.garmin.com/sso/login?service=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F&webhost=olaxpw" \
+                "-conctmodern005.garmin.com&source=https%3A%2F%2Fconnect.garmin.com%2Fen-US%2Fsignin" \
+                "&redirectAfterAccountLoginUrl=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F" \
+                "&redirectAfterAccountCreationUrl=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F&gauthHost=https%3A%2F" \
+                "%2Fsso.garmin.com%2Fsso&locale=en_US&id=gauth-widget&clientId=GarminConnect&initialFocus=true" \
+                "&embedWidget=false&mobile=false# "
     LOGIN_BUTTON_ID = "login-btn-signin"  # html id of the login button
     USERNAME_FIELD_NAME = "username"  # html name of username in login form
     PASSWORD_FIELD_NAME = "password"  # html name of password in login form
