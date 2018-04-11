@@ -1,6 +1,6 @@
 # PyGCE
-
 *Export, save, and analyze your Garmin Connect data*
+> This project is no longer under active development
 
 [![Code Health](https://landscape.io/github/sirfoga/pygce/master/landscape.svg?style=flat
 )](https://landscape.io/github/sirfoga/pygce/master) [![Python version](https://img.shields.io/badge/Python-3.5-blue.svg)](https://www.python.org/download/releases/3.4.0/)
