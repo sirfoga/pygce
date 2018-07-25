@@ -1,6 +1,7 @@
 # !/usr/bin/python3
 # coding: utf-8
 
+
 from datetime import datetime
 
 GARMIN_CONNECT_URL = "https://connect.garmin.com"

@@ -1,6 +1,7 @@
 # !/usr/bin/python3
 # coding: utf-8
 
+
 import matplotlib.pyplot as plt
 import numpy as np
 from hal.charts.bar import create_symlog_bar_chart, create_multiple_bar_chart
