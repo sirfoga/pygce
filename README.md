@@ -1,13 +1,14 @@
-# PyGCE
-*Export, save, and analyze your Garmin Connect data*
-> This project is no longer under active development
+<div align="center">
+<h1>PyGCE | Export, save, and analyze your Garmin Connect data</h1>
+<em>This project is no longer under active development</em></br></br>
+</div>
 
-[![Code Health](https://landscape.io/github/sirfoga/pygce/master/landscape.svg?style=flat
-)](https://landscape.io/github/sirfoga/pygce/master) [![Python version](https://img.shields.io/badge/Python-3.5-blue.svg)](https://www.python.org/download/releases/3.4.0/)
 
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/licenses/Apache-2.0)
-[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/sirfoga/scrapebots/issues)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+<div align="center"><a href="https://landscape.io/github/sirfoga/pygce/master"><img alt="Code Health" src="https://landscape.io/github/sirfoga/pygce/master/landscape.svg?style=flat"></a> <a href="https://www.python.org/download/releases/3.4.0/"><img alt="Python version" src="https://img.shields.io/badge/Python-3.5-blue.svg"></a></div>
+
+<div align="center"><a href="https://opensource.org/licenses/Apache-2.0"><img alt="Open Source Love" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
+<a href="https://github.com/sirfoga/scrapebots/issues"><img alt="Contributions welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a> <a href="http://unlicense.org/"><img src="https://img.shields.io/badge/license-Unlicense-blue.svg"></a></div>
+
 
 There is a [detailed blog post](https://sirfoga.github.io/2017/04/16/pygce) explaining all this fuss in a nice and easy way. Please, take a look.
 
@@ -80,14 +81,23 @@ There is lots of machine-learning stuff already done, and you can browse some sa
 
 
 ## Documentation
-- You can browse the [html](docs/doxygen/html/index.html) (or if you prefer the [epydoc docs](docs/epydoc/html/index.html))
-- There is also the [pdf](docs/doxygen/latex/refman.pdf) version (for the epydoc pdfs go [here](docs/epydoc/pdf/api.pdf))
+- You can browse the [html](docs/doxygen/html/index.html)
+- There is also the [pdf](docs/doxygen/latex/refman.pdf)
 
 
-## Questions and issues
-The one thing to note is that you should have a [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) downloaded locally: when `pygce` runs, it opens a `Google Chrome` window and starts navigating through your Garmin Connect timeline, saving the results.
+## Contributing
+[Fork](https://github.com/sirfoga/pygce/fork) | Patch | Push | [Pull request](https://github.com/sirfoga/pygce/pulls)
 
-The [github issue tracker](https://github.com/sirfoga/pygce/issues) is **only** for bug reports and feature requests.
+
+## Feedback
+Suggestions and improvements [welcome](https://github.com/sirfoga/pygce/issues)!
+
+
+## Authors
+| [![sirfoga](https://avatars0.githubusercontent.com/u/14162628?s=128&v=4)](https://github.com/sirfoga "Follow @sirfoga on Github") |
+|---|
+| [Stefano Fogarollo](https://sirfoga.github.io) |
+
 
 ## License
-[Apache License](http://www.apache.org/licenses/LICENSE-2.0) Version 2.0, January 2004
+[Unlicense](https://unlicense.org/)
