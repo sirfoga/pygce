@@ -6,7 +6,8 @@ import argparse
 import os
 from datetime import datetime
 
-from .models.bot import GarminConnectBot  # 'from models.bot import GarminConnectBot' when testing local script
+from .models.bot import \
+    GarminConnectBot  # 'from models.bot import GarminConnectBot' when testing local script
 
 AVAILABLE_OUTPUT_FORMATS = ["json", "csv"]
 
@@ -30,16 +31,28 @@ def create_args():
     """
 
     parser = argparse.ArgumentParser(
-        usage="-u <username (email) to login to Garmin Connect> -p <password to login to Garmin Connect> -c <path to "
-              "chromedriver to use> -d <days to save. e.g -d 2017-12-30 or -d 2016-01-01 2017-12-30> -f <format of "
+        usage="-u <username (email) to login to Garmin Connect> -p <password "
+              "to login to Garmin Connect> -c <path to "
+              "chromedriver to use> -d <days to save. e.g -d 2017-12-30 or "
+              "-d 2016-01-01 2017-12-30> -f <format of "
               "output file [json, csv]> -o <path to output file>")
-    parser.add_argument("-u", dest="user", help="username (email) to login to Garmin Connect", required=True)
-    parser.add_argument("-p", dest="password", help="password to login to Garmin Connect", required=True)
-    parser.add_argument("-c", dest="path_chromedriver", help="path to chromedriver to use", required=True)
+    parser.add_argument("-u", dest="user",
+                        help="username (email) to login to Garmin Connect",
+                        required=True)
+    parser.add_argument("-p", dest="password",
+                        help="password to login to Garmin Connect",
+                        required=True)
+    parser.add_argument("-c", dest="path_chromedriver",
+                        help="path to chromedriver to use", required=True)
     parser.add_argument("-d", nargs="*", dest="days",
-                        help="days to save. e.g -d 2017-12-30 or -d 2016-01-01 2017-12-30", required=True)
-    parser.add_argument("-f", dest="format_out", help="<format of output file [json, csv]>", required=True)
-    parser.add_argument("-o", dest="path_out", help="path to output file", required=True)
+                        help="days to save. e.g -d 2017-12-30 or -d "
+                             "2016-01-01 2017-12-30",
+                        required=True)
+    parser.add_argument("-f", dest="format_out",
+                        help="<format of output file [json, csv]>",
+                        required=True)
+    parser.add_argument("-o", dest="path_out", help="path to output file",
+                        required=True)
     return parser
 
 
@@ -59,7 +72,8 @@ def parse_args(parser):
     else:
         days = [parse_yyyy_mm_dd(raw_days[0]), parse_yyyy_mm_dd(raw_days[1])]
 
-    return str(args.user), str(args.password), str(args.path_chromedriver), days, str(args.format_out), str(
+    return str(args.user), str(args.password), str(
+        args.path_chromedriver), days, str(args.format_out), str(
         args.path_out)
 
 
@@ -96,7 +110,8 @@ def check_args(user, password, chromedriver, days, format_out, path_out):
 
 
 def main():
-    user, password, chromedriver, days, format_out, path_out = parse_args(create_args())
+    user, password, chromedriver, days, format_out, path_out = parse_args(
+        create_args())
     if check_args(user, password, chromedriver, days, format_out, path_out):
         bot = GarminConnectBot(user, password, chromedriver)
         if format_out == "json":
@@ -105,6 +120,7 @@ def main():
             bot.save_csv_days(days[0], days[1], path_out)
     else:
         print("Error while parsing args. Run 'pygce -h' for help")
+
 
 if __name__ == '__main__':
     main()

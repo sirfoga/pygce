@@ -98,8 +98,10 @@ class GCDaySummary(GCDaySection):
             Finds likes count and stores value
         """
 
-        container = self.soup.find_all("div", {"class": "span4 page-navigation"})[0]
-        container = container.find_all("span", {"class": "like js-like-count"})[0]
+        container = \
+            self.soup.find_all("div", {"class": "span4 page-navigation"})[0]
+        container = \
+            container.find_all("span", {"class": "like js-like-count"})[0]
         likes = container.text.strip().split(" ")[0]
         self.likes = utils.parse_num(likes)
 
@@ -120,7 +122,8 @@ class GCDaySummary(GCDaySection):
             Finds kcal value and stores value
         """
 
-        container = self.soup.find_all("div", {"class": "span8 daily-summary-stats-placeholder"})[0]
+        container = self.soup.find_all("div", {
+            "class": "span8 daily-summary-stats-placeholder"})[0]
         container = container.find_all("div", {"class": "row-fluid top-xl"})[0]
         kcal_count = container.find_all("div", {"class": "data-bit"})[0].text
         self.kcal_count = utils.parse_num(kcal_count)
@@ -162,12 +165,17 @@ class GCDaySteps(GCDaySection):
             Parses HTML source and finds goal and daily steps
         """
 
-        container = self.soup.find_all("div", {"class": "span4 text-center charts"})[0]
+        container = \
+            self.soup.find_all("div", {"class": "span4 text-center charts"})[0]
 
-        total = container.find_all("div", {"class": "data-bit"})[0].text  # finds total steps
+        total = container.find_all("div", {"class": "data-bit"})[
+            0].text  # finds total steps
         self.total = utils.parse_num(total)
 
-        goal = container.find_all("div", {"class": "h5"})[0].text.strip().split(" ")[-1].strip()
+        goal = \
+            container.find_all("div", {"class": "h5"})[0].text.strip().split(
+                " ")[
+                -1].strip()
         self.goal = utils.parse_num(goal)
 
     def parse_steps_stats(self):
@@ -176,7 +184,8 @@ class GCDaySteps(GCDaySection):
             Parses HTML source and finds daily distance and avg daily steps
         """
 
-        container = self.soup.find_all("div", {"class": "span8 daily-summary-stats-placeholder"})[0]
+        container = self.soup.find_all("div", {
+            "class": "span8 daily-summary-stats-placeholder"})[0]
         container = container.find_all("div", {"class": "row-fluid top-xl"})[0]
         container = container.find_all("div", {"class": "data-bit"})
 
@@ -228,7 +237,7 @@ class GCDaySleep(GCDaySection):
 
         try:
             container = \
-            self.soup.find_all("div", {"class": "equation centered"})[0]
+                self.soup.find_all("div", {"class": "equation centered"})[0]
             times = container.find_all("div", {"class": "data-bit"})
             times = [str(t.text).strip() for t in times]  # strip texts
 
@@ -331,12 +340,14 @@ class GCDayActivities(GCDaySection):
 
         time_day = columns[0].text.strip()  # parse time of the day
         try:
-            time_day = datetime.strptime(columns[0].text.strip(), "%I:%M %p").time()  # account for AM/PM
+            time_day = datetime.strptime(columns[0].text.strip(),
+                                         "%I:%M %p").time()  # account for AM/PM
         except:
             pass
 
         try:
-            duration = utils.parse_hh_mm_ss(columns[2].text.strip())  # in case of multiple hours
+            duration = utils.parse_hh_mm_ss(
+                columns[2].text.strip())  # in case of multiple hours
         except:
             duration = utils.parse_hh_mm_ss("00:00")
 
@@ -395,10 +406,12 @@ class GCDayActivities(GCDaySection):
             Total duration of all activities
         """
 
-        all_durations = [a["duration"] for a in self.activities]  # fetch duration of all activities
+        all_durations = [a["duration"] for a in
+                         self.activities]  # fetch duration of all activities
         total_duration = timedelta(hours=0, minutes=0, seconds=0)
         for duration in all_durations:
-            total_duration += timedelta(hours=duration.hour, minutes=duration.minute,
+            total_duration += timedelta(hours=duration.hour,
+                                        minutes=duration.minute,
                                         seconds=duration.second)  # sum all durations
         return total_duration
 
@@ -444,7 +457,8 @@ class GCDayBreakdown(GCDaySection):
 
     def parse(self):
         values = self.soup.find_all("tspan")
-        values = [str(v.text).strip().replace("%", "") for v in values]  # remove jibberish
+        values = [str(v.text).strip().replace("%", "") for v in
+                  values]  # remove jibberish
 
         self.highly_active = utils.parse_num(values[0])
         self.active = utils.parse_num(values[1])
@@ -471,7 +485,8 @@ class GCDayTimeline(object):
     - breakdown (highly active %, active %, sedentary %, sleep %)
     """
 
-    def __init__(self, date_time, summary_html, steps_section_html, sleep_section_html, activities_section_html,
+    def __init__(self, date_time, summary_html, steps_section_html,
+                 sleep_section_html, activities_section_html,
                  breakdown_section_html):
         """
         :param date_time: datetime
@@ -541,7 +556,8 @@ class GCDayTimeline(object):
 
         sections_dumps = {}  # dict section name -> section json
         for s in self.sections.keys():
-            sections_dumps[s] = json.loads(self.sections[s].to_json())  # json object
+            sections_dumps[s] = json.loads(
+                self.sections[s].to_json())  # json object
 
         day_dump = {
             str(self.date): sections_dumps  # add date

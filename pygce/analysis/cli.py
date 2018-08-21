@@ -16,7 +16,9 @@ def create_args():
 
     parser = argparse.ArgumentParser(
         usage="-f <path to folder with data files to analyse>")
-    parser.add_argument("-f", dest="folder_path", help="path to folder with data files to analyse", required=True)
+    parser.add_argument("-f", dest="folder_path",
+                        help="path to folder with data files to analyse",
+                        required=True)
     return parser
 
 
@@ -55,7 +57,9 @@ def main():
                 # gc.show_correlation_matrix_of_data()
                 # gc.predict_feature("SLEEP:deep_sleep_time")
                 # gc.cluster_analyze(n_clusters=4)
-                gc.cluster_3d_plot(["SLEEP:deep_sleep_time", "ACTIVITIES:distance", "SUMMARY:kcal_count"])
+                gc.cluster_3d_plot(
+                    ["SLEEP:deep_sleep_time", "ACTIVITIES:distance",
+                     "SUMMARY:kcal_count"])
                 # gc.select_k_best("SLEEP:deep_sleep_time")
     else:
         print("Error while parsing args.")

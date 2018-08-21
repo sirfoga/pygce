@@ -43,7 +43,8 @@ class GarminConnectBot(object):
 
         object.__init__(self)
 
-        self.browser = webdriver.Chrome(chromedriver_path)  # bot browser to use
+        self.browser = webdriver.Chrome(
+            chromedriver_path)  # bot browser to use
         self.user_name = user_name  # user settings
         self.user_password = password
         self.user_logged_in = False  # True iff user is correctly logged in
@@ -64,8 +65,10 @@ class GarminConnectBot(object):
             )  # fill login form
             self.browser.execute_script(
                 "document.getElementById(\"" + self.LOGIN_BUTTON_ID + "\").click()")  # click button to login
-            WebDriverWait(self.browser, self.BROWSER_WAIT_TIMEOUT_SECONDS).until(
-                EC.presence_of_element_located((By.CLASS_NAME, "activity-tracking-disclaimer"))
+            WebDriverWait(self.browser,
+                          self.BROWSER_WAIT_TIMEOUT_SECONDS).until(
+                EC.presence_of_element_located(
+                    (By.CLASS_NAME, "activity-tracking-disclaimer"))
             )  # wait until fully loaded
 
             self.user_logged_in = True
@@ -83,17 +86,20 @@ class GarminConnectBot(object):
 
         if self.user_id is None:
             self.go_to_dashboard()
-            soup = BeautifulSoup(self.browser.page_source, "lxml")  # html parser
+            soup = BeautifulSoup(self.browser.page_source,
+                                 "lxml")  # html parser
             widgets = soup.find_all("div", {"class": "widget-content"})
 
             id_found = False  # True iff id has been found
             for w in widgets:
                 if not id_found:
                     try:
-                        widget_title = w.find_all("h3", {"class": "data-bit"})[0]
+                        widget_title = w.find_all("h3", {"class": "data-bit"})[
+                            0]
                         raw_id = widget_title.a["href"]
                         tokens = raw_id.split("/")
-                        candidate_id = max(tokens, key=len)  # longest string (typically is the id, since it's 36 chars)
+                        candidate_id = max(tokens,
+                                           key=len)  # longest string (typically is the id, since it's 36 chars)
                         self.user_id = str(candidate_id).strip()
                         id_found = True
                     except:
@@ -124,11 +130,14 @@ class GarminConnectBot(object):
         if self.user_id is None:
             self.get_user_id()
 
-        date_to_to = date_time.strftime('%Y-%m-%d')  # retrieve year, month and day to to go to
-        url_to_get = "https://connect.garmin.com/modern/daily-summary/" + str(self.user_id) + "/" + date_to_to
+        date_to_to = date_time.strftime(
+            '%Y-%m-%d')  # retrieve year, month and day to to go to
+        url_to_get = "https://connect.garmin.com/modern/daily-summary/" + str(
+            self.user_id) + "/" + date_to_to
         self.browser.get(url_to_get)
         WebDriverWait(self.browser, self.BROWSER_WAIT_TIMEOUT_SECONDS).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "comment-container"))
+            EC.presence_of_element_located(
+                (By.CLASS_NAME, "comment-container"))
         )  # wait until fully loaded
 
     def get_day(self, date_time):
@@ -141,11 +150,15 @@ class GarminConnectBot(object):
 
         try:
             self.go_to_day(date_time)
-            soup = BeautifulSoup(str(self.browser.page_source), "html.parser")  # html parser
+            soup = BeautifulSoup(str(self.browser.page_source),
+                                 "html.parser")  # html parser
 
-            tabs_html = soup.find_all("div", {"class": "tab-content"})[0]  # find html source code for sections
-            summary_html = soup.find_all("div", {"class": "content page steps sleep calories timeline"})[0]
-            steps_html = soup.find_all("div", {"class": "row-fluid bottom-m"})[0]
+            tabs_html = soup.find_all("div", {"class": "tab-content"})[
+                0]  # find html source code for sections
+            summary_html = soup.find_all("div", {
+                "class": "content page steps sleep calories timeline"})[0]
+            steps_html = soup.find_all("div", {"class": "row-fluid bottom-m"})[
+                0]
             sleep_html = tabs_html.find_all("div", {"id": "pane5"})[0]
             activities_html = tabs_html.find_all("div", {"id": "pane4"})[0]
             breakdown_html = tabs_html.find_all("div", {"id": "pane2"})[0]
@@ -172,7 +185,8 @@ class GarminConnectBot(object):
             List of data about days
         """
 
-        days_delta = (max_date_time - min_date_time).days  # days from begin to end
+        days_delta = (
+            max_date_time - min_date_time).days  # days from begin to end
         days_data = []  # output list
         for i in range(days_delta + 1):  # including last day
             day_to_get = min_date_time + timedelta(days=i)
@@ -196,7 +210,8 @@ class GarminConnectBot(object):
         for d in data:
             print("Parsing day", str(d.date))
             d.parse()  # parse
-        json_data = [json.loads(d.to_json()) for d in data]  # convert to json objects
+        json_data = [json.loads(d.to_json()) for d in
+                     data]  # convert to json objects
         with open(output_file, "w") as o:  # write to file
             json.dump(json_data, o)
 
