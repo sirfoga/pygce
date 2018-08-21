@@ -38,6 +38,15 @@ def parse_hh_mm_ss(h):
         return datetime.strptime(str(h).strip(), "%S").time()
 
 
+def null_hh_mm_ss():
+    """
+    :return: datetime.time
+        0 time parsed
+    """
+
+    return parse_hh_mm_ss("00:00:00")
+
+
 def get_seconds(s):
     """
     :param s: str

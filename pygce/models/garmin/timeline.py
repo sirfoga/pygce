@@ -240,12 +240,13 @@ class GCDaySleep(GCDaySection):
                 self.soup.find_all("div", {"class": "equation centered"})[0]
             times = container.find_all("div", {"class": "data-bit"})
             times = [str(t.text).strip() for t in times]  # strip texts
-
             self.night_sleep_time = utils.parse_hh_mm(times[0])
             self.nap_time = utils.parse_hh_mm(times[1])
             self.total_sleep_time = utils.parse_hh_mm(times[2].split(" ")[0])
         except:
-            print("Error parsing sleep totals")
+            self.night_sleep_time = None
+            self.nap_time = None
+            self.total_sleep_time = None
 
     def parse_bed_time(self):
         """
@@ -263,7 +264,8 @@ class GCDaySleep(GCDaySection):
             self.wake_time = datetime.strptime(
                 times[1], "%I:%M %p").time()  # account for AM/PM
         except:
-            print("Error parsing bed time")
+            self.bed_time = None
+            self.wake_time = None
 
     def parse_sleep_times(self):
         """
@@ -290,7 +292,9 @@ class GCDaySleep(GCDaySection):
             self.awake_sleep_time = utils.parse_hh_mm(
                 container.find_all("span")[0].text.split("hrs")[0])
         except:
-            print("Error parsing sleep times")
+            self.deep_sleep_time = None
+            self.light_sleep_time = None
+            self.awake_sleep_time = None
 
     def to_dict(self):
         return {
@@ -318,7 +322,6 @@ class GCDayActivities(GCDaySection):
         """
 
         GCDaySection.__init__(self, raw_html, tag="ACTIVITIES")
-
         self.activities = []
 
     def parse(self):

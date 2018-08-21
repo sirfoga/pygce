@@ -26,6 +26,7 @@ class GarminConnectBot(object):
                 "&redirectAfterAccountCreationUrl=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F&gauthHost=https%3A%2F" \
                 "%2Fsso.garmin.com%2Fsso&locale=en_US&id=gauth-widget&clientId=GarminConnect&initialFocus=true" \
                 "&embedWidget=false&mobile=false# "
+    GPX_DOWNLOAD_URL = "https://connect.garmin.com/modern/proxy/download-service/export/gpx/activity/"
     LOGIN_BUTTON_ID = "login-btn-signin"  # html id of the login button
     USERNAME_FIELD_NAME = "username"  # html name of username in login form
     PASSWORD_FIELD_NAME = "password"  # html name of password in login form
@@ -78,13 +79,13 @@ class GarminConnectBot(object):
             self.user_logged_in = False
             return False  # something went wrong
 
-    def get_user_id(self):
+    def _find_user_id(self):
         """
         :return: void
             Retrieves user unique id and token
         """
 
-        if self.user_id is None:
+        if not self.user_id:
             self.go_to_dashboard()
             soup = BeautifulSoup(self.browser.page_source,
                                  "lxml")  # html parser
@@ -127,9 +128,7 @@ class GarminConnectBot(object):
             Navigates to daily summary of given date
         """
 
-        if self.user_id is None:
-            self.get_user_id()
-
+        self._find_user_id()
         date_to_to = date_time.strftime(
             '%Y-%m-%d')  # retrieve year, month and day to to go to
         url_to_get = "https://connect.garmin.com/modern/daily-summary/" + str(

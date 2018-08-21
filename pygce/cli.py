@@ -6,8 +6,7 @@ import argparse
 import os
 from datetime import datetime
 
-from .models.bot import \
-    GarminConnectBot  # 'from models.bot import GarminConnectBot' when testing local script
+from models.bot import GarminConnectBot
 
 AVAILABLE_OUTPUT_FORMATS = ["json", "csv"]
 
@@ -51,6 +50,10 @@ def create_args():
     parser.add_argument("-f", dest="format_out",
                         help="<format of output file [json, csv]>",
                         required=True)
+    parser.add_argument("-gpx", dest="gpx_out",
+                        help="download .gpx files too [y/n]",
+                        default="n",
+                        required=False)
     parser.add_argument("-o", dest="path_out", help="path to output file",
                         required=True)
     return parser
@@ -72,8 +75,10 @@ def parse_args(parser):
     else:
         days = [parse_yyyy_mm_dd(raw_days[0]), parse_yyyy_mm_dd(raw_days[1])]
 
+    args.gpx_out = (args.gpx_out.startswith("y"))
+
     return str(args.user), str(args.password), str(
-        args.path_chromedriver), days, str(args.format_out), str(
+        args.path_chromedriver), days, str(args.format_out), args.gpx_out, str(
         args.path_out)
 
 
@@ -110,10 +115,11 @@ def check_args(user, password, chromedriver, days, format_out, path_out):
 
 
 def main():
-    user, password, chromedriver, days, format_out, path_out = parse_args(
-        create_args())
+    user, password, chromedriver, days, format_out, gpx_out, path_out = \
+        parse_args(create_args())
     if check_args(user, password, chromedriver, days, format_out, path_out):
         bot = GarminConnectBot(user, password, chromedriver)
+
         if format_out == "json":
             bot.save_json_days(days[0], days[1], path_out)
         elif format_out == "csv":
