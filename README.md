@@ -36,6 +36,7 @@ optional arguments:
   -d [DAYS [DAYS ...]]  days to save. e.g -d 2017-12-30 or -d 2016-01-01
                         2017-12-30
   -f FORMAT_OUT         <format of output file [json, csv]>
+  -gpx GPX_OUT          download .gpx files too [y/n]
   -o PATH_OUT           path to output file
 ```
 When called with appropriate args `pygce` saves `.csv` or `.json` data dumps of your Garmin Connect timeline data. The files will look like
