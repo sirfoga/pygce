@@ -1,6 +1,6 @@
 <div align="center">
 <h1>PyGCE | Export, save, and analyze your Garmin Connect data</h1>
-<em>This project is no longer under active development</em></br></br>
+<em>There is a <a href="https://sirfoga.github.io/2017/04/16/pygce" rel="nofollow">detailed blog post</a> explaining all this fuss in a nice and easy way. Please, take a look.</em></br></br>
 </div>
 
 
@@ -9,8 +9,6 @@
 <div align="center"><a href="https://opensource.org/licenses/Apache-2.0"><img alt="Open Source Love" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
 <a href="https://github.com/sirfoga/scrapebots/issues"><img alt="Contributions welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a> <a href="http://unlicense.org/"><img src="https://img.shields.io/badge/license-Unlicense-blue.svg"></a></div>
 
-
-There is a [detailed blog post](https://sirfoga.github.io/2017/04/16/pygce) explaining all this fuss in a nice and easy way. Please, take a look.
 
 ## Install
 ```shell
