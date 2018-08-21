@@ -26,18 +26,19 @@ class GarminConnectBot(object):
                 "&redirectAfterAccountCreationUrl=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F&gauthHost=https%3A%2F" \
                 "%2Fsso.garmin.com%2Fsso&locale=en_US&id=gauth-widget&clientId=GarminConnect&initialFocus=true" \
                 "&embedWidget=false&mobile=false# "
-    GPX_DOWNLOAD_URL = "https://connect.garmin.com/modern/proxy/download-service/export/gpx/activity/"
     LOGIN_BUTTON_ID = "login-btn-signin"  # html id of the login button
     USERNAME_FIELD_NAME = "username"  # html name of username in login form
     PASSWORD_FIELD_NAME = "password"  # html name of password in login form
     BROWSER_WAIT_TIMEOUT_SECONDS = 5  # max seconds before url request is discarded
 
-    def __init__(self, user_name, password, chromedriver_path):
+    def __init__(self, user_name, password, download_gpx, chromedriver_path):
         """
         :param user_name: str
             Username (email) to login to Garmin Connect
         :param password: str
             Password to login to Garmin Connect
+        :param download_gpx: bool
+            Download .gpx files of activities
         :param chromedriver_path: str
             Path to Chrome driver to use as browser
         """
@@ -50,6 +51,7 @@ class GarminConnectBot(object):
         self.user_password = password
         self.user_logged_in = False  # True iff user is correctly logged in
         self.user_id = None  # id of user logged in
+        self.download_gpx = download_gpx
 
     def login(self):
         """
@@ -209,10 +211,13 @@ class GarminConnectBot(object):
         for d in data:
             print("Parsing day", str(d.date))
             d.parse()  # parse
+
         json_data = [json.loads(d.to_json()) for d in
                      data]  # convert to json objects
         with open(output_file, "w") as o:  # write to file
             json.dump(json_data, o)
+
+        self.save_gpx(data)
 
     def save_csv_days(self, min_date_time, max_date_time, output_file):
         """
@@ -237,3 +242,21 @@ class GarminConnectBot(object):
             dict_writer = csv.DictWriter(o, csv_headers)
             dict_writer.writeheader()
             dict_writer.writerows(data)
+
+        self.save_gpx(data)
+
+    def save_gpx(self, data):
+        """
+        :param data: [] of GCDayTimeline
+            Timeline with activities
+        :return: void
+            Downloads .gpx file for each activity to folder
+        """
+
+        if self.download_gpx:
+            timelines = [timeline.activities for timeline in data]
+            for timeline in timelines:
+                for activity in timeline.activities:
+                    self.browser.get(activity["gpx"])
+                    print("Saved .gpx for", activity["name"],
+                          activity["time_day"])

@@ -118,7 +118,7 @@ def main():
     user, password, chromedriver, days, format_out, gpx_out, path_out = \
         parse_args(create_args())
     if check_args(user, password, chromedriver, days, format_out, path_out):
-        bot = GarminConnectBot(user, password, chromedriver)
+        bot = GarminConnectBot(user, password, gpx_out, chromedriver)
 
         if format_out == "json":
             bot.save_json_days(days[0], days[1], path_out)

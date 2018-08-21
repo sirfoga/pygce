@@ -315,6 +315,8 @@ class GCDayActivities(GCDaySection):
     Common features are kcal, time, distance, type, name, link
     """
 
+    GPX_DOWNLOAD_URL = "https://connect.garmin.com/modern/proxy/download-service/export/gpx/activity/"
+
     def __init__(self, raw_html):
         """
         :param raw_html: str
@@ -326,9 +328,12 @@ class GCDayActivities(GCDaySection):
 
     def parse(self):
         rows = self.soup.find_all("tr")
-        for r in rows[1:-1]:  # discard headers and totals
-            activity = self.parse_activity(r)
-            self.activities.append(activity)
+        for r in rows[1:]:  # discard header
+            try:
+                activity = self.parse_activity(r)
+                self.activities.append(activity)
+            except:
+                pass
 
     @staticmethod
     def parse_activity(raw_html):
@@ -354,8 +359,11 @@ class GCDayActivities(GCDaySection):
         except:
             duration = utils.parse_hh_mm_ss("00:00")
 
+        link = str(columns[5].a["href"]).strip()
+        id_ref = link.split("/")[-1]
+
         try:
-            url = utils.GARMIN_CONNECT_URL + str(columns[5].a["href"]).strip()
+            url = utils.GARMIN_CONNECT_URL + link
         except:
             url = None
 
@@ -366,7 +374,8 @@ class GCDayActivities(GCDaySection):
             "distance": utils.parse_num(columns[3].text.split("km")[0]),
             "type": columns[4].text.strip(),
             "name": columns[5].text.strip(),
-            "url": url
+            "url": url,
+            "gpx": GCDayActivities.GPX_DOWNLOAD_URL + id_ref
         }
 
     def to_dict(self):
