@@ -25,7 +25,6 @@ setup(
     author_email="sirfoga@protonmail.com",
     description="pygce is an unofficial Garmin Connect data exporter.",
     long_description=DESCRIPTION,
-    license="Apache License, Version 2.0",
     keywords="garmin data parser",
     url="https://github.com/sirfoga/pygce",
     packages=find_packages(),
