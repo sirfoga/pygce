@@ -19,9 +19,12 @@ from .garmin.timeline import GCDayTimeline
 class GarminConnectBot(object):
     """ Navigate through Garmin Connect app via a bot """
 
-    USER_DASHBOARD = "https://connect.garmin.com/modern/"
-    LOGIN_URL = "https://sso.garmin.com/sso/login?service=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F&webhost=olaxpw" \
-                "-conctmodern005.garmin.com&source=https%3A%2F%2Fconnect.garmin.com%2Fen-US%2Fsignin" \
+    USER_PATH = "/modern/"
+    BASE_URL = "https://connect.garmin.com"
+    BASE_LOGIN_URL = "https://sso.garmin.com/sso/login?service=https%3A%2F" \
+                     "%2Fconnect.garmin.com" \
+                     "%2Fmodern%2F&webhost=olaxpw" \
+                     "-conctmodern005.garmin.com&source=https%3A%2F%2Fconnect.garmin.com%2Fen-US%2Fsignin" \
                 "&redirectAfterAccountLoginUrl=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F" \
                 "&redirectAfterAccountCreationUrl=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F&gauthHost=https%3A%2F" \
                 "%2Fsso.garmin.com%2Fsso&locale=en_US&id=gauth-widget&clientId=GarminConnect&initialFocus=true" \
@@ -31,7 +34,8 @@ class GarminConnectBot(object):
     PASSWORD_FIELD_NAME = "password"  # html name of password in login form
     BROWSER_WAIT_TIMEOUT_SECONDS = 5  # max seconds before url request is discarded
 
-    def __init__(self, user_name, password, download_gpx, chromedriver_path):
+    def __init__(self, user_name, password, download_gpx, chromedriver_path,
+                 url=BASE_URL):
         """
         :param user_name: str
             Username (email) to login to Garmin Connect
@@ -41,6 +45,8 @@ class GarminConnectBot(object):
             Download .gpx files of activities
         :param chromedriver_path: str
             Path to Chrome driver to use as browser
+        :param url: str
+            Url to base downloads on
         """
 
         object.__init__(self)
@@ -52,6 +58,14 @@ class GarminConnectBot(object):
         self.user_logged_in = False  # True iff user is correctly logged in
         self.user_id = None  # id of user logged in
         self.download_gpx = download_gpx
+        self.user_url = url + self.USER_PATH
+        garmin_region = self.user_url.split("/")[2].split("connect.")[-1]
+        print(garmin_region)
+        self.login_url = \
+            self.BASE_LOGIN_URL.replace("garmin.com", garmin_region)
+
+        print(self.user_url)
+        print(self.login_url)
 
     def login(self):
         """
@@ -60,7 +74,7 @@ class GarminConnectBot(object):
         """
 
         try:
-            self.browser.get(self.LOGIN_URL)  # open login url
+            self.browser.get(self.login_url)  # open login url
             SeleniumForm.fill_login_form(
                 self.browser,
                 self.user_name, self.USERNAME_FIELD_NAME,
@@ -117,7 +131,8 @@ class GarminConnectBot(object):
         if not self.user_logged_in:
             self.login()
 
-        self.browser.get(self.USER_DASHBOARD)
+        print("Getting user dashboard from", self.user_url)
+        self.browser.get(self.user_url)
         WebDriverWait(self.browser, self.BROWSER_WAIT_TIMEOUT_SECONDS).until(
             EC.presence_of_element_located((By.CLASS_NAME, "widget-content"))
         )  # wait until fully loaded
@@ -150,6 +165,7 @@ class GarminConnectBot(object):
         """
 
         try:
+            print("Getting day", str(date_time))
             self.go_to_day(date_time)
             soup = BeautifulSoup(str(self.browser.page_source),
                                  "html.parser")  # html parser
@@ -191,7 +207,6 @@ class GarminConnectBot(object):
         days_data = []  # output list
         for i in range(days_delta + 1):  # including last day
             day_to_get = min_date_time + timedelta(days=i)
-            print("Getting day", str(day_to_get))
             days_data.append(self.get_day(day_to_get))
         return days_data
 
