@@ -12,6 +12,8 @@
 </div>
 
 
+## Install
+
 Different ways, all equals
 - ```$ pip3 install . --upgrade --force-reinstall``` from the source
 - ```$ pip3 install pygce``` via [pip](https://pypi.org/project/pygce/)
