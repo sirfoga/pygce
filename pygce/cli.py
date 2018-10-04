@@ -44,7 +44,7 @@ def create_args():
     parser.add_argument("-url", dest="url",
                         help="url to connect to (e.g "
                              "https://connect.garmin.com)",
-                        default=GarminConnectBot.BASE_URL,
+                        default=GarminConnectBot.DEFAULT_BASE_URL,
                         required=False)
     parser.add_argument("-chrome", dest="path_chromedriver",
                         help="path to chromedriver to use", required=True)

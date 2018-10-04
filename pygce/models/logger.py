@@ -25,9 +25,9 @@ def get_logger():
     return LOGGER
 
 
-def log_message(message):
+def log_message(*message):
     logger = get_logger()
-    logger.debug(message)
+    logger.debug(" ".join(message))
 
 
 def log_error(exception, cause=None):

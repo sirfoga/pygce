@@ -13,6 +13,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+from models.logger import log_error, log_message
 from .garmin.timeline import GCDayTimeline
 
 
@@ -20,7 +21,7 @@ class GarminConnectBot(object):
     """ Navigate through Garmin Connect app via a bot """
 
     USER_PATH = "/modern/"
-    BASE_URL = "https://connect.garmin.com"
+    DEFAULT_BASE_URL = "https://connect.garmin.com"
     BASE_LOGIN_URL = "https://sso.garmin.com/sso/login?service=https%3A%2F" \
                      "%2Fconnect.garmin.com" \
                      "%2Fmodern%2F&webhost=olaxpw" \
@@ -32,12 +33,14 @@ class GarminConnectBot(object):
     LOGIN_BUTTON_ID = "login-btn-signin"  # html id of the login button
     USERNAME_FIELD_NAME = "username"  # html name of username in login form
     PASSWORD_FIELD_NAME = "password"  # html name of password in login form
-    BROWSER_WAIT_TIMEOUT_SECONDS = 25  # max seconds before url request is
-
-    # discarded
+    BROWSER_WAIT_TIMEOUT_SECONDS = 2  # max seconds before url request is
+    BROWSER_GENERAL_ERROR = "If the error persist, please open an issue."
+    BROWSER_TIMEOUT_ERROR = "Cannot complete request (cannot find {}). I " \
+                            "suggest setting a larger browser timeout page. " + \
+                            BROWSER_GENERAL_ERROR
 
     def __init__(self, user_name, password, download_gpx, chromedriver_path,
-                 url=BASE_URL):
+                 url=DEFAULT_BASE_URL):
         """
         :param user_name: str
             Username (email) to login to Garmin Connect
@@ -61,11 +64,50 @@ class GarminConnectBot(object):
         self.user_id = None  # id of user logged in
         self.download_gpx = download_gpx
         self.user_url = url + self.USER_PATH
+        self.base_url = url
+
         garmin_region = self.user_url.split("/")[2].split("connect.")[-1]
-        log_message(garmin_region)
+        log_message("Region:", garmin_region)
 
         self.login_url = \
             self.BASE_LOGIN_URL.replace("garmin.com", garmin_region)
+
+    def _wait_for(self, locator, element, attempts=3):
+        for i in range(attempts):
+            log_message("attempt", str(i))
+
+            try:
+                WebDriverWait(
+                    self.browser,
+                    self.BROWSER_WAIT_TIMEOUT_SECONDS
+                ).until(
+                    EC.presence_of_element_located(
+                        (locator, element)
+                    )
+                )  # wait until fully loaded
+                self.browser.find_element(locator, element)
+
+                log_message("found " + element)
+                return True
+            except:
+                pass  # maybe next time
+
+        log_message(self.BROWSER_TIMEOUT_ERROR.format(element))
+        return False
+
+    def _perform_login(self):
+        self.browser.execute_script(
+            "document.getElementById(\"" + self.LOGIN_BUTTON_ID + "\").click()"
+        )  # click button to login
+        self._wait_for(By.CLASS_NAME, "activity-tracking-disclaimer")
+
+    def _go_to(self, url, locator=None, element=None):
+        log_message("GET", url)
+        self.browser.get(url)
+
+        if locator and element:
+            if not self._wait_for(locator, element):
+                raise ValueError(url + " not fully loaded")
 
     def login(self):
         """
@@ -74,26 +116,28 @@ class GarminConnectBot(object):
         """
 
         try:
-            self.browser.get(self.login_url)  # open login url
+            self._go_to(self.login_url)  # open login url
             SeleniumForm.fill_login_form(
                 self.browser,
                 self.user_name, self.USERNAME_FIELD_NAME,
                 self.user_password, self.PASSWORD_FIELD_NAME
             )  # fill login form
-            self.browser.execute_script(
-                "document.getElementById(\"" + self.LOGIN_BUTTON_ID + "\").click()")  # click button to login
-            WebDriverWait(self.browser,
-                          self.BROWSER_WAIT_TIMEOUT_SECONDS).until(
-                EC.presence_of_element_located(
-                    (By.CLASS_NAME, "activity-tracking-disclaimer"))
-            )  # wait until fully loaded
-
+            self._perform_login()
             self.user_logged_in = True
             return True  # if arrived here, everything is fine
         except Exception as e:
-            print(str(e))
+            log_error(e)
             self.user_logged_in = False
             return False  # something went wrong
+
+    def _get_user_id(self):
+        self.go_to_dashboard()
+        soup = BeautifulSoup(self.browser.page_source,
+                             "lxml")  # html parser
+        widget = soup.find("div", {"class": "header-nav-item user-profile"})
+        candidates = widget.a["href"].split("/")
+        raw = candidates[-1]
+        return str(raw).strip()
 
     def _find_user_id(self):
         """
@@ -101,26 +145,11 @@ class GarminConnectBot(object):
             Retrieves user unique id and token
         """
 
-        if not self.user_id:
-            self.go_to_dashboard()
-            soup = BeautifulSoup(self.browser.page_source,
-                                 "lxml")  # html parser
-            widgets = soup.find_all("div", {"class": "widget-content"})
+        if self.user_id is None:
+            self.user_id = self._get_user_id()
 
-            id_found = False  # True iff id has been found
-            for w in widgets:
-                if not id_found:
-                    try:
-                        widget_title = w.find_all("h3", {"class": "data-bit"})[
-                            0]
-                        raw_id = widget_title.a["href"]
-                        tokens = raw_id.split("/")
-                        candidate_id = max(tokens,
-                                           key=len)  # longest string (typically is the id, since it's 36 chars)
-                        self.user_id = str(candidate_id).strip()
-                        id_found = True
-                    except:
-                        pass  # that widget didn't contain the id .. skip to the next
+        if self.user_id is None:
+            raise ValueError("Cannot find user ID!")
 
     def go_to_dashboard(self):
         """
@@ -131,11 +160,12 @@ class GarminConnectBot(object):
         if not self.user_logged_in:
             self.login()
 
-        print("Getting user dashboard from", self.user_url)
-        self.browser.get(self.user_url)
-        WebDriverWait(self.browser, self.BROWSER_WAIT_TIMEOUT_SECONDS).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "widget-content"))
-        )  # wait until fully loaded
+        self._go_to(self.user_url, By.CLASS_NAME, "widget-content")
+
+    def _get_day_url(self, date_time):
+        url = self.base_url + "/modern/daily-summary/{}/{}"
+        day = date_time.strftime('%Y-%m-%d')
+        return url.format(self.user_id, day)
 
     def go_to_day(self, date_time):
         """
@@ -146,15 +176,8 @@ class GarminConnectBot(object):
         """
 
         self._find_user_id()
-        date_to_to = date_time.strftime(
-            '%Y-%m-%d')  # retrieve year, month and day to to go to
-        url_to_get = "https://connect.garmin.com/modern/daily-summary/" + str(
-            self.user_id) + "/" + date_to_to
-        self.browser.get(url_to_get)
-        WebDriverWait(self.browser, self.BROWSER_WAIT_TIMEOUT_SECONDS).until(
-            EC.presence_of_element_located(
-                (By.CLASS_NAME, "comment-container"))
-        )  # wait until fully loaded
+        url = self._get_day_url(date_time)
+        self._go_to(url, By.CLASS_NAME, "comment-container")
 
     def get_day(self, date_time):
         """
@@ -164,33 +187,29 @@ class GarminConnectBot(object):
             Data about day
         """
 
-        try:
-            print("Getting day", str(date_time))
-            self.go_to_day(date_time)
-            soup = BeautifulSoup(str(self.browser.page_source),
-                                 "html.parser")  # html parser
+        log_message("Getting day", str(date_time))
+        self.go_to_day(date_time)
+        soup = BeautifulSoup(str(self.browser.page_source),
+                             "html.parser")  # html parser
 
-            tabs_html = soup.find_all("div", {"class": "tab-content"})[
-                0]  # find html source code for sections
-            summary_html = soup.find_all("div", {
-                "class": "content page steps sleep calories timeline"})[0]
-            steps_html = soup.find_all("div", {"class": "row-fluid bottom-m"})[
-                0]
-            sleep_html = tabs_html.find_all("div", {"id": "pane5"})[0]
-            activities_html = tabs_html.find_all("div", {"id": "pane4"})[0]
-            breakdown_html = tabs_html.find_all("div", {"id": "pane2"})[0]
+        tabs_html = soup.find_all("div", {"class": "tab-content"})[
+            0]  # find html source code for sections
+        summary_html = soup.find_all("div", {
+            "class": "content page steps sleep calories timeline"})[0]
+        steps_html = soup.find_all("div", {"class": "row-fluid bottom-m"})[
+            0]
+        sleep_html = tabs_html.find_all("div", {"id": "pane5"})[0]
+        activities_html = tabs_html.find_all("div", {"id": "pane4"})[0]
+        breakdown_html = tabs_html.find_all("div", {"id": "pane2"})[0]
 
-            return GCDayTimeline(
-                date_time,
-                summary_html,
-                steps_html,
-                sleep_html,
-                activities_html,
-                breakdown_html
-            )
-        except Exception as e:
-            print(str(e))
-            return None
+        return GCDayTimeline(
+            date_time,
+            summary_html,
+            steps_html,
+            sleep_html,
+            activities_html,
+            breakdown_html
+        )
 
     def get_days(self, min_date_time, max_date_time):
         """
@@ -203,12 +222,33 @@ class GarminConnectBot(object):
         """
 
         days_delta = (
-            max_date_time - min_date_time).days  # days from begin to end
-        days_data = []  # output list
+            max_date_time - min_date_time
+        ).days  # days from begin to end
+        days = []  # output list
+
         for i in range(days_delta + 1):  # including last day
-            day_to_get = min_date_time + timedelta(days=i)
-            days_data.append(self.get_day(day_to_get))
-        return days_data
+            day = min_date_time + timedelta(days=i)
+            days.append(self.get_day(day))
+
+        return days
+
+    def parse_days(self, min_date_time, max_date_time):
+        """
+        :param min_date_time: datetime
+            Datetime object with date, this is the date when to start downloading data
+        :param max_date_time: datetime
+            Datetime object with date, this is the date when to stop downloading data
+        :return: []
+            List of data about days
+        """
+
+        data = self.get_days(min_date_time, max_date_time)  # get raw data
+
+        for d in data:
+            log_message("Parsing day", str(d.date))
+            d.parse()  # parse
+
+        return data
 
     def save_json_days(self, min_date_time, max_date_time, output_file):
         """
@@ -222,10 +262,7 @@ class GarminConnectBot(object):
             Retrieves data about days in given range, then saves json dump
         """
 
-        data = self.get_days(min_date_time, max_date_time)  # get raw data
-        for d in data:
-            print("Parsing day", str(d.date))
-            d.parse()  # parse
+        data = self.parse_days(min_date_time, max_date_time)
 
         json_data = [json.loads(d.to_json()) for d in
                      data]  # convert to json objects
@@ -246,19 +283,16 @@ class GarminConnectBot(object):
             Retrieves data about days in given range, then saves csv dump
         """
 
-        data = self.get_days(min_date_time, max_date_time)  # get raw data
-        for d in data:
-            print("Parsing day", str(d.date))
-            d.parse()  # parse
+        data = self.parse_days(min_date_time, max_date_time)
 
-        data = [d.to_csv_dict() for d in data]  # get csv
-        csv_headers = data[0].keys()  # get headers for a sample dict
+        csv_data = [d.to_csv_dict() for d in data]  # get csv
+        csv_headers = csv_data[0].keys()  # get headers for a sample dict
         with open(output_file, "w") as o:  # write to file
             dict_writer = csv.DictWriter(o, csv_headers)
             dict_writer.writeheader()
-            dict_writer.writerows(data)
+            dict_writer.writerows(csv_data)
 
-        self.save_gpx(data)
+        self.save_gpx(csv_data)
 
     def save_gpx(self, data):
         """
@@ -272,6 +306,7 @@ class GarminConnectBot(object):
             timelines = [timeline.activities for timeline in data]
             for timeline in timelines:
                 for activity in timeline.activities:
-                    self.browser.get(activity["gpx"])
-                    print("Saved .gpx for", activity["name"],
-                          activity["time_day"])
+                    self._go_to(activity["gpx"])
+                    log_message(
+                        "Saved .gpx for", activity["name"], activity["time_day"]
+                    )
