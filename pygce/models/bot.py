@@ -62,7 +62,7 @@ class GarminConnectBot(object):
         self.download_gpx = download_gpx
         self.user_url = url + self.USER_PATH
         garmin_region = self.user_url.split("/")[2].split("connect.")[-1]
-        print(garmin_region)
+        log_message(garmin_region)
 
         self.login_url = \
             self.BASE_LOGIN_URL.replace("garmin.com", garmin_region)
