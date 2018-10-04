@@ -4,8 +4,9 @@
 
 import csv
 import json
-from bs4 import BeautifulSoup
 from datetime import timedelta
+
+from bs4 import BeautifulSoup
 from hal.internet.selenium_bots import SeleniumForm
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -31,7 +32,9 @@ class GarminConnectBot(object):
     LOGIN_BUTTON_ID = "login-btn-signin"  # html id of the login button
     USERNAME_FIELD_NAME = "username"  # html name of username in login form
     PASSWORD_FIELD_NAME = "password"  # html name of password in login form
-    BROWSER_WAIT_TIMEOUT_SECONDS = 5  # max seconds before url request is discarded
+    BROWSER_WAIT_TIMEOUT_SECONDS = 25  # max seconds before url request is
+
+    # discarded
 
     def __init__(self, user_name, password, download_gpx, chromedriver_path,
                  url=BASE_URL):
@@ -60,11 +63,9 @@ class GarminConnectBot(object):
         self.user_url = url + self.USER_PATH
         garmin_region = self.user_url.split("/")[2].split("connect.")[-1]
         print(garmin_region)
+
         self.login_url = \
             self.BASE_LOGIN_URL.replace("garmin.com", garmin_region)
-
-        print(self.user_url)
-        print(self.login_url)
 
     def login(self):
         """
