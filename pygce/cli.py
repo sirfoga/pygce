@@ -6,7 +6,7 @@ import argparse
 import os
 from datetime import datetime
 
-from models.bot import GarminConnectBot
+from pygce.models.bot import GarminConnectBot
 
 AVAILABLE_OUTPUT_FORMATS = ["json", "csv"]
 

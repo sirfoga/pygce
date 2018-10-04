@@ -12,15 +12,14 @@ DESCRIPTION = \
     - $ python3 setup.py (install from source)\n\
     \n\
     Questions and issues\n\n\
-    The github issue tracker is only for bug reports and feature requests.\
-    Anything else, such as questions for help in using the tool, should be posted in StackOverflow.\n\
-    \n\
-    License: Apache License Version 2.0, January 2004"
+    The github issue tracker is only for bug reports and feature requests."
+VERSION = open("VERSION").readlines()[0]
+VERSION_NUMBER = VERSION.split(" ")[0]
 
 
 setup(
     name="pygce",
-    version="1.9.8",
+    version=VERSION_NUMBER,
     author="sirfoga",
     author_email="sirfoga@protonmail.com",
     description="pygce is an unofficial Garmin Connect data exporter.",

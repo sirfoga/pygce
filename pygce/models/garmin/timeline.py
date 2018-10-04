@@ -3,10 +3,11 @@
 
 
 import json
-from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 
-from . import utils
+from bs4 import BeautifulSoup
+
+from pygce.models.garmin import utils
 
 
 class GCDaySection(object):
