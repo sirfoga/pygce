@@ -4,17 +4,17 @@
 </div>
 
 
-<div align="center"><a href="https://landscape.io/github/sirfoga/pygce/master"><img alt="Code Health" src="https://landscape.io/github/sirfoga/pygce/master/landscape.svg?style=flat"></a> <a href="https://www.python.org/download/releases/3.4.0/"><img alt="Python version" src="https://img.shields.io/badge/Python-3.5-blue.svg"></a></div>
+<div align="center"><a href="https://landscape.io/github/sirfoga/pygce/master"><img alt="Code Health" src="https://landscape.io/github/sirfoga/pygce/master/landscape.svg?style=flat"></a> <a href="https://www.python.org/download/releases/3.6.0/"><img alt="Python version" src="https://img.shields.io/badge/Python-3.6-blue.svg"></a></div>
 
-<div align="center"><a href="https://opensource.org/licenses/Apache-2.0"><img alt="Open Source Love" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
-<a href="https://github.com/sirfoga/scrapebots/issues"><img alt="Contributions welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a> <a href="http://unlicense.org/"><img src="https://img.shields.io/badge/license-Unlicense-blue.svg"></a></div>
+<div align="center">
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a> <a href="https://opensource.org/licenses/MIT"><img alt="Open Source Love" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
+<a href="https://github.com/sirfoga/pygce/issues"><img alt="Contributions welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a> <a href="http://unlicense.org/"><img src="https://img.shields.io/badge/license-Unlicense-blue.svg"></a>
+</div>
 
 
 ## Install
 ```shell
-$ git clone https://github.com/sirfoga/pygce && cd pygce
-$ pip3 uninstall pygce  # remove previous installations
-$ python3 setup.py install --force  # install (forcing files replacing)
+$ pip3 install .  # install (forcing files replacing)
 ```
 *As long as the [new](https://pypi.org/) pypi website is not ready, I cannot 
 update the 
@@ -28,15 +28,14 @@ usage: -u <username (email) to login to Garmin Connect> -p <password to login to
 
 optional arguments:
   -h, --help            show this help message and exit
-  -user USER               username (email) to login to Garmin Connect
-  -password PASSWORD           password to login to Garmin Connect
-  -url URL           url to connect to (e.g https://connect.garmin.com)
-  -chrome PATH_CHROMEDRIVER  path to chromedriver to use
-  -d [DAYS [DAYS ...]]  days to save. e.g -d 2017-12-30 or -d 2016-01-01
-                        2017-12-30
-  -f FORMAT_OUT         <format of output file [json, csv]>
-  -gpx GPX_OUT          download .gpx files too [y/n]
-  -out PATH_OUT           path to output file
+  -user                 username (email) to login to Garmin Connect
+  -password             password to login to Garmin Connect
+  -url URL              url to connect to (e.g https://connect.garmin.com)
+  -chrome               path to chromedriver to use
+  -d [DAYS [DAYS ...]]  days to save. e.g -d 2017-12-30 or -d 2016-01-01 2017-12-30
+  -f                    format of output file [json, csv]
+  -gpx                  download .gpx files too [y/n]
+  -out                  path to output file
 ```
 When called with appropriate args `pygce` saves `.csv` or `.json` data dumps of your Garmin Connect timeline data. The files will look like
 ```
@@ -100,4 +99,4 @@ Suggestions and improvements [welcome](https://github.com/sirfoga/pygce/issues)!
 
 
 ## License
-[Unlicense](https://unlicense.org/)
+[MIT License](https://opensource.org/licenses/MIT)

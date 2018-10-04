@@ -3,9 +3,8 @@
 
 
 import json
-from datetime import datetime, timedelta
-
 from bs4 import BeautifulSoup
+from datetime import datetime, timedelta
 
 from . import utils
 

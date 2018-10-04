@@ -4,9 +4,8 @@
 
 import csv
 import json
-from datetime import timedelta
-
 from bs4 import BeautifulSoup
+from datetime import timedelta
 from hal.internet.selenium_bots import SeleniumForm
 from selenium import webdriver
 from selenium.webdriver.common.by import By
