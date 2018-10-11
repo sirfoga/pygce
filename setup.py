@@ -37,6 +37,6 @@ setup(
         "pyhal",
         "lxml",
         "numpy",
-        "sklearn"
+        "sklearn", 'selenium'
     ]
 )

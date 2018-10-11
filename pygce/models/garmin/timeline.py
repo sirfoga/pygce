@@ -472,10 +472,25 @@ class GCDayBreakdown(GCDaySection):
         values = [str(v.text).strip().replace("%", "") for v in
                   values]  # remove jibberish
 
-        self.highly_active = utils.parse_num(values[0])
-        self.active = utils.parse_num(values[1])
-        self.sedentary = utils.parse_num(values[2])
-        self.sleeping = utils.parse_num(values[3])
+        try:
+            self.highly_active = utils.parse_num(values[0])
+        except:
+            pass  # None
+
+        try:
+            self.active = utils.parse_num(values[1])
+        except:
+            pass  # None
+
+        try:
+            self.sedentary = utils.parse_num(values[2])
+        except:
+            pass  # None
+
+        try:
+            self.sleeping = utils.parse_num(values[3])
+        except:
+            pass  # None
 
     def to_dict(self):
         return {

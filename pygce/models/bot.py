@@ -33,7 +33,7 @@ class GarminConnectBot(object):
     LOGIN_BUTTON_ID = "login-btn-signin"  # html id of the login button
     USERNAME_FIELD_NAME = "username"  # html name of username in login form
     PASSWORD_FIELD_NAME = "password"  # html name of password in login form
-    BROWSER_WAIT_TIMEOUT_SECONDS = 2  # max seconds before url request is
+    BROWSER_WAIT_TIMEOUT_SECONDS = 3  # max seconds before url request is
     BROWSER_GENERAL_ERROR = "If the error persist, please open an issue."
     BROWSER_TIMEOUT_ERROR = "Cannot complete request (cannot find {}). I " \
                             "suggest setting a larger browser timeout page. " + \
@@ -117,8 +117,7 @@ class GarminConnectBot(object):
 
         try:
             self._go_to(self.login_url)  # open login url
-            SeleniumForm.fill_login_form(
-                self.browser,
+            SeleniumForm(self.browser).fill_login_form(
                 self.user_name, self.USERNAME_FIELD_NAME,
                 self.user_password, self.PASSWORD_FIELD_NAME
             )  # fill login form
@@ -198,9 +197,27 @@ class GarminConnectBot(object):
             "class": "content page steps sleep calories timeline"})[0]
         steps_html = soup.find_all("div", {"class": "row-fluid bottom-m"})[
             0]
-        sleep_html = tabs_html.find_all("div", {"id": "pane5"})[0]
-        activities_html = tabs_html.find_all("div", {"id": "pane4"})[0]
-        breakdown_html = tabs_html.find_all("div", {"id": "pane2"})[0]
+
+        try:
+            sleep_html = tabs_html.find_all("div", {"id": "pane5"})[0]
+            log_message("found sleep data")
+        except:
+            sleep_html = None
+            log_message("NOT found sleep data")
+
+        try:
+            activities_html = tabs_html.find_all("div", {"id": "pane4"})[0]
+            log_message("found activities data")
+        except:
+            activities_html = None
+            log_message("NOT found activities data")
+
+        try:
+            breakdown_html = tabs_html.find_all("div", {"id": "pane2"})[0]
+            log_message("found breakdown data")
+        except:
+            breakdown_html = None
+            log_message("NOT found breakdown data")
 
         return GCDayTimeline(
             date_time,
