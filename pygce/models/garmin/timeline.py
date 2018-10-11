@@ -2,6 +2,7 @@
 # coding: utf-8
 
 
+import abc
 import json
 from datetime import datetime, timedelta
 
@@ -10,7 +11,7 @@ from bs4 import BeautifulSoup
 from pygce.models.garmin import utils
 
 
-class GCDaySection(object):
+class GCDaySection:
     """
     Standard section in the Garmin Connect timeline of day.
     """
@@ -23,12 +24,11 @@ class GCDaySection(object):
             Unique str in order not to mistake this GCDaySection with another one
         """
 
-        object.__init__(self)
-
         self.tag = tag  # unique key in order not to mistake this GCDaySection with another one
         self.html = str(raw_html)
         self.soup = BeautifulSoup(self.html, "html.parser")
 
+    @abc.abstractmethod
     def parse(self):
         """
         :return: void
@@ -81,16 +81,27 @@ class GCDaySummary(GCDaySection):
             HTML source snippet with information about section
         """
 
-        GCDaySection.__init__(self, raw_html, tag="SUMMARY")
+        super().__init__(raw_html, tag="SUMMARY")
 
         self.likes = None
         self.comment = None
         self.kcal_count = None
 
     def parse(self):
-        self.parse_likes()
-        self.parse_comment()
-        self.parse_kcal_count()
+        try:
+            self.parse_likes()
+        except:
+            pass
+
+        try:
+            self.parse_comment()
+        except:
+            pass
+
+        try:
+            self.parse_kcal_count()
+        except:
+            pass
 
     def parse_likes(self):
         """
@@ -148,7 +159,7 @@ class GCDaySteps(GCDaySection):
             HTML source snippet with information about section
         """
 
-        GCDaySection.__init__(self, raw_html, tag="STEPS")
+        super().__init__(raw_html, tag="STEPS")
 
         self.total = None
         self.goal = None
@@ -156,8 +167,15 @@ class GCDaySteps(GCDaySection):
         self.distance = None
 
     def parse(self):
-        self.parse_steps_count()
-        self.parse_steps_stats()
+        try:
+            self.parse_steps_count()
+        except:
+            pass
+
+        try:
+            self.parse_steps_stats()
+        except:
+            pass
 
     def parse_steps_count(self):
         """
@@ -213,7 +231,7 @@ class GCDaySleep(GCDaySection):
             HTML source snippet with information about section
         """
 
-        GCDaySection.__init__(self, raw_html, tag="SLEEP")
+        super().__init__(raw_html, tag="SLEEP")
 
         self.night_sleep_time = None
         self.nap_time = None
@@ -225,9 +243,20 @@ class GCDaySleep(GCDaySection):
         self.awake_sleep_time = None  # time during night you were awake
 
     def parse(self):
-        self.parse_sleep_totals()
-        self.parse_bed_time()
-        self.parse_sleep_times()
+        try:
+            self.parse_sleep_totals()
+        except:
+            pass
+
+        try:
+            self.parse_bed_time()
+        except:
+            pass
+
+        try:
+            self.parse_sleep_times()
+        except:
+            pass
 
     def parse_sleep_totals(self):
         """
@@ -235,18 +264,13 @@ class GCDaySleep(GCDaySection):
             Finds value of night/nap/total sleep times
         """
 
-        try:
-            container = \
-                self.soup.find_all("div", {"class": "equation centered"})[0]
-            times = container.find_all("div", {"class": "data-bit"})
-            times = [str(t.text).strip() for t in times]  # strip texts
-            self.night_sleep_time = utils.parse_hh_mm(times[0])
-            self.nap_time = utils.parse_hh_mm(times[1])
-            self.total_sleep_time = utils.parse_hh_mm(times[2].split(" ")[0])
-        except:
-            self.night_sleep_time = None
-            self.nap_time = None
-            self.total_sleep_time = None
+        container = \
+            self.soup.find_all("div", {"class": "equation centered"})[0]
+        times = container.find_all("div", {"class": "data-bit"})
+        times = [str(t.text).strip() for t in times]  # strip texts
+        self.night_sleep_time = utils.parse_hh_mm(times[0])
+        self.nap_time = utils.parse_hh_mm(times[1])
+        self.total_sleep_time = utils.parse_hh_mm(times[2].split(" ")[0])
 
     def parse_bed_time(self):
         """
@@ -254,18 +278,14 @@ class GCDaySleep(GCDaySection):
             Finds hour start/end sleep
         """
 
-        try:
-            times = self.soup.find_all(
-                "div", {"class": "time-inline-edit-placeholder"}
-            )
-            times = [str(t.text).strip() for t in times]  # strip texts
-            self.bed_time = datetime.strptime(
-                times[0], "%I:%M %p").time()  # account for AM/PM
-            self.wake_time = datetime.strptime(
-                times[1], "%I:%M %p").time()  # account for AM/PM
-        except:
-            self.bed_time = None
-            self.wake_time = None
+        times = self.soup.find_all(
+            "div", {"class": "time-inline-edit-placeholder"}
+        )
+        times = [str(t.text).strip() for t in times]  # strip texts
+        self.bed_time = datetime.strptime(
+            times[0], "%I:%M %p").time()  # account for AM/PM
+        self.wake_time = datetime.strptime(
+            times[1], "%I:%M %p").time()  # account for AM/PM
 
     def parse_sleep_times(self):
         """
@@ -273,28 +293,24 @@ class GCDaySleep(GCDaySection):
             Finds deep/light/awake sleep times
         """
 
-        try:
-            container = self.soup.find_all("div", {
-                "class": "span4 text-center sleep-chart-secondary deep-sleep-circle-chart-placeholder"})[
-                0]
-            self.deep_sleep_time = utils.parse_hh_mm(
-                container.find_all("span")[0].text.split("hrs")[0])
+        base_class = "span4 text-center sleep-chart-secondary"
+        container = self.soup.find_all("div", {
+            "class": base_class + " deep-sleep-circle-chart-placeholder"})[
+            0]
+        self.deep_sleep_time = utils.parse_hh_mm(
+            container.find_all("span")[0].text.split("hrs")[0])
 
-            container = self.soup.find_all("div", {
-                "class": "span4 text-center sleep-chart-secondary light-sleep-circle-chart-placeholder"})[
-                0]
-            self.light_sleep_time = utils.parse_hh_mm(
-                container.find_all("span")[0].text.split("hrs")[0])
+        container = self.soup.find_all("div", {
+            "class": base_class + " light-sleep-circle-chart-placeholder"})[
+            0]
+        self.light_sleep_time = utils.parse_hh_mm(
+            container.find_all("span")[0].text.split("hrs")[0])
 
-            container = self.soup.find_all("div", {
-                "class": "span4 text-center sleep-chart-secondary awake-circle-chart-placeholder"})[
-                0]
-            self.awake_sleep_time = utils.parse_hh_mm(
-                container.find_all("span")[0].text.split("hrs")[0])
-        except:
-            self.deep_sleep_time = None
-            self.light_sleep_time = None
-            self.awake_sleep_time = None
+        container = self.soup.find_all("div", {
+            "class": base_class + " awake-circle-chart-placeholder"})[
+            0]
+        self.awake_sleep_time = utils.parse_hh_mm(
+            container.find_all("span")[0].text.split("hrs")[0])
 
     def to_dict(self):
         return {
@@ -323,7 +339,7 @@ class GCDayActivities(GCDaySection):
             HTML source snippet with information about section
         """
 
-        GCDaySection.__init__(self, raw_html, tag="ACTIVITIES")
+        super().__init__(raw_html, tag="ACTIVITIES")
         self.activities = []
 
     def parse(self):
@@ -460,7 +476,7 @@ class GCDayBreakdown(GCDaySection):
             HTML source snippet with information about section
         """
 
-        GCDaySection.__init__(self, raw_html, tag="BREAKDOWN")
+        super().__init__(raw_html, tag="BREAKDOWN")
 
         self.highly_active = None
         self.active = None
