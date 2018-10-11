@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="dir_24e56a326da42ce043efcd046db7603f" kind="dir">
-    <compoundname>/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin</compoundname>
+    <compoundname>/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin</compoundname>
     <innerfile refid="models_2garmin_2____init_____8py">__init__.py</innerfile>
-    <innerfile refid="activities_8py">activities.py</innerfile>
     <innerfile refid="timeline_8py">timeline.py</innerfile>
     <innerfile refid="utils_8py">utils.py</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin/"/>
+    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/"/>
   </compounddef>
 </doxygen>

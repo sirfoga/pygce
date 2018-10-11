@@ -37,38 +37,33 @@ list \hyperlink{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_afae
 \begin{DoxyVerb}Analyzes and provides insights into Garmin timeline data \end{DoxyVerb}
  
 
-Definition at line 138 of file models.\+py.
+Definition at line 123 of file models.\+py.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a7fccb7531cafe3b618ad7026db2d3b53}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a7fccb7531cafe3b618ad7026db2d3b53}} 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
 \index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
-\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, dataset\+\_\+file)}{__init__(self, dataset_file)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+\_\+\+\_\+init\+\_\+\+\_\+ (
-\begin{DoxyParamCaption}
-\item[{}]{self, }
-\item[{}]{dataset\+\_\+file}
-\end{DoxyParamCaption}
-)}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a7fccb7531cafe3b618ad7026db2d3b53}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a7fccb7531cafe3b618ad7026db2d3b53}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{dataset\+\_\+file }\end{DoxyParamCaption})}
+
 \begin{DoxyVerb}:param dataset_file: str
     Path to folder with data to analyse
 \end{DoxyVerb}
  
 
-Definition at line 169 of file models.\+py.
+Definition at line 154 of file models.\+py.
 
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a981ac0211fd075b7fae599a09f385314}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a981ac0211fd075b7fae599a09f385314}} 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!cluster\+\_\+3d\+\_\+plot@{cluster\+\_\+3d\+\_\+plot}}
 \index{cluster\+\_\+3d\+\_\+plot@{cluster\+\_\+3d\+\_\+plot}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
-\subsubsection[{\texorpdfstring{cluster\+\_\+3d\+\_\+plot(self, labels, n\+\_\+clusters=6)}{cluster_3d_plot(self, labels, n_clusters=6)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+cluster\+\_\+3d\+\_\+plot (
-\begin{DoxyParamCaption}
-\item[{}]{self, }
-\item[{}]{labels, }
-\item[{}]{n\+\_\+clusters = {\ttfamily 6}}
-\end{DoxyParamCaption}
-)}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a981ac0211fd075b7fae599a09f385314}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a981ac0211fd075b7fae599a09f385314}
+\subsubsection{\texorpdfstring{cluster\+\_\+3d\+\_\+plot()}{cluster\_3d\_plot()}}
+{\footnotesize\ttfamily def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+cluster\+\_\+3d\+\_\+plot (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{labels,  }\item[{}]{n\+\_\+clusters = {\ttfamily 6} }\end{DoxyParamCaption})}
+
 \begin{DoxyVerb}:param labels: [] of str (len = 3)
     Features to cluster data. Each item must be in the csv data file. Each label is one of x, y, z axis
 :param n_clusters: int
@@ -78,16 +73,14 @@ Definition at line 169 of file models.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 263 of file models.\+py.
+Definition at line 257 of file models.\+py.
 
+\mbox{\Hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a4bdbc9b67a365b2e0d5a76e7bd811ce5}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a4bdbc9b67a365b2e0d5a76e7bd811ce5}} 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!cluster\+\_\+analyze@{cluster\+\_\+analyze}}
 \index{cluster\+\_\+analyze@{cluster\+\_\+analyze}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
-\subsubsection[{\texorpdfstring{cluster\+\_\+analyze(self, n\+\_\+clusters=6)}{cluster_analyze(self, n_clusters=6)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+cluster\+\_\+analyze (
-\begin{DoxyParamCaption}
-\item[{}]{self, }
-\item[{}]{n\+\_\+clusters = {\ttfamily 6}}
-\end{DoxyParamCaption}
-)}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a4bdbc9b67a365b2e0d5a76e7bd811ce5}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a4bdbc9b67a365b2e0d5a76e7bd811ce5}
+\subsubsection{\texorpdfstring{cluster\+\_\+analyze()}{cluster\_analyze()}}
+{\footnotesize\ttfamily def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+cluster\+\_\+analyze (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n\+\_\+clusters = {\ttfamily 6} }\end{DoxyParamCaption})}
+
 \begin{DoxyVerb}:param n_clusters: int
     Number of clusters
 :return: void
@@ -98,30 +91,27 @@ Definition at line 263 of file models.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 225 of file models.\+py.
+Definition at line 215 of file models.\+py.
 
+\mbox{\Hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a1a02ca1184152091fc1f66306e1ac02c}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a1a02ca1184152091fc1f66306e1ac02c}} 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!parse\+\_\+csv@{parse\+\_\+csv}}
 \index{parse\+\_\+csv@{parse\+\_\+csv}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
-\subsubsection[{\texorpdfstring{parse\+\_\+csv(self)}{parse_csv(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+parse\+\_\+csv (
-\begin{DoxyParamCaption}
-\item[{}]{self}
-\end{DoxyParamCaption}
-)}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a1a02ca1184152091fc1f66306e1ac02c}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a1a02ca1184152091fc1f66306e1ac02c}
+\subsubsection{\texorpdfstring{parse\+\_\+csv()}{parse\_csv()}}
+{\footnotesize\ttfamily def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+parse\+\_\+csv (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
 \begin{DoxyVerb}:return: tuple [], [] of []
     Headers of csv file and data
 \end{DoxyVerb}
  
 
-Definition at line 177 of file models.\+py.
+Definition at line 162 of file models.\+py.
 
+\mbox{\Hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ab769c6f075333081a68712e0ecf8b094}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ab769c6f075333081a68712e0ecf8b094}} 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!predict\+\_\+feature@{predict\+\_\+feature}}
 \index{predict\+\_\+feature@{predict\+\_\+feature}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
-\subsubsection[{\texorpdfstring{predict\+\_\+feature(self, feature)}{predict_feature(self, feature)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+predict\+\_\+feature (
-\begin{DoxyParamCaption}
-\item[{}]{self, }
-\item[{}]{feature}
-\end{DoxyParamCaption}
-)}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ab769c6f075333081a68712e0ecf8b094}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ab769c6f075333081a68712e0ecf8b094}
+\subsubsection{\texorpdfstring{predict\+\_\+feature()}{predict\_feature()}}
+{\footnotesize\ttfamily def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+predict\+\_\+feature (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{feature }\end{DoxyParamCaption})}
+
 \begin{DoxyVerb}:param feature: str
     Name of feature (column name) to predict
 :return: void
@@ -129,17 +119,14 @@ Definition at line 177 of file models.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 196 of file models.\+py.
+Definition at line 183 of file models.\+py.
 
+\mbox{\Hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a2f8938bff9d88b45dbdc7342b84d1bc6}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a2f8938bff9d88b45dbdc7342b84d1bc6}} 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!select\+\_\+k\+\_\+best@{select\+\_\+k\+\_\+best}}
 \index{select\+\_\+k\+\_\+best@{select\+\_\+k\+\_\+best}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
-\subsubsection[{\texorpdfstring{select\+\_\+k\+\_\+best(self, feature, k=5)}{select_k_best(self, feature, k=5)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+select\+\_\+k\+\_\+best (
-\begin{DoxyParamCaption}
-\item[{}]{self, }
-\item[{}]{feature, }
-\item[{}]{k = {\ttfamily 5}}
-\end{DoxyParamCaption}
-)}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a2f8938bff9d88b45dbdc7342b84d1bc6}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_a2f8938bff9d88b45dbdc7342b84d1bc6}
+\subsubsection{\texorpdfstring{select\+\_\+k\+\_\+best()}{select\_k\_best()}}
+{\footnotesize\ttfamily def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+select\+\_\+k\+\_\+best (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{feature,  }\item[{}]{k = {\ttfamily 5} }\end{DoxyParamCaption})}
+
 \begin{DoxyVerb}:param feature: str
     Name of feature (column name) to predict
 :param k: int
@@ -149,74 +136,79 @@ Definition at line 196 of file models.\+py.
 \end{DoxyVerb}
  
 
-Definition at line 314 of file models.\+py.
+Definition at line 317 of file models.\+py.
 
+\mbox{\Hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ac5f4540c89ea52ccbd5c28ce850bc1d3}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ac5f4540c89ea52ccbd5c28ce850bc1d3}} 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data@{show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data}}
 \index{show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data@{show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
-\subsubsection[{\texorpdfstring{show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data(self)}{show_correlation_matrix_of_data(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data (
-\begin{DoxyParamCaption}
-\item[{}]{self}
-\end{DoxyParamCaption}
-)}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ac5f4540c89ea52ccbd5c28ce850bc1d3}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_ac5f4540c89ea52ccbd5c28ce850bc1d3}
+\subsubsection{\texorpdfstring{show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data()}{show\_correlation\_matrix\_of\_data()}}
+{\footnotesize\ttfamily def pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+show\+\_\+correlation\+\_\+matrix\+\_\+of\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
 \begin{DoxyVerb}:return: void
     Shows correlation matrix of data of files in folder
 \end{DoxyVerb}
  
 
-Definition at line 187 of file models.\+py.
+Definition at line 173 of file models.\+py.
 
 
 
 \subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_abc835b2b9b9d8555a2b49e8534782021}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_abc835b2b9b9d8555a2b49e8534782021}} 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+A\+N\+A\+L\+Y\+ZE@{H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+A\+N\+A\+L\+Y\+ZE}}
 \index{H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+A\+N\+A\+L\+Y\+ZE@{H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+A\+N\+A\+L\+Y\+ZE}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
-\subsubsection[{\texorpdfstring{H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+A\+N\+A\+L\+Y\+ZE}{HEADERS_TO_ANALYZE}}]{\setlength{\rightskip}{0pt plus 5cm}list pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+A\+N\+A\+L\+Y\+ZE\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_abc835b2b9b9d8555a2b49e8534782021}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_abc835b2b9b9d8555a2b49e8534782021}
+\subsubsection{\texorpdfstring{H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+A\+N\+A\+L\+Y\+ZE}{HEADERS\_TO\_ANALYZE}}
+{\footnotesize\ttfamily list pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+A\+N\+A\+L\+Y\+ZE\hspace{0.3cm}{\ttfamily [static]}}
+
 {\bfseries Initial value\+:}
 \begin{DoxyCode}
-1 = [
-2         \textcolor{stringliteral}{"SUMMARY:kcal\_count"},
-3         \textcolor{stringliteral}{"STEPS:distance"},
-4         \textcolor{stringliteral}{"SLEEP:light\_sleep\_time"},
-5         \textcolor{stringliteral}{"BREAKDOWN:sleeping"},
-6         \textcolor{stringliteral}{"BREAKDOWN:highly\_active"},
-7         \textcolor{stringliteral}{"ACTIVITIES:kcal"},
-8         \textcolor{stringliteral}{"BREAKDOWN:active"},
-9         \textcolor{stringliteral}{"STEPS:total"},
-10         \textcolor{stringliteral}{"STEPS:avg"},
-11         \textcolor{stringliteral}{"BREAKDOWN:sedentary"},
-12         \textcolor{stringliteral}{"SLEEP:awake\_sleep\_time"},
-13         \textcolor{stringliteral}{"SLEEP:total\_sleep\_time"},
-14         \textcolor{stringliteral}{"SLEEP:deep\_sleep\_time"},
-15         \textcolor{stringliteral}{"ACTIVITIES:duration"},
-16         \textcolor{stringliteral}{"ACTIVITIES:distance"},
-17         \textcolor{stringliteral}{"STEPS:goal"}
-18     ]
+=  [
+        \textcolor{stringliteral}{"SUMMARY:kcal\_count"},
+        \textcolor{stringliteral}{"STEPS:distance"},
+        \textcolor{stringliteral}{"SLEEP:light\_sleep\_time"},
+        \textcolor{stringliteral}{"BREAKDOWN:sleeping"},
+        \textcolor{stringliteral}{"BREAKDOWN:highly\_active"},
+        \textcolor{stringliteral}{"ACTIVITIES:kcal"},
+        \textcolor{stringliteral}{"BREAKDOWN:active"},
+        \textcolor{stringliteral}{"STEPS:total"},
+        \textcolor{stringliteral}{"STEPS:avg"},
+        \textcolor{stringliteral}{"BREAKDOWN:sedentary"},
+        \textcolor{stringliteral}{"SLEEP:awake\_sleep\_time"},
+        \textcolor{stringliteral}{"SLEEP:total\_sleep\_time"},
+        \textcolor{stringliteral}{"SLEEP:deep\_sleep\_time"},
+        \textcolor{stringliteral}{"ACTIVITIES:duration"},
+        \textcolor{stringliteral}{"ACTIVITIES:distance"},
+        \textcolor{stringliteral}{"STEPS:goal"}
+    ]
 \end{DoxyCode}
 
 
-Definition at line 141 of file models.\+py.
+Definition at line 126 of file models.\+py.
 
+\mbox{\Hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_afaebf4ce7e847ff4c32a7b9b799fd94d}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_afaebf4ce7e847ff4c32a7b9b799fd94d}} 
 \index{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}!T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT@{T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT}}
 \index{T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT@{T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT}!pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis@{pygce\+::analysis\+::models\+::\+Timeline\+Data\+Analysis}}
-\subsubsection[{\texorpdfstring{T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT}{TIME_HEADERS_TO_CONVERT}}]{\setlength{\rightskip}{0pt plus 5cm}list pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_afaebf4ce7e847ff4c32a7b9b799fd94d}{}\label{classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_afaebf4ce7e847ff4c32a7b9b799fd94d}
+\subsubsection{\texorpdfstring{T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT}{TIME\_HEADERS\_TO\_CONVERT}}
+{\footnotesize\ttfamily list pygce.\+analysis.\+models.\+Timeline\+Data\+Analysis.\+T\+I\+M\+E\+\_\+\+H\+E\+A\+D\+E\+R\+S\+\_\+\+T\+O\+\_\+\+C\+O\+N\+V\+E\+RT\hspace{0.3cm}{\ttfamily [static]}}
+
 {\bfseries Initial value\+:}
 \begin{DoxyCode}
-1 = [
-2         \textcolor{stringliteral}{"SLEEP:nap\_time"},
-3         \textcolor{stringliteral}{"SLEEP:light\_sleep\_time"},
-4         \textcolor{stringliteral}{"SLEEP:awake\_sleep\_time"},
-5         \textcolor{stringliteral}{"SLEEP:total\_sleep\_time"},
-6         \textcolor{stringliteral}{"SLEEP:deep\_sleep\_time"},
-7         \textcolor{stringliteral}{"SLEEP:night\_sleep\_time"},
-8         \textcolor{stringliteral}{"ACTIVITIES:duration"}
-9     ]
+=  [
+        \textcolor{stringliteral}{"SLEEP:nap\_time"},
+        \textcolor{stringliteral}{"SLEEP:light\_sleep\_time"},
+        \textcolor{stringliteral}{"SLEEP:awake\_sleep\_time"},
+        \textcolor{stringliteral}{"SLEEP:total\_sleep\_time"},
+        \textcolor{stringliteral}{"SLEEP:deep\_sleep\_time"},
+        \textcolor{stringliteral}{"SLEEP:night\_sleep\_time"},
+        \textcolor{stringliteral}{"ACTIVITIES:duration"}
+    ]
 \end{DoxyCode}
 
 
-Definition at line 159 of file models.\+py.
+Definition at line 144 of file models.\+py.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/stefano/\+Coding/\+Python/projects/garmin-\/connect-\/export/pygce/analysis/\hyperlink{models_8py}{models.\+py}\end{DoxyCompactItemize}
+/home/stefano/\+Coding/\+Python/projects/pygce/pygce/analysis/\hyperlink{models_8py}{models.\+py}\end{DoxyCompactItemize}

@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="namespacepygce_1_1models" kind="namespace" language="Python">
     <compoundname>pygce::models</compoundname>
     <innernamespace refid="namespacepygce_1_1models_1_1bot">pygce::models::bot</innernamespace>
     <innernamespace refid="namespacepygce_1_1models_1_1garmin">pygce::models::garmin</innernamespace>
+    <innernamespace refid="namespacepygce_1_1models_1_1logger">pygce::models::logger</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/__init__.py" line="1" column="1"/>
+    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/__init__.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="dir_5d66fa335f2221b0de0fdbd258a5936b" kind="dir">
-    <compoundname>/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models</compoundname>
-    <innerdir refid="dir_24e56a326da42ce043efcd046db7603f">/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/garmin</innerdir>
+    <compoundname>/home/stefano/Coding/Python/projects/pygce/pygce/models</compoundname>
+    <innerdir refid="dir_24e56a326da42ce043efcd046db7603f">/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin</innerdir>
     <innerfile refid="models_2____init_____8py">__init__.py</innerfile>
     <innerfile refid="bot_8py">bot.py</innerfile>
+    <innerfile refid="logger_8py">logger.py</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/models/"/>
+    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/"/>
   </compounddef>
 </doxygen>

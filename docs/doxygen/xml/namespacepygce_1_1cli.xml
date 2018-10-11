@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="namespacepygce_1_1cli" kind="namespace" language="Python">
     <compoundname>pygce::cli</compoundname>
       <sectiondef kind="var">
@@ -8,14 +8,14 @@
         <definition>list pygce::cli.AVAILABLE_OUTPUT_FORMATS</definition>
         <argsstring></argsstring>
         <name>AVAILABLE_OUTPUT_FORMATS</name>
-        <initializer>= [&quot;json&quot;, &quot;csv&quot;]</initializer>
+        <initializer>=  [&quot;json&quot;, &quot;csv&quot;]</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" line="24" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" bodystart="24" bodyend="-1"/>
+        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" line="11" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" bodystart="11" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -38,7 +38,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" line="27" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" bodystart="27" bodyend="38"/>
+        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" line="14" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" bodystart="14" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="namespacepygce_1_1cli_1a5734100556cffce34b4b53f9d027080b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -53,7 +53,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" line="39" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" bodystart="39" bodyend="58"/>
+        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" line="26" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" bodystart="26" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="namespacepygce_1_1cli_1a7729e758c25a70a57c0578bd4dde32df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -74,12 +74,12 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" line="59" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" bodystart="59" bodyend="78"/>
+        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" line="67" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" bodystart="67" bodyend="89"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepygce_1_1cli_1a0f7f85c9696c954d49239d75ffe8face" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepygce_1_1cli_1a15e4213eee5373558d6f7b59b6a84498" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pygce.cli.check_args</definition>
-        <argsstring>(user, password, chromedriver, days, format_out, path_out)</argsstring>
+        <argsstring>(user, password, url, chromedriver, days, format_out, path_out)</argsstring>
         <name>check_args</name>
         <param>
           <type>user</type>
@@ -88,6 +88,10 @@
         <param>
           <type>password</type>
           <defname>password</defname>
+        </param>
+        <param>
+          <type>url</type>
+          <defname>url</defname>
         </param>
         <param>
           <type>chromedriver</type>
@@ -112,6 +116,8 @@
     User to use
 :param password: str
     Password to use
+:param url: str
+    Url to connect to
 :param chromedriver: str
     Path to chromedriver to use
 :param days: [] of datetime.date
@@ -125,7 +131,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" line="79" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" bodystart="79" bodyend="110"/>
+        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" line="90" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" bodystart="90" bodyend="124"/>
       </memberdef>
       <memberdef kind="function" id="namespacepygce_1_1cli_1a696dc9e135d9815a0d4a889eb94c18fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -138,13 +144,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" line="111" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" bodystart="111" bodyend="121"/>
+        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" line="125" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" bodystart="125" bodyend="139"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/cli.py" line="1" column="1"/>
+    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/cli.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

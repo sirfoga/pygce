@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classpygce_1_1analysis_1_1models_1_1_stats_analysis" kind="class" language="Python" prot="public">
     <compoundname>pygce::analysis::models::StatsAnalysis</compoundname>
     <basecompoundref refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter" prot="public" virt="non-virtual">pygce.analysis.models.GarminDataFilter</basecompoundref>
@@ -27,7 +27,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" line="98" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" bodystart="98" bodyend="105"/>
+        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="83" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="83" bodyend="90"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_stats_analysis_1a2dd9052d1133c137c3049c6a425f8722" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -58,7 +58,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" line="106" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" bodystart="106" bodyend="125"/>
+        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="91" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="91" bodyend="110"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -111,7 +111,7 @@
         <label>object</label>
       </node>
     </collaborationgraph>
-    <location file="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" line="95" column="1" bodyfile="/home/stefano/Coding/Python/projects/garmin-connect-export/pygce/analysis/models.py" bodystart="95" bodyend="126"/>
+    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="80" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="80" bodyend="111"/>
     <listofallmembers>
       <member refid="classpygce_1_1analysis_1_1models_1_1_stats_analysis_1a161706ff9c5a5410356e28a240ea5e29" prot="public" virt="non-virtual"><scope>pygce::analysis::models::StatsAnalysis</scope><name>__init__</name></member>
       <member refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1aba928d8e942c743cf1553760cdb95ea1" prot="public" virt="non-virtual"><scope>pygce::analysis::models::StatsAnalysis</scope><name>convert_time_columns</name></member>
