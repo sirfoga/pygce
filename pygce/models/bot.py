@@ -7,7 +7,7 @@ import json
 from datetime import timedelta
 
 from bs4 import BeautifulSoup
-from hal.internet.selenium_bots import SeleniumForm
+from hal.internet.selenium import SeleniumFormFiller
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -117,7 +117,7 @@ class GarminConnectBot(object):
 
         try:
             self._go_to(self.login_url)  # open login url
-            SeleniumForm(self.browser).fill_login_form(
+            SeleniumFormFiller(self.browser).fill_login_form(
                 self.user_name, self.USERNAME_FIELD_NAME,
                 self.user_password, self.PASSWORD_FIELD_NAME
             )  # fill login form
