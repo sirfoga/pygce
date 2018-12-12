@@ -7,7 +7,7 @@ import json
 from datetime import timedelta
 
 from bs4 import BeautifulSoup
-from hal.internet.selenium import SeleniumFormFiller
+from hal.internet.selenium.forms import SeleniumFormFiller
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
