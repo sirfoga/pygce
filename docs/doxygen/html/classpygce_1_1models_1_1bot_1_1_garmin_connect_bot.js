@@ -1,10 +1,14 @@
 var classpygce_1_1models_1_1bot_1_1_garmin_connect_bot =
 [
     [ "__init__", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#aeb909c53e6a647b5e8419d4877ba5b6d", null ],
+    [ "close", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#a969efb76eef02df4458492d68e92e231", null ],
     [ "get_day", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#ab5ab1e855230273b7c7c085a461a3ed2", null ],
     [ "get_days", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#a18ab2d80266a9da67186bcba6b4856b9", null ],
+    [ "get_html_parser", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#ad276eeef1f1fa248b1461235bbbef2b1", null ],
+    [ "get_steps_details", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#a75340bb4b6cd7c35f8d6de1068bcd626", null ],
     [ "go_to_dashboard", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#ad9433580f9aced25b650ddd5e912cc52", null ],
     [ "go_to_day", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#a3a0df451b2e7c0667064adc5c0ba1ad5", null ],
+    [ "go_to_steps_details", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#a1ff345f9d9116b4c1cc1718f38b84e5b", null ],
     [ "login", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#a31c8153cff1e4c2ce2a66d3b3aada3f1", null ],
     [ "parse_days", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#a17c3b23e3a712395581e88294308b822", null ],
     [ "save_csv_days", "classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#ac10284acc765724afd060381ace0cb5e", null ],

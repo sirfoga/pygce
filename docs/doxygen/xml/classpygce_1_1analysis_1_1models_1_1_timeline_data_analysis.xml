@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="126" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="126" bodyend="-1"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="126" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="126" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1afaebf4ce7e847ff4c32a7b9b799fd94d" prot="public" static="yes" mutable="no">
         <type>list</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="144" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="144" bodyend="-1"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="144" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="144" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -80,7 +80,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="154" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="154" bodyend="161"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="154" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="154" bodyend="161"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a1a02ca1184152091fc1f66306e1ac02c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -99,7 +99,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="162" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="162" bodyend="172"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="162" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="162" bodyend="172"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1ac5f4540c89ea52ccbd5c28ce850bc1d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -118,7 +118,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="173" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="173" bodyend="182"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="173" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="173" bodyend="182"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1ab769c6f075333081a68712e0ecf8b094" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -143,7 +143,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="183" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="183" bodyend="214"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="183" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="183" bodyend="214"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a4bdbc9b67a365b2e0d5a76e7bd811ce5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -172,7 +172,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="215" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="215" bodyend="256"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="215" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="215" bodyend="256"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a981ac0211fd075b7fae599a09f385314" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -204,7 +204,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="257" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="257" bodyend="316"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="257" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="257" bodyend="316"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a2f8938bff9d88b45dbdc7342b84d1bc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -236,7 +236,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="317" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="317" bodyend="353"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="317" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="317" bodyend="353"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -244,52 +244,52 @@
     <detaileddescription>
 <para><verbatim>Analyzes and provides insights into Garmin timeline data </verbatim> </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="79">
+      <node id="72">
         <label>pygce.analysis.models.GarminDataFilter</label>
         <link refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter"/>
-        <childnode refid="80" relation="public-inheritance">
+        <childnode refid="73" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="78">
+      <node id="71">
         <label>pygce.analysis.models.StatsAnalysis</label>
         <link refid="classpygce_1_1analysis_1_1models_1_1_stats_analysis"/>
-        <childnode refid="79" relation="public-inheritance">
+        <childnode refid="72" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="80">
+      <node id="73">
         <label>object</label>
       </node>
-      <node id="77">
+      <node id="70">
         <label>pygce.analysis.models.TimelineDataAnalysis</label>
         <link refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis"/>
-        <childnode refid="78" relation="public-inheritance">
+        <childnode refid="71" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="83">
+      <node id="76">
         <label>pygce.analysis.models.GarminDataFilter</label>
         <link refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter"/>
-        <childnode refid="84" relation="public-inheritance">
+        <childnode refid="77" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="82">
+      <node id="75">
         <label>pygce.analysis.models.StatsAnalysis</label>
         <link refid="classpygce_1_1analysis_1_1models_1_1_stats_analysis"/>
-        <childnode refid="83" relation="public-inheritance">
+        <childnode refid="76" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="84">
+      <node id="77">
         <label>object</label>
       </node>
-      <node id="81">
+      <node id="74">
         <label>pygce.analysis.models.TimelineDataAnalysis</label>
         <link refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis"/>
-        <childnode refid="82" relation="public-inheritance">
+        <childnode refid="75" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="123" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="123" bodyend="354"/>
+    <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="123" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="123" bodyend="354"/>
     <listofallmembers>
       <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a7fccb7531cafe3b618ad7026db2d3b53" prot="public" virt="non-virtual"><scope>pygce::analysis::models::TimelineDataAnalysis</scope><name>__init__</name></member>
       <member refid="classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis_1a981ac0211fd075b7fae599a09f385314" prot="public" virt="non-virtual"><scope>pygce::analysis::models::TimelineDataAnalysis</scope><name>cluster_3d_plot</name></member>

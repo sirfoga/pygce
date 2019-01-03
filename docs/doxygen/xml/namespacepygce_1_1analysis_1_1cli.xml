@@ -16,7 +16,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/cli.py" line="11" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/cli.py" bodystart="11" bodyend="24"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/cli.py" line="11" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/cli.py" bodystart="11" bodyend="24"/>
       </memberdef>
       <memberdef kind="function" id="namespacepygce_1_1analysis_1_1cli_1ac516ecec64d1d3b73eef12d5114ae9c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -37,7 +37,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/cli.py" line="25" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/cli.py" bodystart="25" bodyend="37"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/cli.py" line="25" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/cli.py" bodystart="25" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="namespacepygce_1_1analysis_1_1cli_1aaef37c4489c0f8e69ef918878523b920" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -56,7 +56,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/cli.py" line="38" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/cli.py" bodystart="38" bodyend="48"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/cli.py" line="38" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/cli.py" bodystart="38" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="namespacepygce_1_1analysis_1_1cli_1a172ae5d6f63e3600d4b184c6e23cd375" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -69,13 +69,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/cli.py" line="49" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/cli.py" bodystart="49" bodyend="67"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/cli.py" line="49" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/cli.py" bodystart="49" bodyend="67"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/cli.py" line="1" column="1"/>
+    <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/cli.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="357" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="357" bodyend="-1"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="357" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="357" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpygce_1_1analysis_1_1models_1_1_activities_data_analysis_1a2f0ccc7899b8c6b6d94391c80f5def1d" prot="public" static="yes" mutable="no">
         <type>list</type>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="370" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="370" bodyend="-1"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="370" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="370" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpygce_1_1analysis_1_1models_1_1_activities_data_analysis_1a272e010f956a64a8f916ebf1b9e14255" prot="public" static="yes" mutable="no">
         <type>list</type>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="375" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="375" bodyend="-1"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="375" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="375" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -88,7 +88,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="380" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="380" bodyend="387"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="380" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="380" bodyend="387"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_activities_data_analysis_1a5b3ad1747c5ff3a8cd868ebf8e5724ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -107,7 +107,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="388" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="388" bodyend="400"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="388" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="388" bodyend="400"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1analysis_1_1models_1_1_activities_data_analysis_1a7aac6979906baac1801dc83b5ea40360" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -126,7 +126,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="401" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="401" bodyend="410"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="401" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="401" bodyend="410"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -179,7 +179,7 @@
         <label>object</label>
       </node>
     </collaborationgraph>
-    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" line="354" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py" bodystart="354" bodyend="410"/>
+    <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" line="354" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py" bodystart="354" bodyend="410"/>
     <listofallmembers>
       <member refid="classpygce_1_1analysis_1_1models_1_1_activities_data_analysis_1a6196617473672f614453a357bcb09799" prot="public" virt="non-virtual"><scope>pygce::analysis::models::ActivitiesDataAnalysis</scope><name>__init__</name></member>
       <member refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1aba928d8e942c743cf1553760cdb95ea1" prot="public" virt="non-virtual"><scope>pygce::analysis::models::ActivitiesDataAnalysis</scope><name>convert_time_columns</name></member>

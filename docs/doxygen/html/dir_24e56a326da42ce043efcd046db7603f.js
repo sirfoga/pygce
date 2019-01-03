@@ -5,6 +5,7 @@ var dir_24e56a326da42ce043efcd046db7603f =
       [ "GCDaySection", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section.html", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section" ],
       [ "GCDaySummary", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary.html", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary" ],
       [ "GCDaySteps", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_steps.html", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_steps" ],
+      [ "GCDetailsSteps", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps.html", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps" ],
       [ "GCDaySleep", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_sleep.html", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_sleep" ],
       [ "GCDayActivities", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities.html", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities" ],
       [ "GCDayBreakdown", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown.html", "classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown" ],

@@ -423,6 +423,6 @@
 <codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1a7bb7be05577c2d31546e27823a5d11c5" kindref="member">dataset_file</ref>).name.strip(),</highlight></codeline>
 <codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classpygce_1_1analysis_1_1models_1_1_activities_data_analysis_1a799ad90125cc686b985fe525a3b33062" kindref="member">HEADERS_TO_ANALYZE</ref>)</highlight></codeline>
     </programlisting>
-    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/models.py"/>
+    <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/models.py"/>
   </compounddef>
 </doxygen>

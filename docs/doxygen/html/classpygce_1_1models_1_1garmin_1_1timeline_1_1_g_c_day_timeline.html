@@ -100,8 +100,8 @@ Inheritance diagram for pygce.models.garmin.timeline.GCDayTimeline:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4dd53f447c45ea43629204d32243835e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline.html#a4dd53f447c45ea43629204d32243835e">__init__</a> (self, date_time, summary_html, steps_section_html, sleep_section_html, activities_section_html, breakdown_section_html)</td></tr>
-<tr class="separator:a4dd53f447c45ea43629204d32243835e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ac2fc2ad2c247d5ac64c393e9e3c31e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline.html#a7ac2fc2ad2c247d5ac64c393e9e3c31e">__init__</a> (self, date_time, summary_html, steps_section_html, steps_details_html, sleep_section_html, activities_section_html, breakdown_section_html)</td></tr>
+<tr class="separator:a7ac2fc2ad2c247d5ac64c393e9e3c31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a868c632c33e0deb2b2ebfccfa35aa839"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline.html#a868c632c33e0deb2b2ebfccfa35aa839">parse</a> (self)</td></tr>
 <tr class="separator:a868c632c33e0deb2b2ebfccfa35aa839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2d3f754907b22c3a87715fa8664cb5d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline.html#ae2d3f754907b22c3a87715fa8664cb5d">__getattr__</a> (self, item)</td></tr>
@@ -129,10 +129,10 @@ Each standard day consists of different sections:
 - activities (for each one: kcal, time, distance, type, name, link)
 - breakdown (highly active %, active %, sedentary %, sleep %)
 </pre> 
-<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00504">504</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00556">556</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4dd53f447c45ea43629204d32243835e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dd53f447c45ea43629204d32243835e">&#9670;&nbsp;</a></span>__init__()</h2>
+<a id="a7ac2fc2ad2c247d5ac64c393e9e3c31e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ac2fc2ad2c247d5ac64c393e9e3c31e">&#9670;&nbsp;</a></span>__init__()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,6 +160,12 @@ Each standard day consists of different sections:
           <td></td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>steps_section_html</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>steps_details_html</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -199,7 +205,7 @@ Each standard day consists of different sections:
 :param breakdown_section_html: str
     HTML source snippet with information about daily breakdown
 </pre> 
-<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00517">517</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00570">570</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
 
 </div>
 </div>
@@ -230,7 +236,7 @@ Each standard day consists of different sections:
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00553">553</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00607">607</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
 
 </div>
 </div>
@@ -252,7 +258,7 @@ Each standard day consists of different sections:
 <pre class="fragment">:return: void
     Finds all sections to parse, then builds corresponding objects and parses everything
 </pre> 
-<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00544">544</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00598">598</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
 
 </div>
 </div>
@@ -274,7 +280,7 @@ Each standard day consists of different sections:
 <pre class="fragment">:return: {}
     Like self.to_dict() but with a set with keys and values NOT nested. Also for activities there are totals only
 </pre> 
-<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00564">564</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00618">618</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
 
 </div>
 </div>
@@ -296,7 +302,7 @@ Each standard day consists of different sections:
 <pre class="fragment">:return: dict
     Dictionary with keys (obj fields) and values (obj values)
 </pre> 
-<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00556">556</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00610">610</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
 
 </div>
 </div>
@@ -318,7 +324,7 @@ Each standard day consists of different sections:
 <pre class="fragment">:return: json object
     A json representation of this object
 </pre> 
-<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00578">578</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00632">632</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
 
 </div>
 </div>
@@ -335,7 +341,7 @@ Each standard day consists of different sections:
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00535">535</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00588">588</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
 
 </div>
 </div>
@@ -351,12 +357,12 @@ Each standard day consists of different sections:
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00536">536</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="timeline_8py_source.html#l00589">589</a> of file <a class="el" href="timeline_8py_source.html">timeline.py</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/<a class="el" href="timeline_8py_source.html">timeline.py</a></li>
+<li>/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/<a class="el" href="timeline_8py_source.html">timeline.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

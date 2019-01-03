@@ -78,6 +78,6 @@
 <codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;__main__&apos;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacepygce_1_1analysis_1_1cli_1a172ae5d6f63e3600d4b184c6e23cd375" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
-    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/analysis/cli.py"/>
+    <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/analysis/cli.py"/>
   </compounddef>
 </doxygen>

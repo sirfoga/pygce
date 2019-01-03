@@ -8,5 +8,6 @@ var searchData=
   ['gcdaysleep',['GCDaySleep',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_sleep.html',1,'pygce::models::garmin::timeline']]],
   ['gcdaysteps',['GCDaySteps',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_steps.html',1,'pygce::models::garmin::timeline']]],
   ['gcdaysummary',['GCDaySummary',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary.html',1,'pygce::models::garmin::timeline']]],
-  ['gcdaytimeline',['GCDayTimeline',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline.html',1,'pygce::models::garmin::timeline']]]
+  ['gcdaytimeline',['GCDayTimeline',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline.html',1,'pygce::models::garmin::timeline']]],
+  ['gcdetailssteps',['GCDetailsSteps',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps.html',1,'pygce::models::garmin::timeline']]]
 ];

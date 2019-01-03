@@ -9,10 +9,11 @@
     <innerclass refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_steps" prot="public">pygce::models::garmin::timeline::GCDaySteps</innerclass>
     <innerclass refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_summary" prot="public">pygce::models::garmin::timeline::GCDaySummary</innerclass>
     <innerclass refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline" prot="public">pygce::models::garmin::timeline::GCDayTimeline</innerclass>
+    <innerclass refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps" prot="public">pygce::models::garmin::timeline::GCDetailsSteps</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="1" column="1"/>
+    <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['user_5fid',['user_id',['../classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#a762d018855af5616f0519e08c354a7c7',1,'pygce::models::bot::GarminConnectBot']]],
-  ['user_5flogged_5fin',['user_logged_in',['../classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#ae6d646cac47d9930a50be37aad133dea',1,'pygce::models::bot::GarminConnectBot']]],
-  ['user_5fname',['user_name',['../classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#a259da08c172fe9b54bbb6b997ab840a7',1,'pygce::models::bot::GarminConnectBot']]],
-  ['user_5fpassword',['user_password',['../classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#af3d5c76d7e90a6aefe67926755d08c01',1,'pygce::models::bot::GarminConnectBot']]],
-  ['user_5fpath',['USER_PATH',['../classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#aa0d174bafc498e1c037324e16fd0dbe0',1,'pygce::models::bot::GarminConnectBot']]],
-  ['user_5furl',['user_url',['../classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#a6afbf3f00e551c7a29de3b18e86f1eb2',1,'pygce::models::bot::GarminConnectBot']]],
-  ['username_5ffield_5fname',['USERNAME_FIELD_NAME',['../classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#a0128de4e9df3cd9171f697709b634865',1,'pygce::models::bot::GarminConnectBot']]]
+  ['tag',['tag',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section.html#a3dacbeacfedec2f69dcbb9fe6870f8a3',1,'pygce::models::garmin::timeline::GCDaySection']]],
+  ['time_5fheaders_5fto_5fconvert',['TIME_HEADERS_TO_CONVERT',['../classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html#afaebf4ce7e847ff4c32a7b9b799fd94d',1,'pygce.analysis.models.TimelineDataAnalysis.TIME_HEADERS_TO_CONVERT()'],['../classpygce_1_1analysis_1_1models_1_1_activities_data_analysis.html#a2f0ccc7899b8c6b6d94391c80f5def1d',1,'pygce.analysis.models.ActivitiesDataAnalysis.TIME_HEADERS_TO_CONVERT()']]],
+  ['total',['total',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_steps.html#accaf8fa0f07a44164f5e2ee3a4c5fca7',1,'pygce::models::garmin::timeline::GCDaySteps']]],
+  ['total_5fsleep_5ftime',['total_sleep_time',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_sleep.html#a4942fa038d25a7af4c0793da1b3abf86',1,'pygce::models::garmin::timeline::GCDaySleep']]]
 ];

@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" line="7" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" bodystart="7" bodyend="-1"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" line="7" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" bodystart="7" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepygce_1_1models_1_1garmin_1_1utils_1a147f822f3288cb74ff6012414e346e6f" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" line="8" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" bodystart="8" bodyend="-1"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" line="8" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" bodystart="8" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -52,7 +52,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" line="11" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" bodystart="11" bodyend="22"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" line="11" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" bodystart="11" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="namespacepygce_1_1models_1_1garmin_1_1utils_1ac75c05f5427172ce319c6ff155399b17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -73,7 +73,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" line="23" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" bodystart="23" bodyend="40"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" line="23" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" bodystart="23" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="namespacepygce_1_1models_1_1garmin_1_1utils_1a853806377bb57d17627a9f418cec3e0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -88,7 +88,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" line="41" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" bodystart="41" bodyend="49"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" line="41" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" bodystart="41" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="namespacepygce_1_1models_1_1garmin_1_1utils_1a8505cf82cbca1a0f001e062b09a82581" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -109,7 +109,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" line="50" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" bodystart="50" bodyend="64"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" line="50" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" bodystart="50" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="namespacepygce_1_1models_1_1garmin_1_1utils_1a53d4c33bdb7653260d28ee934c8e35fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -130,13 +130,13 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" line="65" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" bodystart="65" bodyend="79"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" line="65" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" bodystart="65" bodyend="79"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/utils.py" line="1" column="1"/>
+    <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/utils.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

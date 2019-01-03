@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['tag',['tag',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section.html#a3dacbeacfedec2f69dcbb9fe6870f8a3',1,'pygce::models::garmin::timeline::GCDaySection']]],
-  ['time_5fheaders_5fto_5fconvert',['TIME_HEADERS_TO_CONVERT',['../classpygce_1_1analysis_1_1models_1_1_timeline_data_analysis.html#afaebf4ce7e847ff4c32a7b9b799fd94d',1,'pygce.analysis.models.TimelineDataAnalysis.TIME_HEADERS_TO_CONVERT()'],['../classpygce_1_1analysis_1_1models_1_1_activities_data_analysis.html#a2f0ccc7899b8c6b6d94391c80f5def1d',1,'pygce.analysis.models.ActivitiesDataAnalysis.TIME_HEADERS_TO_CONVERT()']]],
-  ['total',['total',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_steps.html#accaf8fa0f07a44164f5e2ee3a4c5fca7',1,'pygce::models::garmin::timeline::GCDaySteps']]],
-  ['total_5fsleep_5ftime',['total_sleep_time',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_sleep.html#a4942fa038d25a7af4c0793da1b3abf86',1,'pygce::models::garmin::timeline::GCDaySleep']]]
+  ['sections',['sections',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline.html#a2e73f290ffe476624ddc495bb3edd19b',1,'pygce::models::garmin::timeline::GCDayTimeline']]],
+  ['sedentary',['sedentary',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown.html#a03d898e7c3c8131ff30e0316d7257739',1,'pygce::models::garmin::timeline::GCDayBreakdown']]],
+  ['sleeping',['sleeping',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_breakdown.html#a26a3f7d4d5903c8ad6221c11ded6d601',1,'pygce::models::garmin::timeline::GCDayBreakdown']]],
+  ['soup',['soup',['../classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section.html#ae04dcff466d78ae686dce462057260a9',1,'pygce::models::garmin::timeline::GCDaySection']]],
+  ['steps_5fdetails_5fpath',['STEPS_DETAILS_PATH',['../classpygce_1_1models_1_1bot_1_1_garmin_connect_bot.html#a78e3175baf488664581a9b9183c06858',1,'pygce::models::bot::GarminConnectBot']]],
+  ['stream_5fhandler',['STREAM_HANDLER',['../namespacepygce_1_1models_1_1logger.html#ab6225d6a55e9813da66713928eb58df8',1,'pygce::models::logger']]]
 ];

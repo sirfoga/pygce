@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="318" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="318" bodyend="-1"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="370" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="370" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="327" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="327" bodyend="-1"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="379" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="379" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -56,7 +56,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="320" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="320" bodyend="328"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="372" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="372" bodyend="380"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities_1a665d9bc773825c31562129f1f5b47a2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="329" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="329" bodyend="337"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="381" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="381" bodyend="389"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities_1a6c4869fd929e6076d25e949c7ee51d91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="381" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="381" bodyend="385"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="433" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="433" bodyend="437"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities_1ab1366ff6ee7b5230f12e6a3f324ffc8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="386" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="386" bodyend="393"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="438" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="438" bodyend="445"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities_1a2e4d1b6ab08095a558271ba0299c3535" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -126,7 +126,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="394" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="394" bodyend="406"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="446" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="446" bodyend="458"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities_1a1f271dd2ea272005fe5dc739496ed9e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -145,7 +145,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="407" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="407" bodyend="414"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="459" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="459" bodyend="466"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities_1a960ae86a18db046fac6222a3f62e3035" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -164,7 +164,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="415" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="415" bodyend="429"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="467" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="467" bodyend="481"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities_1a2ad838af777ce178392b5f61ee6e6561" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -183,7 +183,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="430" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="430" bodyend="437"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="482" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="482" bodyend="489"/>
       </memberdef>
       <memberdef kind="function" id="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities_1a230c1feee2914f86f2bddb05fc2e51cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -202,7 +202,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="438" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="438" bodyend="450"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="490" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="490" bodyend="502"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -225,7 +225,7 @@
 </verbatim> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="339" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="339" bodyend="380"/>
+        <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="391" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="391" bodyend="432"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -244,31 +244,21 @@ Common features are kcal, time, distance, type, name, link
       <node id="21">
         <label>pygce.models.garmin.timeline.GCDaySection</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
-        <childnode refid="22" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="22">
-        <label>object</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="23">
+      <node id="22">
         <label>pygce.models.garmin.timeline.GCDayActivities</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities"/>
-        <childnode refid="24" relation="public-inheritance">
+        <childnode refid="23" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="24">
+      <node id="23">
         <label>pygce.models.garmin.timeline.GCDaySection</label>
         <link refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section"/>
-        <childnode refid="25" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>object</label>
       </node>
     </collaborationgraph>
-    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" line="312" column="1" bodyfile="/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin/timeline.py" bodystart="312" bodyend="451"/>
+    <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" line="364" column="1" bodyfile="/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin/timeline.py" bodystart="364" bodyend="503"/>
     <listofallmembers>
       <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_activities_1abde52d1321a233947e2585e7ed43415b" prot="public" virt="non-virtual"><scope>pygce::models::garmin::timeline::GCDayActivities</scope><name>__init__</name></member>
       <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_section_1aae8c8c4a74381fa4ee47881ad498fb8f" prot="public" virt="non-virtual" ambiguityscope="pygce::models::garmin::timeline::GCDaySection."><scope>pygce::models::garmin::timeline::GCDayActivities</scope><name>__init__</name></member>

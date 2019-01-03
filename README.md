@@ -91,6 +91,10 @@ There is lots of machine-learning stuff already done, and you can browse some sa
 Suggestions and improvements [welcome](https://github.com/sirfoga/pygce/issues)!
 
 
+## Thanks to
+- [William Paredes](https://github.com/b-paredes) for [#8](https://github.com/sirfoga/pygce/issues/8)
+
+
 ## Authors
 | [![sirfoga](https://avatars0.githubusercontent.com/u/14162628?s=128&v=4)](https://github.com/sirfoga "Follow @sirfoga on Github") |
 |---|

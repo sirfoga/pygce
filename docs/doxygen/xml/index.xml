@@ -12,6 +12,8 @@
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1aa0d174bafc498e1c037324e16fd0dbe0" kind="variable"><name>USER_PATH</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a860621296516b8e3793321d0773e30f3" kind="variable"><name>DEFAULT_BASE_URL</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1aad154f2121928191c68ac2f9530470e3" kind="variable"><name>BASE_LOGIN_URL</name></member>
+    <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a78e3175baf488664581a9b9183c06858" kind="variable"><name>STEPS_DETAILS_PATH</name></member>
+    <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a1d63bc08e66cf688a2992ad7f7533919" kind="variable"><name>DATE_FORMAT</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a792c3468032c4154b334cacfb30a871f" kind="variable"><name>LOGIN_BUTTON_ID</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a0128de4e9df3cd9171f697709b634865" kind="variable"><name>USERNAME_FIELD_NAME</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1aa5839cf18d60997c81245cebea3eb307" kind="variable"><name>PASSWORD_FIELD_NAME</name></member>
@@ -29,20 +31,27 @@
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a9ae225cd44515fe8675b123b1907492e" kind="variable"><name>login_url</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1aeb909c53e6a647b5e8419d4877ba5b6d" kind="function"><name>__init__</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a31c8153cff1e4c2ce2a66d3b3aada3f1" kind="function"><name>login</name></member>
+    <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1ad276eeef1f1fa248b1461235bbbef2b1" kind="function"><name>get_html_parser</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1ad9433580f9aced25b650ddd5e912cc52" kind="function"><name>go_to_dashboard</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a3a0df451b2e7c0667064adc5c0ba1ad5" kind="function"><name>go_to_day</name></member>
+    <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a1ff345f9d9116b4c1cc1718f38b84e5b" kind="function"><name>go_to_steps_details</name></member>
+    <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a75340bb4b6cd7c35f8d6de1068bcd626" kind="function"><name>get_steps_details</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1ab5ab1e855230273b7c7c085a461a3ed2" kind="function"><name>get_day</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a18ab2d80266a9da67186bcba6b4856b9" kind="function"><name>get_days</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a17c3b23e3a712395581e88294308b822" kind="function"><name>parse_days</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a6b7760e4013e2ada06bed1a5f47133f1" kind="function"><name>save_json_days</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1ac10284acc765724afd060381ace0cb5e" kind="function"><name>save_csv_days</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a9cd831d6a4a8efdd793a395f99fc1796" kind="function"><name>save_gpx</name></member>
+    <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a969efb76eef02df4458492d68e92e231" kind="function"><name>close</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a1291d14cb4573ed69f99bdfeb078011a" kind="function"><name>_wait_for</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1add4e969481b71e4932ac4be4bd6643b5" kind="function"><name>_perform_login</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a5b32790b8654317385731e6aeec563d9" kind="function"><name>_go_to</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a95950cb8b79be218dbb48803a649b15b" kind="function"><name>_get_user_id</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a05492a80cd71db78d0a45ca62c598bda" kind="function"><name>_find_user_id</name></member>
     <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a9764dd71e0c6b1809eb52bb446153f73" kind="function"><name>_get_day_url</name></member>
+    <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a20f80aaf14952f9e15aca5b29c0a57b5" kind="function"><name>_get_steps_details_url</name></member>
+    <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a987255466b3bb8f3f130376d2e07aa38" kind="function"><name>save_json_steps_details</name></member>
+    <member refid="classpygce_1_1models_1_1bot_1_1_garmin_connect_bot_1a7a3affbcf44b0b4a2d82a3dc517d41bc" kind="function"><name>save_csv_steps_details</name></member>
   </compound>
   <compound refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter" kind="class"><name>pygce::analysis::models::GarminDataFilter</name>
     <member refid="classpygce_1_1analysis_1_1models_1_1_garmin_data_filter_1a7bb7be05577c2d31546e27823a5d11c5" kind="variable"><name>dataset_file</name></member>
@@ -125,12 +134,22 @@
   <compound refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline" kind="class"><name>pygce::models::garmin::timeline::GCDayTimeline</name>
     <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_1a93fbc84cc4bfb4b01ec4678c512dc6f7" kind="variable"><name>date</name></member>
     <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_1a2e73f290ffe476624ddc495bb3edd19b" kind="variable"><name>sections</name></member>
-    <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_1a4dd53f447c45ea43629204d32243835e" kind="function"><name>__init__</name></member>
+    <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_1a7ac2fc2ad2c247d5ac64c393e9e3c31e" kind="function"><name>__init__</name></member>
     <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_1a868c632c33e0deb2b2ebfccfa35aa839" kind="function"><name>parse</name></member>
     <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_1ae2d3f754907b22c3a87715fa8664cb5d" kind="function"><name>__getattr__</name></member>
     <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_1aea84908a12fe244f70ef0c7d6f9875b7" kind="function"><name>to_dict</name></member>
     <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_1a89b4a28c05fc57f7588f9aea91c2f5f3" kind="function"><name>to_csv_dict</name></member>
     <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_day_timeline_1a45e446687d33554cb53dea0a2d052c1a" kind="function"><name>to_json</name></member>
+  </compound>
+  <compound refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps" kind="class"><name>pygce::models::garmin::timeline::GCDetailsSteps</name>
+    <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps_1a8d17dfb2c71940bf93eaad067530b647" kind="variable"><name>DATE_FORMAT</name></member>
+    <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps_1a3384eb72726712a30a3afa1456d93435" kind="variable"><name>OUT_DATE_FORMAT</name></member>
+    <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps_1a0503bcc08719619e9059e254d072b2e9" kind="variable"><name>date_time</name></member>
+    <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps_1ab63cc2d91ce9313896d2a6fa80b0bf3a" kind="variable"><name>content</name></member>
+    <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps_1a382652a9191f09dce80b307622a879a7" kind="variable"><name>bins</name></member>
+    <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps_1a5f7b833bf7f4a81d94f3f133d264824e" kind="function"><name>__init__</name></member>
+    <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps_1adebc8b1b03fdb864a436e660ee2c198b" kind="function"><name>parse</name></member>
+    <member refid="classpygce_1_1models_1_1garmin_1_1timeline_1_1_g_c_details_steps_1a03260c978dfe5aa2d2ddd9643c5a4ecd" kind="function"><name>to_dict</name></member>
   </compound>
   <compound refid="classpygce_1_1analysis_1_1models_1_1_m_l_analysis" kind="class"><name>pygce::analysis::models::MLAnalysis</name>
     <member refid="classpygce_1_1analysis_1_1models_1_1_m_l_analysis_1a87a6dea18d5aa1163763e66f0142dca8" kind="function"><name>__init__</name></member>
@@ -167,7 +186,7 @@
     <member refid="namespacepygce_1_1cli_1a807a6becfdbbb6dab4fede7208861afc" kind="function"><name>parse_yyyy_mm_dd</name></member>
     <member refid="namespacepygce_1_1cli_1a5734100556cffce34b4b53f9d027080b" kind="function"><name>create_args</name></member>
     <member refid="namespacepygce_1_1cli_1a7729e758c25a70a57c0578bd4dde32df" kind="function"><name>parse_args</name></member>
-    <member refid="namespacepygce_1_1cli_1a15e4213eee5373558d6f7b59b6a84498" kind="function"><name>check_args</name></member>
+    <member refid="namespacepygce_1_1cli_1ae7af99f151402a9303ad2086f3d308b7" kind="function"><name>check_args</name></member>
     <member refid="namespacepygce_1_1cli_1a696dc9e135d9815a0d4a889eb94c18fb" kind="function"><name>main</name></member>
   </compound>
   <compound refid="namespacepygce_1_1models" kind="namespace"><name>pygce::models</name>
@@ -218,12 +237,12 @@
   </compound>
   <compound refid="logger_8py" kind="file"><name>logger.py</name>
   </compound>
-  <compound refid="dir_10899d196ec9ee259211439645d3c235" kind="dir"><name>/home/stefano/Coding/Python/projects/pygce/pygce/analysis</name>
+  <compound refid="dir_10899d196ec9ee259211439645d3c235" kind="dir"><name>/home/stefano/Coding/Python/_projects/pygce/pygce/analysis</name>
   </compound>
-  <compound refid="dir_24e56a326da42ce043efcd046db7603f" kind="dir"><name>/home/stefano/Coding/Python/projects/pygce/pygce/models/garmin</name>
+  <compound refid="dir_24e56a326da42ce043efcd046db7603f" kind="dir"><name>/home/stefano/Coding/Python/_projects/pygce/pygce/models/garmin</name>
   </compound>
-  <compound refid="dir_5d66fa335f2221b0de0fdbd258a5936b" kind="dir"><name>/home/stefano/Coding/Python/projects/pygce/pygce/models</name>
+  <compound refid="dir_5d66fa335f2221b0de0fdbd258a5936b" kind="dir"><name>/home/stefano/Coding/Python/_projects/pygce/pygce/models</name>
   </compound>
-  <compound refid="dir_d6d1831bc5531775bedbdf3c7974a683" kind="dir"><name>/home/stefano/Coding/Python/projects/pygce/pygce</name>
+  <compound refid="dir_d6d1831bc5531775bedbdf3c7974a683" kind="dir"><name>/home/stefano/Coding/Python/_projects/pygce/pygce</name>
   </compound>
 </doxygenindex>

@@ -49,6 +49,6 @@
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>logger.error(text)</highlight></codeline>
     </programlisting>
-    <location file="/home/stefano/Coding/Python/projects/pygce/pygce/models/logger.py"/>
+    <location file="/home/stefano/Coding/Python/_projects/pygce/pygce/models/logger.py"/>
   </compounddef>
 </doxygen>
