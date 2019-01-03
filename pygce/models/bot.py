@@ -317,7 +317,18 @@ class GarminConnectBot(object):
 
     @staticmethod
     def save_csv_steps_details(data, output_folder):
-        pass
+        for d in data:
+            steps_details = d.sections["steps details"].to_dict()
+            output_file = 'step_details_' + str(d.date) + '.csv'
+            output_file = os.path.join(output_folder, output_file)
+
+            steps_details = list(steps_details.values())[0]
+            csv_headers = steps_details[0].keys()  # sample of keys
+            with open(output_file, "w") as o:  # write to file
+                dict_writer = csv.DictWriter(o, csv_headers)
+                dict_writer.writeheader()
+
+                dict_writer.writerows(steps_details)
 
     def save_json_days(self, min_date_time, max_date_time, output_file):
         """
@@ -356,6 +367,9 @@ class GarminConnectBot(object):
         """
 
         data = self.parse_days(min_date_time, max_date_time)
+        self.save_csv_steps_details(data, os.path.dirname(output_file))
+        for d in data:  # remove steps details
+            del d.sections["steps details"]
 
         csv_data = [d.to_csv_dict() for d in data]  # get csv
         csv_headers = csv_data[0].keys()  # get headers for a sample dict

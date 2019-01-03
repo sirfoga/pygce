@@ -33,11 +33,10 @@ optional arguments:
   -url URL              url to connect to (e.g https://connect.garmin.com)
   -chrome               path to chromedriver to use
   -d [DAYS [DAYS ...]]  days to save. e.g -d 2017-12-30 or -d 2016-01-01 2017-12-30
-  -f                    format of output file [json, csv]
   -gpx                  download .gpx files too [y/n]
   -out                  path to output file
 ```
-When called with appropriate args `pygce` saves `.csv` or `.json` data dumps of your Garmin Connect timeline data. The files will look like
+When called with appropriate args `pygce` saves `.csv` (`.json`) data dumps of your Garmin Connect timeline data. The files will look like
 ```
 {
   "2017-04-09": {

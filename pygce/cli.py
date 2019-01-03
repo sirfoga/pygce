@@ -52,9 +52,6 @@ def create_args():
                         help="days to save. e.g -d 2017-12-30 or -d "
                              "2016-01-01 2017-12-30",
                         required=True)
-    parser.add_argument("-f", dest="format_out",
-                        help="<format of output file [json, csv]>",
-                        required=True)
     parser.add_argument("-gpx", dest="gpx_out",
                         help="download .gpx files too [y/n]",
                         default="n",
@@ -83,11 +80,10 @@ def parse_args(parser):
     args.gpx_out = (args.gpx_out.startswith("y"))
 
     return str(args.user), str(args.password), str(args.url), str(
-        args.path_chromedriver), days, str(args.format_out), args.gpx_out, str(
-        args.path_out)
+        args.path_chromedriver), days, args.gpx_out, str(args.path_out)
 
 
-def check_args(user, password, url, chromedriver, days, format_out, path_out):
+def check_args(user, password, url, chromedriver, days, path_out):
     """
     :param user: str
         User to use
@@ -113,7 +109,6 @@ def check_args(user, password, url, chromedriver, days, format_out, path_out):
     assert (os.path.exists(chromedriver))
     assert (isinstance(days[0], datetime))
     assert (days[0] <= days[1])  # start day <= end day
-    assert format_out in AVAILABLE_OUTPUT_FORMATS
 
     out_dir = os.path.dirname(path_out)
     if not os.path.exists(out_dir):
@@ -123,13 +118,13 @@ def check_args(user, password, url, chromedriver, days, format_out, path_out):
 
 
 def main():
-    user, password, url, chromedriver, days, format_out, gpx_out, path_out = \
+    user, password, url, chromedriver, days, gpx_out, path_out = \
         parse_args(create_args())
 
-    if check_args(user, password, url, chromedriver, days, format_out,
-                  path_out):
-        bot = GarminConnectBot(user, password, gpx_out, chromedriver,
-                               url=url)
+    if check_args(user, password, url, chromedriver, days, path_out):
+        bot = GarminConnectBot(user, password, gpx_out, chromedriver, url=url)
+
+        format_out = path_out.split('.')[-1]
         try:
             if format_out == "json":
                 bot.save_json_days(days[0], days[1], path_out)
