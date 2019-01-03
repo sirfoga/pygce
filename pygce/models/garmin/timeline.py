@@ -225,25 +225,29 @@ class GCDetailsSteps(GCDaySection):
     DATE_FORMAT = '%Y-%m-%dT%H:%M:%S'
     OUT_DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
 
-    def __init__(self, raw_html):
+    def __init__(self, date_time, raw_html):
         super().__init__(raw_html, tag="STEPS DETAILS")
 
+        self.date_time = date_time
         self.content = json.loads(self.html)
         self.bins = []
 
     def parse(self):
-        offset = 4  # there are 4 data points left from yesterday
-        total_n = 4 * 24  # each 15 min -> 4 per hour
-        for data in self.content[offset: offset + total_n]:
+        tomorrow = self.date_time + timedelta(days=1)
+
+        for data in self.content:
             date_time = data['startGMT'][:-2]  # remove trailing 0
             date_time = datetime.strptime(date_time, self.DATE_FORMAT)
-            date_time = date_time.strftime(self.OUT_DATE_FORMAT)  # to string
-            steps_count = int(data['steps'])
+            is_in_today = self.date_time <= date_time < tomorrow
 
-            self.bins.append({
-                'time': date_time,
-                'steps': steps_count
-            })
+            if is_in_today:
+                date_time = date_time.strftime(self.OUT_DATE_FORMAT)
+                steps_count = int(data['steps'])
+
+                self.bins.append({
+                    'time': date_time,
+                    'steps': steps_count
+                })
 
     def to_dict(self):
         return {
@@ -585,7 +589,7 @@ class GCDayTimeline(object):
         self.sections = {
             "summary": GCDaySummary(summary_html),
             "steps": GCDaySteps(steps_section_html),
-            "steps details": GCDetailsSteps(steps_details_html),
+            "steps details": GCDetailsSteps(date_time, steps_details_html),
             "sleep": GCDaySleep(sleep_section_html),
             "activities": GCDayActivities(activities_section_html),
             "breakdown": GCDayBreakdown(breakdown_section_html)
