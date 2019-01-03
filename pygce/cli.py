@@ -125,14 +125,21 @@ def check_args(user, password, url, chromedriver, days, format_out, path_out):
 def main():
     user, password, url, chromedriver, days, format_out, gpx_out, path_out = \
         parse_args(create_args())
+
     if check_args(user, password, url, chromedriver, days, format_out,
                   path_out):
-        bot = GarminConnectBot(user, password, gpx_out, chromedriver, url=url)
+        bot = GarminConnectBot(user, password, gpx_out, chromedriver,
+                               url=url)
+        try:
+            if format_out == "json":
+                bot.save_json_days(days[0], days[1], path_out)
+            elif format_out == "csv":
+                bot.save_csv_days(days[0], days[1], path_out)
 
-        if format_out == "json":
-            bot.save_json_days(days[0], days[1], path_out)
-        elif format_out == "csv":
-            bot.save_csv_days(days[0], days[1], path_out)
+        except Exception as e:
+            raise e
+        finally:
+            bot.close()
     else:
         print("Error while parsing args. Run 'pygce -h' for help")
 

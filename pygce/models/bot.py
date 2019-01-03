@@ -5,9 +5,11 @@
 import csv
 import json
 from datetime import timedelta
+from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 from hal.internet.selenium.forms import SeleniumFormFiller
+from hal.internet.utils import add_params_to_url
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -30,6 +32,9 @@ class GarminConnectBot(object):
                 "&redirectAfterAccountCreationUrl=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F&gauthHost=https%3A%2F" \
                 "%2Fsso.garmin.com%2Fsso&locale=en_US&id=gauth-widget&clientId=GarminConnect&initialFocus=true" \
                 "&embedWidget=false&mobile=false# "
+    STEPS_DETAILS_PATH = '/modern/proxy/wellness-service/wellness' \
+                         '/dailySummaryChart/'
+    DATE_FORMAT = '%Y-%m-%d'
     LOGIN_BUTTON_ID = "login-btn-signin"  # html id of the login button
     USERNAME_FIELD_NAME = "username"  # html name of username in login form
     PASSWORD_FIELD_NAME = "password"  # html name of password in login form
@@ -86,8 +91,6 @@ class GarminConnectBot(object):
                     )
                 )  # wait until fully loaded
                 self.browser.find_element(locator, element)
-
-                log_message("found " + element)
                 return True
             except:
                 pass  # maybe next time
@@ -129,10 +132,12 @@ class GarminConnectBot(object):
             self.user_logged_in = False
             return False  # something went wrong
 
+    def get_html_parser(self, page_format="html.parser"):
+        return BeautifulSoup(str(self.browser.page_source), page_format)
+
     def _get_user_id(self):
         self.go_to_dashboard()
-        soup = BeautifulSoup(self.browser.page_source,
-                             "lxml")  # html parser
+        soup = self.get_html_parser("lxml")
         widget = soup.find("div", {"class": "header-nav-item user-profile"})
         candidates = widget.a["href"].split("/")
         raw = candidates[-1]
@@ -163,7 +168,7 @@ class GarminConnectBot(object):
 
     def _get_day_url(self, date_time):
         url = self.base_url + "/modern/daily-summary/{}/{}"
-        day = date_time.strftime('%Y-%m-%d')
+        day = date_time.strftime(self.DATE_FORMAT)
         return url.format(self.user_id, day)
 
     def go_to_day(self, date_time):
@@ -178,6 +183,31 @@ class GarminConnectBot(object):
         url = self._get_day_url(date_time)
         self._go_to(url, By.CLASS_NAME, "comment-container")
 
+    def _get_steps_details_url(self, date_time):
+        url = urljoin(self.base_url, self.STEPS_DETAILS_PATH)
+        url = urljoin(url, self.user_id)
+
+        params = {'date': date_time.strftime(self.DATE_FORMAT)}
+        url = add_params_to_url(url, params)
+        return url
+
+    def go_to_steps_details(self, date_time):
+        self._find_user_id()
+        url = self._get_steps_details_url(date_time)
+        self._go_to(url, By.TAG_NAME, "pre")
+
+    def get_steps_details(self, date_time):
+        try:
+            self.go_to_steps_details(date_time)
+            soup = self.get_html_parser()
+            steps_details_html = soup.find('pre').text
+            log_message("found steps details data")
+        except:
+            steps_details_html = '[]'
+            log_message("NOT found steps details data")
+
+        return steps_details_html
+
     def get_day(self, date_time):
         """
         :param date_time: datetime
@@ -188,41 +218,46 @@ class GarminConnectBot(object):
 
         log_message("Getting day", str(date_time))
         self.go_to_day(date_time)
-        soup = BeautifulSoup(str(self.browser.page_source),
-                             "html.parser")  # html parser
+        soup = self.get_html_parser()
 
-        tabs_html = soup.find_all("div", {"class": "tab-content"})[
-            0]  # find html source code for sections
-        summary_html = soup.find_all("div", {
-            "class": "content page steps sleep calories timeline"})[0]
-        steps_html = soup.find_all("div", {"class": "row-fluid bottom-m"})[
-            0]
+        tabs_html = soup.find("div", {"class": "tab-content"})
+        summary_html = soup.find("div", {
+            "class": "content page steps sleep calories timeline"})
+        steps_html = soup.find("div", {"class": "row-fluid bottom-m"})
 
         try:
-            sleep_html = tabs_html.find_all("div", {"id": "pane5"})[0]
+            sleep_html = tabs_html.find("div", {"id": "pane5"})
             log_message("found sleep data")
         except:
             sleep_html = None
             log_message("NOT found sleep data")
 
         try:
-            activities_html = tabs_html.find_all("div", {"id": "pane4"})[0]
+            activities_html = tabs_html.find("div", {"id": "pane4"})
             log_message("found activities data")
         except:
             activities_html = None
             log_message("NOT found activities data")
 
         try:
-            breakdown_html = tabs_html.find_all("div", {"id": "pane2"})[0]
+            breakdown_html = tabs_html.find("div", {"id": "pane2"})
             log_message("found breakdown data")
         except:
             breakdown_html = None
             log_message("NOT found breakdown data")
 
+        tomorrow = date_time + timedelta(days=1)
+        steps_details_html_today = json.loads(self.get_steps_details(date_time))
+        steps_details_html_tomorrow = json.loads(
+            self.get_steps_details(tomorrow))
+        steps_details_html = json.dumps(steps_details_html_today + \
+                                        steps_details_html_tomorrow)  # merge days
+
         return GCDayTimeline(
             date_time,
             summary_html,
             steps_html,
+            steps_details_html,
             sleep_html,
             activities_html,
             breakdown_html
@@ -262,7 +297,6 @@ class GarminConnectBot(object):
         data = self.get_days(min_date_time, max_date_time)  # get raw data
 
         for d in data:
-            log_message("Parsing day", str(d.date))
             d.parse()  # parse
 
         return data
@@ -327,3 +361,6 @@ class GarminConnectBot(object):
                     log_message(
                         "Saved .gpx for", activity["name"], activity["time_day"]
                     )
+
+    def close(self):
+        self.browser.close()
