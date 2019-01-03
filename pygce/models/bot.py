@@ -4,6 +4,7 @@
 
 import csv
 import json
+import os
 from datetime import timedelta
 from urllib.parse import urljoin
 
@@ -301,6 +302,23 @@ class GarminConnectBot(object):
 
         return data
 
+    @staticmethod
+    def save_json_steps_details(data, output_folder):
+        for d in data:
+            steps_details = d.sections["steps details"].to_dict()
+            output_file = 'step_details_' + str(d.date) + '.json'
+            output_file = os.path.join(output_folder, output_file)
+
+            json_data = steps_details
+            json_data['date'] = str(d.date)
+
+            with open(output_file, "w") as o:  # write to file
+                json.dump(json_data, o)
+
+    @staticmethod
+    def save_csv_steps_details(data, output_folder):
+        pass
+
     def save_json_days(self, min_date_time, max_date_time, output_file):
         """
         :param min_date_time: datetime
@@ -314,6 +332,9 @@ class GarminConnectBot(object):
         """
 
         data = self.parse_days(min_date_time, max_date_time)
+        self.save_json_steps_details(data, os.path.dirname(output_file))
+        for d in data:  # remove steps details
+            del d.sections["steps details"]
 
         json_data = [json.loads(d.to_json()) for d in
                      data]  # convert to json objects
