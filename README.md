@@ -78,11 +78,6 @@ There is lots of machine-learning stuff already done, and you can browse some sa
 ![k best features](analysis_images/k_best.png "k best features")
 
 
-## Documentation
-- You can browse the [html](docs/doxygen/html/index.html)
-- There is also the [pdf](docs/doxygen/latex/refman.pdf)
-
-
 ## Contributing
 [Fork](https://github.com/sirfoga/pygce/fork) | Patch | Push | [Pull request](https://github.com/sirfoga/pygce/pulls)
 
