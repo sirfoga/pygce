@@ -232,6 +232,16 @@ class GCDetailsSteps(GCDaySection):
         self.content = json.loads(self.html)
         self.bins = []
 
+    @staticmethod
+    def parse_steps_count(raw):
+        raw = str(raw)
+        if raw.endswith('.0'):  # remove decimal point
+            raw = raw[:-2]
+
+        raw = raw.replace('.', '')  # remove thousands point
+
+        return int(raw)
+
     def parse(self):
         for data in self.content:
             date_time = data['startGMT'][:-2]  # remove trailing 0
@@ -242,7 +252,7 @@ class GCDetailsSteps(GCDaySection):
 
             self.bins.append({
                 'time': date_time,
-                'steps': steps_count
+                'steps': self.parse_steps_count(steps_count)
             })
 
     def to_dict(self):
