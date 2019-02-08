@@ -233,21 +233,17 @@ class GCDetailsSteps(GCDaySection):
         self.bins = []
 
     def parse(self):
-        tomorrow = self.date_time + timedelta(days=1)
-
         for data in self.content:
             date_time = data['startGMT'][:-2]  # remove trailing 0
             date_time = datetime.strptime(date_time, self.DATE_FORMAT)
-            is_in_today = self.date_time <= date_time < tomorrow
 
-            if is_in_today:
-                date_time = date_time.strftime(self.OUT_DATE_FORMAT)
-                steps_count = int(data['steps'])
+            date_time = date_time.strftime(self.OUT_DATE_FORMAT)
+            steps_count = int(data['steps'])
 
-                self.bins.append({
-                    'time': date_time,
-                    'steps': steps_count
-                })
+            self.bins.append({
+                'time': date_time,
+                'steps': steps_count
+            })
 
     def to_dict(self):
         return {

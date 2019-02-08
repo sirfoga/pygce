@@ -1,7 +1,6 @@
 # !/usr/bin/python3
 # coding: utf-8
-
-
+import json
 from datetime import datetime
 
 GARMIN_CONNECT_URL = "https://connect.garmin.com"
@@ -76,3 +75,10 @@ def parse_hh_mm(h):
         return datetime.strptime(str(h).strip(), "%H:%M").time()
     else:  # mm
         return datetime.strptime(str(h).strip(), "%M").time()
+
+
+def json2pretty(data, output_file):
+    with open(output_file, "w") as o:  # write to file
+        json.dump(
+            data, o, sort_keys=True, indent=4, separators=(',', ': ')
+        )

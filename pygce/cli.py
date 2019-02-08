@@ -71,7 +71,7 @@ def parse_args(parser):
 
     args = parser.parse_args()
 
-    raw_days = [str(d).strip() for d in args.days]  # parse days
+    raw_days = [str(d).strip() for d in args.days[0].split(' ')]  # parse days
     if len(raw_days) == 1:
         days = [parse_yyyy_mm_dd(raw_days[0]), parse_yyyy_mm_dd(raw_days[0])]
     else:

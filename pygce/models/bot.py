@@ -16,6 +16,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+from models.garmin.utils import json2pretty
 from pygce.models.garmin.timeline import GCDayTimeline
 from pygce.models.logger import log_error, log_message
 
@@ -247,12 +248,25 @@ class GarminConnectBot(object):
             breakdown_html = None
             log_message("NOT found breakdown data")
 
+        yesterday = date_time + timedelta(days=-1)
+        today = date_time
         tomorrow = date_time + timedelta(days=1)
-        steps_details_html_today = json.loads(self.get_steps_details(date_time))
-        steps_details_html_tomorrow = json.loads(
-            self.get_steps_details(tomorrow))
-        steps_details_html = json.dumps(steps_details_html_today + \
-                                        steps_details_html_tomorrow)  # merge days
+
+        steps_details_html_yesterday = json.loads(self.get_steps_details(
+            yesterday
+        ))
+        steps_details_html_today = json.loads(self.get_steps_details(
+            today
+        ))
+        steps_details_html_tomorrow = json.loads(self.get_steps_details(
+            tomorrow
+        ))
+
+        steps_details_html = json.dumps(
+            steps_details_html_yesterday +
+            steps_details_html_today +
+            steps_details_html_tomorrow
+        )  # merge days
 
         return GCDayTimeline(
             date_time,
@@ -312,8 +326,7 @@ class GarminConnectBot(object):
             json_data = steps_details
             json_data['date'] = str(d.date)
 
-            with open(output_file, "w") as o:  # write to file
-                json.dump(json_data, o)
+            json2pretty(json_data, output_file)
 
     @staticmethod
     def save_csv_steps_details(data, output_folder):
@@ -349,8 +362,7 @@ class GarminConnectBot(object):
 
         json_data = [json.loads(d.to_json()) for d in
                      data]  # convert to json objects
-        with open(output_file, "w") as o:  # write to file
-            json.dump(json_data, o)
+        json2pretty(json_data, output_file)
 
         self.save_gpx(data)
 
