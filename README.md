@@ -87,9 +87,7 @@ Suggestions and improvements [welcome](https://github.com/sirfoga/pygce/issues)!
 
 
 ## Thanks to
-- [William Paredes](https://github.com/b-paredes) for [#8](https://github
-.com/sirfoga/pygce/issues/8), [#9](https://github.com/sirfoga/pygce/issues/9)
-and [#10](https://github.com/sirfoga/pygce/issues/10)
+- [William Paredes](https://github.com/b-paredes) for [#8](https://github.com/sirfoga/pygce/issues/8), [#9](https://github.com/sirfoga/pygce/issues/9) and [#10](https://github.com/sirfoga/pygce/issues/10)
 
 
 ## Authors
