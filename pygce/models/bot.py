@@ -16,7 +16,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from models.garmin.utils import json2pretty
+from pygce.models.garmin.utils import json2pretty
 from pygce.models.garmin.timeline import GCDayTimeline
 from pygce.models.logger import log_error, log_message
 
