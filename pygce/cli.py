@@ -33,8 +33,7 @@ def create_args():
         usage="-u <username (email) to login to Garmin Connect> -p <password "
               "to login to Garmin Connect> -c <path to "
               "chromedriver to use> -d <days to save. e.g -d 2017-12-30 or "
-              "-d 2016-01-01 2017-12-30> -f <format of "
-              "output file [json, csv]> -o <path to output file>")
+              "-d 2016-01-01 2017-12-30> -o <path to output file>")
     parser.add_argument("-user", dest="user",
                         help="username (email) to login to Garmin Connect",
                         required=True)
@@ -95,8 +94,6 @@ def check_args(user, password, url, chromedriver, days, path_out):
         Path to chromedriver to use
     :param days: [] of datetime.date
         Days to save
-    :param format_out: str
-        Format of output file (json, csv)
     :param path_out: str
         File to use as output
     :return: bool

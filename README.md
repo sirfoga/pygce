@@ -26,7 +26,7 @@ In order to run the scraper you need a [chromedriver](http://chromedriver.chromi
 ## Usage
 A simple `pygce -h` from the terminal should result in this output
 ```
-usage: -u <username (email) to login to Garmin Connect> -p <password to login to Garmin Connect> -c <path to chromedriver to use> -d <days to save. e.g -d 2017-12-30 or -d 2016-01-01 2017-12-30> -f <format of output file [json, csv]> -o <path to output file>
+usage: -u <username (email) to login to Garmin Connect> -p <password to login to Garmin Connect> -c <path to chromedriver to use> -d <days to save. e.g -d 2017-12-30 or -d 2016-01-01 2017-12-30> -o <path to output file>
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -38,6 +38,8 @@ optional arguments:
   -gpx                  download .gpx files too [y/n]
   -out                  path to output file
 ```
+e.g.: `pygce -u foga@example.it -p myBe@Ut1fulP@550rd -c /home/foga/Downloads/chromedriver -d 2019-07-01 2019-07-04 -o /home/foga/pygce/out/2019-07-01.json`
+
 When called with appropriate args `pygce` saves `.csv` (`.json`) data dumps of your Garmin Connect timeline data. The files will look like
 ```
 {
