@@ -20,6 +20,8 @@ Different ways, all equals
 
 Just run `python3 setup.py install --force` to upgrade from local installation
 
+### Chromedriver
+In order to run the scraper you need a [chromedriver](http://chromedriver.chromium.org/downloads) (i.e. Chrome made for developing purposes, fully controllable by other software). Just download it and save ii toa location: you will need to pass the path of the downloaded driver as argument of `pygce`.
 
 ## Usage
 A simple `pygce -h` from the terminal should result in this output
