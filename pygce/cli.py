@@ -107,6 +107,9 @@ def check_args(user, password, url, chromedriver, days, path_out):
     assert (isinstance(days[0], datetime))
     assert (days[0] <= days[1])  # start day <= end day
 
+    if not path_out.startswith('/'):  # file in current folder
+        path_out = os.path.join(os.getcwd(), path_out)
+
     out_dir = os.path.dirname(path_out)
     if not os.path.exists(out_dir):
         print('Trying to create output folder in {} ...'.format(out_dir))
