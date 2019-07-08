@@ -109,6 +109,7 @@ def check_args(user, password, url, chromedriver, days, path_out):
 
     out_dir = os.path.dirname(path_out)
     if not os.path.exists(out_dir):
+        print('Trying to create output folder in {} ...'.format(out_dir))
         os.makedirs(out_dir)  # create necessary dir for output file
 
     return True
