@@ -30,7 +30,7 @@ def create_args():
     """
 
     parser = argparse.ArgumentParser(
-        usage="-u <username (email) to login to Garmin Connect> -p <password "
+        usage="-user <username (email) to login to Garmin Connect> -password <password "
               "to login to Garmin Connect> -c <path to "
               "chromedriver to use> -d <days to save. e.g -d 2017-12-30 or "
               "-d 2016-01-01 2017-12-30> -o <path to output file>")
