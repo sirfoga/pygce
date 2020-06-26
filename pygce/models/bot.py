@@ -104,7 +104,7 @@ class GarminConnectBot(object):
         self.browser.execute_script(
             "document.getElementById(\"" + self.LOGIN_BUTTON_ID + "\").click()"
         )  # click button to login
-        self._wait_for(By.CLASS_NAME, "activity-tracking-disclaimer")
+        # todo may not be needed self._wait_for(By.CLASS_NAME, "activity-tracking-disclaimer")
 
     def _go_to(self, url, locator=None, element=None):
         log_message("GET", url)
@@ -169,9 +169,9 @@ class GarminConnectBot(object):
         self._go_to(self.user_url, By.CLASS_NAME, "widget-content")
 
     def _get_day_url(self, date_time):
-        url = self.base_url + "/modern/daily-summary/{}/{}"
+        url = self.base_url + "/modern/daily-summary/{}"
         day = date_time.strftime(self.DATE_FORMAT)
-        return url.format(self.user_id, day)
+        return url.format(day)
 
     def go_to_day(self, date_time):
         """
@@ -183,7 +183,7 @@ class GarminConnectBot(object):
 
         self._find_user_id()
         url = self._get_day_url(date_time)
-        self._go_to(url, By.CLASS_NAME, "comment-container")
+        self._go_to(url, By.CLASS_NAME, "ui-datepicker-trigger")
 
     def _get_steps_details_url(self, date_time):
         url = urljoin(self.base_url, self.STEPS_DETAILS_PATH)
