@@ -5,6 +5,7 @@
 import csv
 import json
 import os
+import traceback
 from datetime import timedelta
 from urllib.parse import urljoin
 
@@ -130,6 +131,7 @@ class GarminConnectBot(object):
             self.user_logged_in = True
             return True  # if arrived here, everything is fine
         except Exception as e:
+            traceback.print_exc()
             log_error(e)
             self.user_logged_in = False
             return False  # something went wrong
