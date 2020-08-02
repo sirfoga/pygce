@@ -131,7 +131,8 @@ def main():
                 bot.save_json_days(days[0], days[1], path_out)
             elif format_out == "csv":
                 bot.save_csv_days(days[0], days[1], path_out)
-
+            else:
+              raise("Error while parsing output format. Output file must be .json or .csv")
         except Exception as e:
             raise e
         finally:
