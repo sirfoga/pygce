@@ -1,10 +1,7 @@
 <div align="center">
 <h1>PyGCE | Export, save, and analyze your Garmin Connect data</h1>
-<em>There is a <a href="https://sirfoga.github.io/2017/04/16/pygce" rel="nofollow">detailed blog post</a> explaining all this fuss in a nice and easy way. Please, take a look.</em></br></br>
 </div>
 
-
-<div align="center"><a href="https://landscape.io/github/sirfoga/pygce/master"><img alt="Code Health" src="https://landscape.io/github/sirfoga/pygce/master/landscape.svg?style=flat"></a> <a href="https://www.python.org/download/releases/3.6.0/"><img alt="Python version" src="https://img.shields.io/badge/Python-3.6-blue.svg"></a></div>
 
 <div align="center">
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a> <a href="https://opensource.org/licenses/MIT"><img alt="Open Source Love" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
