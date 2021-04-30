@@ -35,8 +35,7 @@ class GarminConnectBot(object):
                 "&redirectAfterAccountCreationUrl=https%3A%2F%2Fconnect.garmin.com%2Fmodern%2F&gauthHost=https%3A%2F" \
                 "%2Fsso.garmin.com%2Fsso&locale=en_US&id=gauth-widget&clientId=GarminConnect&initialFocus=true" \
                 "&embedWidget=false&mobile=false# "
-    STEPS_DETAILS_PATH = '/modern/proxy/wellness-service/wellness' \
-                         '/dailySummaryChart/'
+    STEPS_DETAILS_PATH = '/modern/daily-summary/'
     DATE_FORMAT = '%Y-%m-%d'
     LOGIN_BUTTON_ID = "login-btn-signin"  # html id of the login button
     USERNAME_FIELD_NAME = "username"  # html name of username in login form
@@ -44,8 +43,7 @@ class GarminConnectBot(object):
     BROWSER_WAIT_TIMEOUT_SECONDS = 3  # max seconds before url request is
     BROWSER_GENERAL_ERROR = "If the error persist, please open an issue."
     BROWSER_TIMEOUT_ERROR = "Cannot complete request (cannot find {}). I " \
-                            "suggest setting a larger browser timeout page. " + \
-                            BROWSER_GENERAL_ERROR
+                            "suggest setting a larger browser timeout page. " + BROWSER_GENERAL_ERROR
 
     def __init__(self, user_name, password, download_gpx, chromedriver_path,
                  url=DEFAULT_BASE_URL):
@@ -64,8 +62,13 @@ class GarminConnectBot(object):
 
         object.__init__(self)
 
+        browser_options = webdriver.ChromeOptions()
+        browser_options.add_argument('--whitelisted-ips')
         self.browser = webdriver.Chrome(
-            chromedriver_path)  # bot browser to use
+            executable_path=chromedriver_path,
+            options=browser_options
+        )
+        
         self.user_name = user_name  # user settings
         self.user_password = password
         self.user_logged_in = False  # True iff user is correctly logged in
